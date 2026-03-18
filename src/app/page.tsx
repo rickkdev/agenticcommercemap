@@ -157,9 +157,24 @@ function Modal({
             <>
               <p className="text-sm text-gray-600 leading-relaxed">
                 {info.description}
+                {info.url && (
+                  <>
+                    {" "}
+                    <a
+                      href={info.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-blue-600 hover:text-blue-500 underline underline-offset-2"
+                    >
+                      [reference]
+                    </a>
+                  </>
+                )}
               </p>
-              <div className="mt-5 flex flex-wrap gap-3">
-                {info.website && (
+
+              {/* Website link */}
+              <div className="mt-5">
+                {info.website ? (
                   <a
                     href={info.website}
                     target="_blank"
@@ -170,23 +185,9 @@ function Modal({
                       <circle cx="7" cy="7" r="5.5" stroke="currentColor" strokeWidth="1.5" />
                       <path d="M1.5 7h11M7 1.5c-1.5 1.5-2 3.5-2 5.5s.5 4 2 5.5M7 1.5c1.5 1.5 2 3.5 2 5.5s-.5 4-2 5.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                     </svg>
-                    Website
+                    Visit Website
                   </a>
-                )}
-                {info.url && info.url !== info.website && (
-                  <a
-                    href={info.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 bg-blue-600 text-white text-sm font-medium px-5 py-2.5 rounded-lg hover:bg-blue-500 transition-colors"
-                  >
-                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
-                      <path d="M5.25 2.33H2.33v9.34h9.34V8.75M8.17 1.17h4.66v4.66M8.17 5.83L12.83 1.17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                    Article / Learn More
-                  </a>
-                )}
-                {!info.website && info.url && (
+                ) : info.url ? (
                   <a
                     href={info.url}
                     target="_blank"
@@ -196,9 +197,9 @@ function Modal({
                     <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="shrink-0">
                       <path d="M5.25 2.33H2.33v9.34h9.34V8.75M8.17 1.17h4.66v4.66M8.17 5.83L12.83 1.17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
-                    Visit Website / Article
+                    Visit Website
                   </a>
-                )}
+                ) : null}
               </div>
             </>
           ) : (
