@@ -5,23 +5,16 @@
 
 const lowRelevance = new Set([
   // NO INFO FOUND AT ALL (not in companyInfo)
-  "MetEngine",
-  "twit.sh",
-  "WURK",
-  "Pawr.link",
   "Valiron",
   "Nava",
   "REP",
-  "ClawdVine",
   "Armory",
   "MAIN",
-  "Fluid",
   "Singularity Layer",
   "Delx",
   "render_self",
   "Agonx402",
   "Invoica",
-  "AsterPay",
   "Mithril",
   "FabricBloc",
   "EmblemAI",
