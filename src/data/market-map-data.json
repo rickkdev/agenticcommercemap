@@ -1,292 +1,803 @@
 {
   "title": "Agentic Commerce Market Map",
-  "totalCompanies": 173,
+  "totalCompanies": 142,
   "categories": {
     "Data & Analytics": {
-      "count": 17,
+      "count": 15,
       "companies": [
-        {"name": "Artemis", "logoUrl": "https://pbs.twimg.com/profile_images/1896982195723546624/2XeO9mPb_400x400.png"},
-        {"name": "x402scan", "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"},
-        {"name": "8004scan", "logoUrl": "https://pbs.twimg.com/profile_images/2006809821463404544/JYuA7ivA_400x400.jpg"},
-        {"name": "Dune", "logoUrl": "https://pbs.twimg.com/profile_images/1986458079248986112/qq80s3hx_400x400.jpg"},
-        {"name": "Allium", "logoUrl": "https://pbs.twimg.com/profile_images/1778926940407132160/UEwR3lHt_400x400.jpg"},
-        {"name": "MetEngine", "logoUrl": "https://pbs.twimg.com/profile_images/1952288991543529472/tz7-lynu_400x400.png"},
-        {"name": "Quicknode", "logoUrl": "https://pbs.twimg.com/profile_images/2006931756109209601/TRgoe6HT_400x400.jpg"},
-        {"name": "Quick Intel", "logoUrl": "https://pbs.twimg.com/profile_images/1882651870201520128/_6yWXw-N_400x400.jpg"},
-        {"name": "SQD", "logoUrl": "https://pbs.twimg.com/profile_images/1930962633387089920/eqfByFAN_400x400.jpg"},
-        {"name": "Alchemy", "logoUrl": "https://pbs.twimg.com/profile_images/1979190252448133120/xAMqZF7__400x400.jpg"},
-        {"name": "Nansen", "logoUrl": "https://pbs.twimg.com/profile_images/2029027179863146496/KhFqNWuW_400x400.jpg"},
-        {"name": "Quotient", "logoUrl": "https://pbs.twimg.com/profile_images/2019776972562526209/0qFoMKKW_400x400.jpg"},
-        {"name": "Octav", "logoUrl": "https://pbs.twimg.com/profile_images/1988739027609010176/1c9cVkd2_400x400.jpg"},
-        {"name": "Birdeye Data", "logoUrl": "https://pbs.twimg.com/profile_images/2007489102632103938/FMQ1tBv2_400x400.jpg"},
-        {"name": "twit.sh", "logoUrl": "https://pbs.twimg.com/profile_images/2025891186729246721/2PzpYJ8j_400x400.jpg"},
-        {"name": "growthepie", "logoUrl": "https://pbs.twimg.com/profile_images/1733218142044758018/58vzNXwy_400x400.jpg"},
-        {"name": "Valoria", "logoUrl": "https://x402.valoria.net/favicon.png"}
+        {
+          "name": "Artemis",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1896982195723546624/2XeO9mPb_400x400.png"
+        },
+        {
+          "name": "x402scan",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"
+        },
+        {
+          "name": "8004scan",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2006809821463404544/JYuA7ivA_400x400.jpg"
+        },
+        {
+          "name": "Dune",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1986458079248986112/qq80s3hx_400x400.jpg"
+        },
+        {
+          "name": "Allium",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1778926940407132160/UEwR3lHt_400x400.jpg"
+        },
+        {
+          "name": "MetEngine",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1952288991543529472/tz7-lynu_400x400.png"
+        },
+        {
+          "name": "Quicknode",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2006931756109209601/TRgoe6HT_400x400.jpg"
+        },
+        {
+          "name": "Quick Intel",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1882651870201520128/_6yWXw-N_400x400.jpg"
+        },
+        {
+          "name": "SQD",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1930962633387089920/eqfByFAN_400x400.jpg"
+        },
+        {
+          "name": "Alchemy",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1979190252448133120/xAMqZF7__400x400.jpg"
+        },
+        {
+          "name": "Nansen",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2029027179863146496/KhFqNWuW_400x400.jpg"
+        },
+        {
+          "name": "Birdeye Data",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2007489102632103938/FMQ1tBv2_400x400.jpg"
+        },
+        {
+          "name": "twit.sh",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2025891186729246721/2PzpYJ8j_400x400.jpg"
+        },
+        {
+          "name": "growthepie",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1733218142044758018/58vzNXwy_400x400.jpg"
+        },
+        {
+          "name": "Valoria",
+          "logoUrl": "https://x402.valoria.net/favicon.png"
+        }
       ]
     },
     "User Interfaces": {
-      "count": 7,
+      "count": 5,
       "companies": [
-        {"name": "Claude", "logoUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg"},
-        {"name": "Telegram", "logoUrl": "https://pbs.twimg.com/profile_images/1183117696730390529/LRDASku7_400x400.jpg"},
-        {"name": "ChatGPT", "logoUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg"},
-        {"name": "Grok", "logoUrl": "https://pbs.twimg.com/profile_images/1769430779845611520/lIgjSJGU_400x400.jpg"},
-        {"name": "Gemini", "logoUrl": "https://pbs.twimg.com/profile_images/1940093473564073984/jiafRcO0_400x400.png"},
-        {"name": "Merit Systems", "logoUrl": "https://pbs.twimg.com/profile_images/1879898800501747712/_2VQkL_g_400x400.jpg"},
-        {"name": "Fere AI", "logoUrl": "https://pbs.twimg.com/profile_images/2013183679929925632/dKpQpk1n_400x400.jpg"}
+        {
+          "name": "Claude",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg"
+        },
+        {
+          "name": "Telegram",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1183117696730390529/LRDASku7_400x400.jpg"
+        },
+        {
+          "name": "ChatGPT",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg"
+        },
+        {
+          "name": "Gemini",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1940093473564073984/jiafRcO0_400x400.png"
+        },
+        {
+          "name": "Merit Systems",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1879898800501747712/_2VQkL_g_400x400.jpg"
+        }
       ]
     },
     "Discovery": {
-      "count": 15,
+      "count": 14,
       "companies": [
-        {"name": "x402scan", "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"},
-        {"name": "UCP", "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771435804/CleanShot_2026-02-18_at_12.29.11_2x_x7un1c.png"},
-        {"name": "NEAR", "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"},
-        {"name": "Coinbase", "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"},
-        {"name": "x402jobs", "logoUrl": "https://pbs.twimg.com/profile_images/1998416577868288001/AbYKovJi_400x400.jpg"},
-        {"name": "Questflow", "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"},
-        {"name": "ClawIndex", "logoUrl": "https://clawindex.org/favicon.svg"},
-        {"name": "Moltlaunch", "logoUrl": "https://pbs.twimg.com/profile_images/2023181713023918080/RFwiwZ-H_400x400.jpg"},
-        {"name": "Unicity Labs", "logoUrl": "https://pbs.twimg.com/profile_images/2021235417836920832/kH6lY52l_400x400.png"},
-        {"name": "WURK", "logoUrl": "https://pbs.twimg.com/profile_images/1971500510529138688/kaABgOix_400x400.jpg"},
-        {"name": "Gizmolab", "logoUrl": "https://pbs.twimg.com/profile_images/1568640111100985346/Eh9-DFSr_400x400.jpg"},
-        {"name": "Pawr.link", "logoUrl": "https://pbs.twimg.com/profile_images/2020565184947892224/r3JSmxMU_400x400.jpg"},
-        {"name": "0xWork", "logoUrl": "https://pbs.twimg.com/profile_images/2018876723308253184/4EjbROsk_400x400.jpg"},
-        {"name": "payable.link", "logoUrl": "https://payable.link/icon.svg"},
-        {"name": "402.bot", "logoUrl": "https://pbs.twimg.com/profile_images/2031728059330793472/drgRqwBP_400x400.png"}
+        {
+          "name": "x402scan",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"
+        },
+        {
+          "name": "UCP",
+          "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771435804/CleanShot_2026-02-18_at_12.29.11_2x_x7un1c.png"
+        },
+        {
+          "name": "NEAR",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"
+        },
+        {
+          "name": "Coinbase",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"
+        },
+        {
+          "name": "x402jobs",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1998416577868288001/AbYKovJi_400x400.jpg"
+        },
+        {
+          "name": "Questflow",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"
+        },
+        {
+          "name": "ClawIndex",
+          "logoUrl": "https://clawindex.org/favicon.svg"
+        },
+        {
+          "name": "Moltlaunch",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2023181713023918080/RFwiwZ-H_400x400.jpg"
+        },
+        {
+          "name": "Unicity Labs",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2021235417836920832/kH6lY52l_400x400.png"
+        },
+        {
+          "name": "WURK",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1971500510529138688/kaABgOix_400x400.jpg"
+        },
+        {
+          "name": "Pawr.link",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2020565184947892224/r3JSmxMU_400x400.jpg"
+        },
+        {
+          "name": "0xWork",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2018876723308253184/4EjbROsk_400x400.jpg"
+        },
+        {
+          "name": "payable.link",
+          "logoUrl": "https://payable.link/icon.svg"
+        },
+        {
+          "name": "402.bot",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2031728059330793472/drgRqwBP_400x400.png"
+        }
       ]
     },
     "Facilitators": {
-      "count": 22,
+      "count": 21,
       "companies": [
-        {"name": "Coinbase", "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"},
-        {"name": "PayAI", "logoUrl": "https://pbs.twimg.com/profile_images/1975843319390572544/28JQbApX_400x400.jpg"},
-        {"name": "Stripe", "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"},
-        {"name": "x402jobs", "logoUrl": "https://pbs.twimg.com/profile_images/1998416577868288001/AbYKovJi_400x400.jpg"},
-        {"name": "x402-rs", "logoUrl": "https://pbs.twimg.com/profile_images/1941522569577852928/hHAGc-jH_400x400.jpg"},
-        {"name": "thirdweb", "logoUrl": "https://pbs.twimg.com/profile_images/1979277559155064832/BsOxEfgq_400x400.jpg"},
-        {"name": "Openx402", "logoUrl": "https://pbs.twimg.com/profile_images/1983064782052962305/NvLhsEbU_400x400.jpg"},
-        {"name": "OpenFacilitator", "logoUrl": "https://pbs.twimg.com/profile_images/1983064782052962305/NvLhsEbU_400x400.jpg"},
-        {"name": "Heurist", "logoUrl": "https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_400x400.jpg"},
-        {"name": "Dexter", "logoUrl": "https://pbs.twimg.com/profile_images/2005547775300120576/P9wcgU2g_400x400.jpg"},
-        {"name": "Daydreams", "logoUrl": "https://pbs.twimg.com/profile_images/1947853268073517057/5YvliT0s_400x400.png"},
-        {"name": "Corbits", "logoUrl": "https://pbs.twimg.com/profile_images/1953883123801890816/PY3bMXdB_400x400.jpg"},
-        {"name": "CodeNut", "logoUrl": "https://pbs.twimg.com/profile_images/1983185801568759810/x5aQM1SN_400x400.jpg"},
-        {"name": "AurraCloud", "logoUrl": "https://pbs.twimg.com/profile_images/1910669171148341248/xxEakvli_400x400.jpg"},
-        {"name": "RelAI", "logoUrl": "https://relai.fi/RelayAI-logo-2.png"},
-        {"name": "Meridian", "logoUrl": "https://pbs.twimg.com/profile_images/1965129637257744384/GgIixglY_400x400.jpg"},
-        {"name": "Kobaru", "logoUrl": "https://pbs.twimg.com/profile_images/2008604836804100096/2EzMMZDL_400x400.jpg"},
-        {"name": "Silverback", "logoUrl": "https://pbs.twimg.com/profile_images/1994854184454426626/nLd6wbWA_400x400.jpg"},
-        {"name": "Autoincentive", "logoUrl": "https://pbs.twimg.com/profile_images/1986524494698033154/CpJyPrED_400x400.jpg"},
-        {"name": "Ultravioleta DAO", "logoUrl": "https://pbs.twimg.com/profile_images/2006548781060206592/zlNliOkn_400x400.jpg"},
-        {"name": "AsterPay", "logoUrl": "https://pbs.twimg.com/profile_images/2023823059443175424/Q5hwCQOU_400x400.jpg"},
-        {"name": "GoPlausible", "logoUrl": "https://pbs.twimg.com/profile_images/1686269002920693760/9RjE-yFV_400x400.jpg"}
+        {
+          "name": "Coinbase",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"
+        },
+        {
+          "name": "PayAI",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1975843319390572544/28JQbApX_400x400.jpg"
+        },
+        {
+          "name": "Stripe",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"
+        },
+        {
+          "name": "x402jobs",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1998416577868288001/AbYKovJi_400x400.jpg"
+        },
+        {
+          "name": "x402-rs",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1941522569577852928/hHAGc-jH_400x400.jpg"
+        },
+        {
+          "name": "thirdweb",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1979277559155064832/BsOxEfgq_400x400.jpg"
+        },
+        {
+          "name": "Openx402",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1983064782052962305/NvLhsEbU_400x400.jpg"
+        },
+        {
+          "name": "OpenFacilitator",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1983064782052962305/NvLhsEbU_400x400.jpg"
+        },
+        {
+          "name": "Heurist",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_400x400.jpg"
+        },
+        {
+          "name": "Dexter",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2005547775300120576/P9wcgU2g_400x400.jpg"
+        },
+        {
+          "name": "Daydreams",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1947853268073517057/5YvliT0s_400x400.png"
+        },
+        {
+          "name": "Corbits",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1953883123801890816/PY3bMXdB_400x400.jpg"
+        },
+        {
+          "name": "CodeNut",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1983185801568759810/x5aQM1SN_400x400.jpg"
+        },
+        {
+          "name": "AurraCloud",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1910669171148341248/xxEakvli_400x400.jpg"
+        },
+        {
+          "name": "RelAI",
+          "logoUrl": "https://relai.fi/RelayAI-logo-2.png"
+        },
+        {
+          "name": "Meridian",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1965129637257744384/GgIixglY_400x400.jpg"
+        },
+        {
+          "name": "Kobaru",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2008604836804100096/2EzMMZDL_400x400.jpg"
+        },
+        {
+          "name": "Autoincentive",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1986524494698033154/CpJyPrED_400x400.jpg"
+        },
+        {
+          "name": "Ultravioleta DAO",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2006548781060206592/zlNliOkn_400x400.jpg"
+        },
+        {
+          "name": "AsterPay",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2023823059443175424/Q5hwCQOU_400x400.jpg"
+        },
+        {
+          "name": "GoPlausible",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1686269002920693760/9RjE-yFV_400x400.jpg"
+        }
       ]
     },
     "Identity & Trust": {
-      "count": 17,
+      "count": 14,
       "companies": [
-        {"name": "ERC-8004", "logoUrl": "https://pbs.twimg.com/profile_images/1878738447067652096/tXQbWfpf_400x400.jpg"},
-        {"name": "Stripe", "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"},
-        {"name": "Mastercard", "logoUrl": "https://pbs.twimg.com/profile_images/1013421144815198208/FV9IEL1U_400x400.jpg"},
-        {"name": "Visa", "logoUrl": "https://pbs.twimg.com/profile_images/1961206022824960001/dE4dNtAm_400x400.jpg"},
-        {"name": "t54.ai", "logoUrl": "https://pbs.twimg.com/profile_images/1978899199480438784/AfWNQOuz_400x400.jpg"},
-        {"name": "zauth", "logoUrl": "https://pbs.twimg.com/profile_images/1998591722616664065/wKnEJjkh_400x400.png"},
-        {"name": "Helixa", "logoUrl": "https://pbs.twimg.com/profile_images/2024163437253664768/6eqwy_nk_400x400.jpg"},
-        {"name": "Cascade", "logoUrl": "https://pbs.twimg.com/profile_images/2008970099391070208/NP3R3nNm_400x400.jpg"},
-        {"name": "Proofivy", "logoUrl": "https://proofivy.com/images/logo_los.svg"},
-        {"name": "Self", "logoUrl": "https://pbs.twimg.com/profile_images/1894153706578317312/A_wuvkoA_400x400.jpg"},
-        {"name": "Nuggets", "logoUrl": "https://pbs.twimg.com/profile_images/2024889204094676992/1HoVyD3T_400x400.jpg"},
-        {"name": "Cred Protocol", "logoUrl": "https://pbs.twimg.com/profile_images/1425122906044964864/Xrgs0ACt_400x400.jpg"},
-        {"name": "Valiron", "logoUrl": "https://pbs.twimg.com/profile_images/2004036085593100288/pMGFndtn_400x400.jpg"},
-        {"name": "8k4", "logoUrl": "https://pbs.twimg.com/profile_images/2029074266210349057/0wV-ba1y_400x400.jpg"},
-        {"name": "REP", "logoUrl": "https://pbs.twimg.com/profile_images/1867521908377309184/aEojqzFs_400x400.jpg"},
-        {"name": "AgentProof", "logoUrl": "https://agentproof.sh/logo-icon.svg"},
-        {"name": "Nava", "logoUrl": "https://pbs.twimg.com/profile_images/1935462788723306496/iJYb_8Ce_400x400.jpg"}
+        {
+          "name": "ERC-8004",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1878738447067652096/tXQbWfpf_400x400.jpg"
+        },
+        {
+          "name": "Stripe",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"
+        },
+        {
+          "name": "Mastercard",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1013421144815198208/FV9IEL1U_400x400.jpg"
+        },
+        {
+          "name": "Visa",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1961206022824960001/dE4dNtAm_400x400.jpg"
+        },
+        {
+          "name": "t54.ai",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1978899199480438784/AfWNQOuz_400x400.jpg"
+        },
+        {
+          "name": "zauth",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1998591722616664065/wKnEJjkh_400x400.png"
+        },
+        {
+          "name": "Helixa",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2024163437253664768/6eqwy_nk_400x400.jpg"
+        },
+        {
+          "name": "Cascade",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2008970099391070208/NP3R3nNm_400x400.jpg"
+        },
+        {
+          "name": "Proofivy",
+          "logoUrl": "https://proofivy.com/images/logo_los.svg"
+        },
+        {
+          "name": "Self",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1894153706578317312/A_wuvkoA_400x400.jpg"
+        },
+        {
+          "name": "Nuggets",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2024889204094676992/1HoVyD3T_400x400.jpg"
+        },
+        {
+          "name": "Cred Protocol",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1425122906044964864/Xrgs0ACt_400x400.jpg"
+        },
+        {
+          "name": "8k4",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2029074266210349057/0wV-ba1y_400x400.jpg"
+        },
+        {
+          "name": "AgentProof",
+          "logoUrl": "https://agentproof.sh/logo-icon.svg"
+        }
       ]
     },
     "Agent Networks": {
-      "count": 10,
+      "count": 9,
       "companies": [
-        {"name": "Virtuals Protocol", "logoUrl": "https://pbs.twimg.com/profile_images/2009228951621914626/U6ZpmYq3_400x400.jpg"},
-        {"name": "Questflow", "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"},
-        {"name": "Heurist", "logoUrl": "https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_400x400.jpg"},
-        {"name": "Bittensor", "logoUrl": "https://pbs.twimg.com/profile_images/1977821372266217472/cr6-Svf8_400x400.jpg"},
-        {"name": "Droyd", "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771449057/DROYD_D_LOGO_v31awk_bej7xy.svg"},
-        {"name": "Lobstr", "logoUrl": "https://pbs.twimg.com/profile_images/2023874401524219904/mZLd-GB1_400x400.jpg"},
-        {"name": "Moltbook", "logoUrl": "https://pbs.twimg.com/profile_images/2016452566297788416/85S-EvmD_400x400.jpg"},
-        {"name": "Rei Labs", "logoUrl": "https://pbs.twimg.com/profile_images/1952470433837744128/oRFv0yDD_400x400.jpg"},
-        {"name": "OpenServ", "logoUrl": "https://pbs.twimg.com/profile_images/1883235175619854336/IVLGO7tx_400x400.png"},
-        {"name": "ClawdVine", "logoUrl": "https://pbs.twimg.com/profile_images/2018390371504435201/r5P5ahC2_400x400.jpg"}
+        {
+          "name": "Virtuals Protocol",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2009228951621914626/U6ZpmYq3_400x400.jpg"
+        },
+        {
+          "name": "Questflow",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"
+        },
+        {
+          "name": "Heurist",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_400x400.jpg"
+        },
+        {
+          "name": "Bittensor",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1977821372266217472/cr6-Svf8_400x400.jpg"
+        },
+        {
+          "name": "Droyd",
+          "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771449057/DROYD_D_LOGO_v31awk_bej7xy.svg"
+        },
+        {
+          "name": "Lobstr",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2023874401524219904/mZLd-GB1_400x400.jpg"
+        },
+        {
+          "name": "Moltbook",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2016452566297788416/85S-EvmD_400x400.jpg"
+        },
+        {
+          "name": "OpenServ",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1883235175619854336/IVLGO7tx_400x400.png"
+        },
+        {
+          "name": "ClawdVine",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2018390371504435201/r5P5ahC2_400x400.jpg"
+        }
       ]
     },
     "Agent Frameworks & Tooling": {
-      "count": 33,
+      "count": 25,
       "companies": [
-        {"name": "MCP", "logoUrl": "https://avatars.githubusercontent.com/u/182288589?s=400&v=4"},
-        {"name": "A2A", "logoUrl": "https://a2a-protocol.org/latest/assets/a2a-logo-black.svg"},
-        {"name": "AXTP", "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771439901/image_2_hsuosw.png"},
-        {"name": "Visa", "logoUrl": "https://pbs.twimg.com/profile_images/1961206022824960001/dE4dNtAm_400x400.jpg"},
-        {"name": "thirdweb", "logoUrl": "https://pbs.twimg.com/profile_images/1979277559155064832/BsOxEfgq_400x400.jpg"},
-        {"name": "t54.ai", "logoUrl": "https://pbs.twimg.com/profile_images/1978899199480438784/AfWNQOuz_400x400.jpg"},
-        {"name": "Questflow", "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"},
-        {"name": "Privy", "logoUrl": "https://pbs.twimg.com/profile_images/1902346061005676544/e6WybE_v_400x400.jpg"},
-        {"name": "Phantom", "logoUrl": "https://pbs.twimg.com/profile_images/1973036509449121792/ePaMAzyA_400x400.jpg"},
-        {"name": "OpenClaw", "logoUrl": "https://pbs.twimg.com/profile_images/2017100664984186880/orbYx-3U_400x400.jpg"},
-        {"name": "Dexter", "logoUrl": "https://pbs.twimg.com/profile_images/2005547775300120576/P9wcgU2g_400x400.jpg"},
-        {"name": "Daydreams", "logoUrl": "https://pbs.twimg.com/profile_images/1947853268073517057/5YvliT0s_400x400.png"},
-        {"name": "Corbits", "logoUrl": "https://pbs.twimg.com/profile_images/1953883123801890816/PY3bMXdB_400x400.jpg"},
-        {"name": "Conway Research", "logoUrl": "https://pbs.twimg.com/profile_images/1989432820989657088/2f_wIfbd_400x400.jpg"},
-        {"name": "Cloudflare", "logoUrl": "https://pbs.twimg.com/profile_images/2016613099034345472/zHWjcVEQ_400x400.jpg"},
-        {"name": "Blockrun", "logoUrl": "https://pbs.twimg.com/profile_images/2008666021171765249/9f1Iv2X4_400x400.jpg"},
-        {"name": "Bankr", "logoUrl": "https://pbs.twimg.com/profile_images/1951545493936545792/AriqgxQN_400x400.jpg"},
-        {"name": "Armory", "logoUrl": "https://raw.githubusercontent.com/TheGreatAxios/armory/90e3cb7db239034439ff76601a26a049b2263258/docs/logo.jpeg"},
-        {"name": "NEAR", "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"},
-        {"name": "MAIN", "logoUrl": "https://pbs.twimg.com/profile_images/1909980885727780864/EGGQwF2Y_400x400.jpg"},
-        {"name": "Quick Intel", "logoUrl": "https://pbs.twimg.com/profile_images/1882651870201520128/_6yWXw-N_400x400.jpg"},
-        {"name": "Tator Trader", "logoUrl": "https://pbs.twimg.com/profile_images/2011823469479276544/j6YrxGG-_400x400.jpg"},
-        {"name": "Frames", "logoUrl": "https://pbs.twimg.com/profile_images/2022207719424266240/YS-sT1m7_400x400.png"},
-        {"name": "RevaPay AI", "logoUrl": "https://pbs.twimg.com/profile_images/1913314465644195840/90bgj7G8_400x400.png"},
-        {"name": "Zyfai", "logoUrl": "https://pbs.twimg.com/profile_images/1981024515627847681/Uvu-CBfc_400x400.jpg"},
-        {"name": "Starkbot Cloud", "logoUrl": "https://pbs.twimg.com/profile_images/2021063860745019392/BAKj_een_400x400.jpg"},
-        {"name": "Silverback", "logoUrl": "https://pbs.twimg.com/profile_images/1994854184454426626/nLd6wbWA_400x400.jpg"},
-        {"name": "Fluid", "logoUrl": "https://pbs.twimg.com/profile_images/1712332669697024001/xgs6LB3Y_400x400.png"},
-        {"name": "OpenServ", "logoUrl": "https://pbs.twimg.com/profile_images/1883235175619854336/IVLGO7tx_400x400.png"},
-        {"name": "Singularity Layer", "logoUrl": "https://pbs.twimg.com/profile_images/2021475097048236032/b-F8VON3_400x400.jpg"},
-        {"name": "Delx", "logoUrl": "https://pbs.twimg.com/profile_images/2021659812816465921/jQz-qvKY_400x400.jpg"},
-        {"name": "Beep", "logoUrl": "https://pbs.twimg.com/profile_images/1963665873954373632/ihUauXYI_400x400.jpg"},
-        {"name": "render_self", "logoUrl": "https://pbs.twimg.com/profile_images/2025323518825504768/I5WucQtz_400x400.jpg"}
+        {
+          "name": "MCP",
+          "logoUrl": "https://avatars.githubusercontent.com/u/182288589?s=400&v=4"
+        },
+        {
+          "name": "A2A",
+          "logoUrl": "https://a2a-protocol.org/latest/assets/a2a-logo-black.svg"
+        },
+        {
+          "name": "AXTP",
+          "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771439901/image_2_hsuosw.png"
+        },
+        {
+          "name": "Visa",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1961206022824960001/dE4dNtAm_400x400.jpg"
+        },
+        {
+          "name": "thirdweb",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1979277559155064832/BsOxEfgq_400x400.jpg"
+        },
+        {
+          "name": "t54.ai",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1978899199480438784/AfWNQOuz_400x400.jpg"
+        },
+        {
+          "name": "Questflow",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"
+        },
+        {
+          "name": "Privy",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1902346061005676544/e6WybE_v_400x400.jpg"
+        },
+        {
+          "name": "Phantom",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1973036509449121792/ePaMAzyA_400x400.jpg"
+        },
+        {
+          "name": "OpenClaw",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2017100664984186880/orbYx-3U_400x400.jpg"
+        },
+        {
+          "name": "Dexter",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2005547775300120576/P9wcgU2g_400x400.jpg"
+        },
+        {
+          "name": "Daydreams",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1947853268073517057/5YvliT0s_400x400.png"
+        },
+        {
+          "name": "Corbits",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1953883123801890816/PY3bMXdB_400x400.jpg"
+        },
+        {
+          "name": "Conway Research",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1989432820989657088/2f_wIfbd_400x400.jpg"
+        },
+        {
+          "name": "Cloudflare",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2016613099034345472/zHWjcVEQ_400x400.jpg"
+        },
+        {
+          "name": "Blockrun",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2008666021171765249/9f1Iv2X4_400x400.jpg"
+        },
+        {
+          "name": "Bankr",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1951545493936545792/AriqgxQN_400x400.jpg"
+        },
+        {
+          "name": "NEAR",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"
+        },
+        {
+          "name": "Quick Intel",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1882651870201520128/_6yWXw-N_400x400.jpg"
+        },
+        {
+          "name": "Frames",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2022207719424266240/YS-sT1m7_400x400.png"
+        },
+        {
+          "name": "RevaPay AI",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1913314465644195840/90bgj7G8_400x400.png"
+        },
+        {
+          "name": "Starkbot Cloud",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2021063860745019392/BAKj_een_400x400.jpg"
+        },
+        {
+          "name": "Fluid",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1712332669697024001/xgs6LB3Y_400x400.png"
+        },
+        {
+          "name": "OpenServ",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1883235175619854336/IVLGO7tx_400x400.png"
+        },
+        {
+          "name": "Beep",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1963665873954373632/ihUauXYI_400x400.jpg"
+        }
       ]
     },
     "Payment Infrastructure": {
-      "count": 25,
+      "count": 22,
       "companies": [
-        {"name": "x402", "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771619847/thumbnails/x402logo_lgzvvg.jpg"},
-        {"name": "ACP", "logoUrl": "https://www.agenticcommerce.dev/favicon.ico"},
-        {"name": "AP2", "logoUrl": "https://pbs.twimg.com/profile_images/1190319303041724417/1a61e4pu_400x400.jpg"},
-        {"name": "Visa", "logoUrl": "https://pbs.twimg.com/profile_images/1961206022824960001/dE4dNtAm_400x400.jpg"},
-        {"name": "Stripe", "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"},
-        {"name": "lobster.cash", "logoUrl": "https://www.lobster.cash/lobster-cash-logo.svg"},
-        {"name": "Crossmint", "logoUrl": "https://pbs.twimg.com/profile_images/1831694029408423936/nFGeiuuL_400x400.png"},
-        {"name": "Sponge", "logoUrl": "https://pbs.twimg.com/profile_images/2011913153408614405/exBnbsqA_400x400.jpg"},
-        {"name": "BVNK", "logoUrl": "https://pbs.twimg.com/profile_images/1638167306101481472/V8aeQS_H_400x400.png"},
-        {"name": "Reveel", "logoUrl": "https://pbs.twimg.com/profile_images/1824198579138809856/XHowpmP2_400x400.png"},
-        {"name": "RevaPay AI", "logoUrl": "https://pbs.twimg.com/profile_images/1913314465644195840/90bgj7G8_400x400.png"},
-        {"name": "Meridian", "logoUrl": "https://pbs.twimg.com/profile_images/1965129637257744384/GgIixglY_400x400.jpg"},
-        {"name": "Pay3", "logoUrl": "https://pbs.twimg.com/profile_images/1640600360841793536/eT4oNIdC_400x400.jpg"},
-        {"name": "Superfluid Foundation", "logoUrl": "https://pbs.twimg.com/profile_images/1855168675248242688/k342r9Mo_400x400.jpg"},
-        {"name": "Agonx402", "logoUrl": "https://pbs.twimg.com/profile_images/2023638552035123201/N3Nd0NXS_400x400.jpg"},
-        {"name": "Gwop", "logoUrl": "https://pbs.twimg.com/profile_images/2024896698976182272/N44abIXD_400x400.jpg"},
-        {"name": "machines.cash", "logoUrl": "https://pbs.twimg.com/profile_images/2007939037412376578/Wj11-xFA_400x400.jpg"},
-        {"name": "Cleared", "logoUrl": "https://pbs.twimg.com/profile_images/2021529540330475520/yTd720Dk_400x400.jpg"},
-        {"name": "ampersend", "logoUrl": "https://pbs.twimg.com/profile_images/1983674950264524800/XW8feNmM_400x400.jpg"},
-        {"name": "HandlPay", "logoUrl": "https://pbs.twimg.com/profile_images/1935988512735535104/s8iNXyvd_400x400.png"},
-        {"name": "Conto", "logoUrl": "https://pbs.twimg.com/profile_images/2029080999376637952/34NbiNRn_400x400.jpg"},
-        {"name": "x402engine", "logoUrl": "https://pbs.twimg.com/profile_images/2020308320477675520/L9kJR5NS_400x400.jpg"},
-        {"name": "Invoica", "logoUrl": "https://pbs.twimg.com/profile_images/2024806740735225858/C1Sah9xr_400x400.jpg"},
-        {"name": "Moonpay", "logoUrl": "https://pbs.twimg.com/profile_images/1974903278400872448/XgE1PBG6_400x400.jpg"},
-        {"name": "HTTPayer", "logoUrl": "https://pbs.twimg.com/profile_images/2019640087538008064/-35T9s_B_400x400.jpg"}
+        {
+          "name": "x402",
+          "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771619847/thumbnails/x402logo_lgzvvg.jpg"
+        },
+        {
+          "name": "ACP",
+          "logoUrl": "https://www.agenticcommerce.dev/favicon.ico"
+        },
+        {
+          "name": "AP2",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1190319303041724417/1a61e4pu_400x400.jpg"
+        },
+        {
+          "name": "Visa",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1961206022824960001/dE4dNtAm_400x400.jpg"
+        },
+        {
+          "name": "Stripe",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"
+        },
+        {
+          "name": "lobster.cash",
+          "logoUrl": "https://www.lobster.cash/lobster-cash-logo.svg"
+        },
+        {
+          "name": "Crossmint",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1831694029408423936/nFGeiuuL_400x400.png"
+        },
+        {
+          "name": "Sponge",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2011913153408614405/exBnbsqA_400x400.jpg"
+        },
+        {
+          "name": "BVNK",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1638167306101481472/V8aeQS_H_400x400.png"
+        },
+        {
+          "name": "Reveel",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1824198579138809856/XHowpmP2_400x400.png"
+        },
+        {
+          "name": "RevaPay AI",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1913314465644195840/90bgj7G8_400x400.png"
+        },
+        {
+          "name": "Meridian",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1965129637257744384/GgIixglY_400x400.jpg"
+        },
+        {
+          "name": "Pay3",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1640600360841793536/eT4oNIdC_400x400.jpg"
+        },
+        {
+          "name": "Superfluid Foundation",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1855168675248242688/k342r9Mo_400x400.jpg"
+        },
+        {
+          "name": "Gwop",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2024896698976182272/N44abIXD_400x400.jpg"
+        },
+        {
+          "name": "machines.cash",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2007939037412376578/Wj11-xFA_400x400.jpg"
+        },
+        {
+          "name": "Cleared",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2021529540330475520/yTd720Dk_400x400.jpg"
+        },
+        {
+          "name": "ampersend",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1983674950264524800/XW8feNmM_400x400.jpg"
+        },
+        {
+          "name": "Conto",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2029080999376637952/34NbiNRn_400x400.jpg"
+        },
+        {
+          "name": "x402engine",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2020308320477675520/L9kJR5NS_400x400.jpg"
+        },
+        {
+          "name": "Moonpay",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1974903278400872448/XgE1PBG6_400x400.jpg"
+        },
+        {
+          "name": "HTTPayer",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2019640087538008064/-35T9s_B_400x400.jpg"
+        }
       ]
     },
     "Stablecoins": {
-      "count": 4,
+      "count": 3,
       "companies": [
-        {"name": "USDC", "logoUrl": "https://pbs.twimg.com/profile_images/1916937910928211968/CKblfanr_400x400.png"},
-        {"name": "USDT", "logoUrl": "https://pbs.twimg.com/profile_images/1792114402864640002/yR72EOJ7_400x400.png"},
-        {"name": "CASH", "logoUrl": "https://pbs.twimg.com/profile_images/1973003466894163968/QLiOIqmF_400x400.jpg"},
-        {"name": "fxUSD", "logoUrl": "https://raw.githubusercontent.com/AladdinDAO/aladdin-assets/refs/heads/main/images/branding/fxusd.svg"}
+        {
+          "name": "USDC",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1916937910928211968/CKblfanr_400x400.png"
+        },
+        {
+          "name": "USDT",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1792114402864640002/yR72EOJ7_400x400.png"
+        },
+        {
+          "name": "CASH",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1973003466894163968/QLiOIqmF_400x400.jpg"
+        }
       ]
     },
     "Wallets": {
-      "count": 21,
+      "count": 16,
       "companies": [
-        {"name": "Privy", "logoUrl": "https://pbs.twimg.com/profile_images/1902346061005676544/e6WybE_v_400x400.jpg"},
-        {"name": "Turnkey", "logoUrl": "https://pbs.twimg.com/profile_images/1617589580298846209/P1Shd_R9_400x400.png"},
-        {"name": "thirdweb", "logoUrl": "https://pbs.twimg.com/profile_images/1979277559155064832/BsOxEfgq_400x400.jpg"},
-        {"name": "Rhinestone", "logoUrl": "https://pbs.twimg.com/profile_images/1947714266900889600/Ezh5ZA9h_400x400.jpg"},
-        {"name": "Phantom", "logoUrl": "https://pbs.twimg.com/profile_images/1973036509449121792/ePaMAzyA_400x400.jpg"},
-        {"name": "Openfort", "logoUrl": "https://pbs.twimg.com/profile_images/1821841426667163648/ILR3rE28_400x400.jpg"},
-        {"name": "Fireblocks", "logoUrl": "https://www.fireblocks.com/wp-content/uploads/2025/09/fireblocks-logo.svg"},
-        {"name": "Dynamic", "logoUrl": "https://pbs.twimg.com/profile_images/1999597754549452806/eNqJ2r3X_400x400.png"},
-        {"name": "Crossmint", "logoUrl": "https://pbs.twimg.com/profile_images/1831694029408423936/nFGeiuuL_400x400.png"},
-        {"name": "Coinbase", "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"},
-        {"name": "Bankr", "logoUrl": "https://pbs.twimg.com/profile_images/1951545493936545792/AriqgxQN_400x400.jpg"},
-        {"name": "BVNK", "logoUrl": "https://pbs.twimg.com/profile_images/1638167306101481472/V8aeQS_H_400x400.png"},
-        {"name": "Locus", "logoUrl": "https://pbs.twimg.com/profile_images/1993742128141488161/Y0JrYjPq_400x400.jpg"},
-        {"name": "MetaMask", "logoUrl": "https://pbs.twimg.com/profile_images/1945525968732295169/fqmzhm8Q_400x400.jpg"},
-        {"name": "RevaPay AI", "logoUrl": "https://pbs.twimg.com/profile_images/1913314465644195840/90bgj7G8_400x400.png"},
-        {"name": "Avocado", "logoUrl": "https://pbs.twimg.com/profile_images/2024885337433276418/6ZXeIj3s_400x400.jpg"},
-        {"name": "Bitget Wallet", "logoUrl": "https://pbs.twimg.com/profile_images/2004905084405383169/Tx-a__rX_400x400.jpg"},
-        {"name": "Mithril", "logoUrl": "https://pbs.twimg.com/profile_images/2028904521334693888/jMQSU5yk_400x400.jpg"},
-        {"name": "FabricBloc", "logoUrl": "https://pbs.twimg.com/profile_images/2002150111028355072/fuN2P169_400x400.png"},
-        {"name": "EmblemAI", "logoUrl": "https://pbs.twimg.com/profile_images/2028511387929243648/ALFNYf8h_400x400.jpg"},
-        {"name": "Para", "logoUrl": "https://pbs.twimg.com/profile_images/1886646606721916928/8FcE5yh1_400x400.png"}
+        {
+          "name": "Privy",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1902346061005676544/e6WybE_v_400x400.jpg"
+        },
+        {
+          "name": "Turnkey",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1617589580298846209/P1Shd_R9_400x400.png"
+        },
+        {
+          "name": "thirdweb",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1979277559155064832/BsOxEfgq_400x400.jpg"
+        },
+        {
+          "name": "Rhinestone",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1947714266900889600/Ezh5ZA9h_400x400.jpg"
+        },
+        {
+          "name": "Phantom",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1973036509449121792/ePaMAzyA_400x400.jpg"
+        },
+        {
+          "name": "Openfort",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1821841426667163648/ILR3rE28_400x400.jpg"
+        },
+        {
+          "name": "Fireblocks",
+          "logoUrl": "https://www.fireblocks.com/wp-content/uploads/2025/09/fireblocks-logo.svg"
+        },
+        {
+          "name": "Dynamic",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1999597754549452806/eNqJ2r3X_400x400.png"
+        },
+        {
+          "name": "Crossmint",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1831694029408423936/nFGeiuuL_400x400.png"
+        },
+        {
+          "name": "Coinbase",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"
+        },
+        {
+          "name": "Bankr",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1951545493936545792/AriqgxQN_400x400.jpg"
+        },
+        {
+          "name": "BVNK",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1638167306101481472/V8aeQS_H_400x400.png"
+        },
+        {
+          "name": "Locus",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1993742128141488161/Y0JrYjPq_400x400.jpg"
+        },
+        {
+          "name": "MetaMask",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1945525968732295169/fqmzhm8Q_400x400.jpg"
+        },
+        {
+          "name": "RevaPay AI",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1913314465644195840/90bgj7G8_400x400.png"
+        },
+        {
+          "name": "Bitget Wallet",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2004905084405383169/Tx-a__rX_400x400.jpg"
+        }
       ]
     },
     "Universal Balance & Account Abstraction": {
-      "count": 11,
+      "count": 8,
       "companies": [
-        {"name": "Privy", "logoUrl": "https://pbs.twimg.com/profile_images/1902346061005676544/e6WybE_v_400x400.jpg"},
-        {"name": "Rhinestone", "logoUrl": "https://pbs.twimg.com/profile_images/1947714266900889600/Ezh5ZA9h_400x400.jpg"},
-        {"name": "Polygon", "logoUrl": "https://pbs.twimg.com/profile_images/1947285584679936001/x0yfJ9e__400x400.jpg"},
-        {"name": "Openfort", "logoUrl": "https://pbs.twimg.com/profile_images/1821841426667163648/ILR3rE28_400x400.jpg"},
-        {"name": "ERC-4337", "logoUrl": "https://pbs.twimg.com/profile_images/1878738447067652096/tXQbWfpf_400x400.jpg"},
-        {"name": "Crossmint", "logoUrl": "https://pbs.twimg.com/profile_images/1831694029408423936/nFGeiuuL_400x400.png"},
-        {"name": "Turnkey", "logoUrl": "https://pbs.twimg.com/profile_images/1617589580298846209/P1Shd_R9_400x400.png"},
-        {"name": "Reveel", "logoUrl": "https://pbs.twimg.com/profile_images/1824198579138809856/XHowpmP2_400x400.png"},
-        {"name": "Zyfai", "logoUrl": "https://pbs.twimg.com/profile_images/1981024515627847681/Uvu-CBfc_400x400.jpg"},
-        {"name": "Obul", "logoUrl": "https://pbs.twimg.com/profile_images/2017295469714534400/62w_vlic_400x400.jpg"},
-        {"name": "Unforgettable", "logoUrl": "https://pbs.twimg.com/profile_images/1986052771003449344/X0_ad6eF_400x400.jpg"}
+        {
+          "name": "Privy",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1902346061005676544/e6WybE_v_400x400.jpg"
+        },
+        {
+          "name": "Rhinestone",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1947714266900889600/Ezh5ZA9h_400x400.jpg"
+        },
+        {
+          "name": "Polygon",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1947285584679936001/x0yfJ9e__400x400.jpg"
+        },
+        {
+          "name": "Openfort",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1821841426667163648/ILR3rE28_400x400.jpg"
+        },
+        {
+          "name": "ERC-4337",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1878738447067652096/tXQbWfpf_400x400.jpg"
+        },
+        {
+          "name": "Crossmint",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1831694029408423936/nFGeiuuL_400x400.png"
+        },
+        {
+          "name": "Turnkey",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1617589580298846209/P1Shd_R9_400x400.png"
+        },
+        {
+          "name": "Reveel",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1824198579138809856/XHowpmP2_400x400.png"
+        }
       ]
     },
     "Hosting / Cloud / Compute": {
-      "count": 10,
+      "count": 8,
       "companies": [
-        {"name": "Amazon Web Services", "logoUrl": "https://pbs.twimg.com/profile_images/1945121625373855744/lmMqMz7V_400x400.png"},
-        {"name": "Cloudflare", "logoUrl": "https://pbs.twimg.com/profile_images/2016613099034345472/zHWjcVEQ_400x400.jpg"},
-        {"name": "Google Cloud", "logoUrl": "https://pbs.twimg.com/profile_images/1190319303041724417/1a61e4pu_400x400.jpg"},
-        {"name": "Nous Research", "logoUrl": "https://pbs.twimg.com/profile_images/1816254738234761216/TX7TW-Mp_400x400.jpg"},
-        {"name": "Bittensor", "logoUrl": "https://pbs.twimg.com/profile_images/1977821372266217472/cr6-Svf8_400x400.jpg"},
-        {"name": "Heurist", "logoUrl": "https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_400x400.jpg"},
-        {"name": "akash", "logoUrl": "https://pbs.twimg.com/profile_images/1733152425127682048/fKXhFXF2_400x400.jpg"},
-        {"name": "Quicknode", "logoUrl": "https://pbs.twimg.com/profile_images/2006931756109209601/TRgoe6HT_400x400.jpg"},
-        {"name": "Ace Data Cloud", "logoUrl": "https://pbs.twimg.com/profile_images/1890760178246746112/6hHwGFLK_400x400.jpg"},
-        {"name": "Treza Labs", "logoUrl": "https://pbs.twimg.com/profile_images/1969327033281847296/syckOUFW_400x400.jpg"}
+        {
+          "name": "Amazon Web Services",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1945121625373855744/lmMqMz7V_400x400.png"
+        },
+        {
+          "name": "Cloudflare",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2016613099034345472/zHWjcVEQ_400x400.jpg"
+        },
+        {
+          "name": "Google Cloud",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1190319303041724417/1a61e4pu_400x400.jpg"
+        },
+        {
+          "name": "Bittensor",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1977821372266217472/cr6-Svf8_400x400.jpg"
+        },
+        {
+          "name": "Heurist",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1856703682324160512/7jrP8hf2_400x400.jpg"
+        },
+        {
+          "name": "akash",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1733152425127682048/fKXhFXF2_400x400.jpg"
+        },
+        {
+          "name": "Quicknode",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2006931756109209601/TRgoe6HT_400x400.jpg"
+        },
+        {
+          "name": "Treza Labs",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1969327033281847296/syckOUFW_400x400.jpg"
+        }
       ]
     },
     "Foundation Models": {
-      "count": 7,
+      "count": 5,
       "companies": [
-        {"name": "Anthropic", "logoUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg"},
-        {"name": "OpenAI", "logoUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg"},
-        {"name": "xAI", "logoUrl": "https://pbs.twimg.com/profile_images/1769430779845611520/lIgjSJGU_400x400.jpg"},
-        {"name": "Meta", "logoUrl": "https://pbs.twimg.com/profile_images/1453818753880190978/HqrrEcrI_400x400.png"},
-        {"name": "Kimi Moonshot", "logoUrl": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_400x400.png"},
-        {"name": "Nous Research", "logoUrl": "https://pbs.twimg.com/profile_images/1816254738234761216/TX7TW-Mp_400x400.jpg"},
-        {"name": "Rei Labs", "logoUrl": "https://pbs.twimg.com/profile_images/1952470433837744128/oRFv0yDD_400x400.jpg"}
+        {
+          "name": "Anthropic",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1798110641414443008/XP8gyBaY_400x400.jpg"
+        },
+        {
+          "name": "OpenAI",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1885410181409820672/ztsaR0JW_400x400.jpg"
+        },
+        {
+          "name": "xAI",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1769430779845611520/lIgjSJGU_400x400.jpg"
+        },
+        {
+          "name": "Meta",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1453818753880190978/HqrrEcrI_400x400.png"
+        },
+        {
+          "name": "Kimi Moonshot",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1910294000927645696/QseOV0uF_400x400.png"
+        }
       ]
     },
     "Blockchains": {
-      "count": 18,
+      "count": 17,
       "companies": [
-        {"name": "Base", "logoUrl": "https://pbs.twimg.com/profile_images/1945608199500910592/rnk6ixxH_400x400.jpg"},
-        {"name": "Solana", "logoUrl": "https://pbs.twimg.com/profile_images/2000347781513261056/hqWJS5Ri_400x400.jpg"},
-        {"name": "Polygon", "logoUrl": "https://pbs.twimg.com/profile_images/1947285584679936001/x0yfJ9e__400x400.jpg"},
-        {"name": "Tempo", "logoUrl": "https://pbs.twimg.com/profile_images/2016273751566905344/0yTjFNa8_400x400.jpg"},
-        {"name": "SKALE", "logoUrl": "https://pbs.twimg.com/profile_images/1511058435261009925/cpm25NwI_400x400.png"},
-        {"name": "Avalanche", "logoUrl": "https://pbs.twimg.com/profile_images/2014350494433783808/EPeRo1FD_400x400.jpg"},
-        {"name": "Sei", "logoUrl": "https://pbs.twimg.com/profile_images/1998864096943566848/quL0fkgk_400x400.jpg"},
-        {"name": "Arbitrum", "logoUrl": "https://pbs.twimg.com/profile_images/1952411676621295616/KUOmiy3l_400x400.jpg"},
-        {"name": "BNB", "logoUrl": "https://pbs.twimg.com/profile_images/1998852558081925120/025iaK2q_400x400.jpg"},
-        {"name": "Celo", "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771449180/CELO_Icon_jk6pl2.png"},
-        {"name": "NEAR", "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"},
-        {"name": "MultiversX", "logoUrl": "https://pbs.twimg.com/profile_images/1953134940301774848/UbIBbfXn_400x400.jpg"},
-        {"name": "Stable", "logoUrl": "https://pbs.twimg.com/profile_images/1985316241914134528/ltad0pJK_400x400.jpg"},
-        {"name": "Story", "logoUrl": "https://pbs.twimg.com/profile_images/1999628458800861186/ZU_lIdNS_400x400.jpg"},
-        {"name": "Radius", "logoUrl": "https://pbs.twimg.com/profile_images/1938624481485852672/F-xEvdWl_400x400.jpg"},
-        {"name": "Keeta Network", "logoUrl": "https://unavatar.io/twitter/KeetaNetwork"},
-        {"name": "Taiko", "logoUrl": "https://pbs.twimg.com/profile_images/1823377013186691072/jPGLrNT0_400x400.png"},
-        {"name": "Algorand", "logoUrl": "https://pbs.twimg.com/profile_images/1805829136381861889/0fI5Zrbv_400x400.jpg"}
+        {
+          "name": "Base",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1945608199500910592/rnk6ixxH_400x400.jpg"
+        },
+        {
+          "name": "Solana",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2000347781513261056/hqWJS5Ri_400x400.jpg"
+        },
+        {
+          "name": "Polygon",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1947285584679936001/x0yfJ9e__400x400.jpg"
+        },
+        {
+          "name": "Tempo",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2016273751566905344/0yTjFNa8_400x400.jpg"
+        },
+        {
+          "name": "SKALE",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1511058435261009925/cpm25NwI_400x400.png"
+        },
+        {
+          "name": "Avalanche",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2014350494433783808/EPeRo1FD_400x400.jpg"
+        },
+        {
+          "name": "Sei",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1998864096943566848/quL0fkgk_400x400.jpg"
+        },
+        {
+          "name": "Arbitrum",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1952411676621295616/KUOmiy3l_400x400.jpg"
+        },
+        {
+          "name": "BNB",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1998852558081925120/025iaK2q_400x400.jpg"
+        },
+        {
+          "name": "Celo",
+          "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771449180/CELO_Icon_jk6pl2.png"
+        },
+        {
+          "name": "NEAR",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"
+        },
+        {
+          "name": "MultiversX",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1953134940301774848/UbIBbfXn_400x400.jpg"
+        },
+        {
+          "name": "Story",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1999628458800861186/ZU_lIdNS_400x400.jpg"
+        },
+        {
+          "name": "Radius",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1938624481485852672/F-xEvdWl_400x400.jpg"
+        },
+        {
+          "name": "Keeta Network",
+          "logoUrl": "https://unavatar.io/twitter/KeetaNetwork"
+        },
+        {
+          "name": "Taiko",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1823377013186691072/jPGLrNT0_400x400.png"
+        },
+        {
+          "name": "Algorand",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1805829136381861889/0fI5Zrbv_400x400.jpg"
+        }
       ]
     }
   }
