@@ -12,6 +12,26 @@ import {
 import companyInfoMap from "@/data/company-info";
 import { notFound } from "next/navigation";
 
+function splitIntoParagraphs(text: string): string[] {
+  const sentences = text.match(/[^.!?]+[.!?]+/g) || [text];
+  const paragraphs: string[] = [];
+  let current = "";
+
+  for (const sentence of sentences) {
+    current += sentence;
+    // Break roughly every 2-3 sentences
+    const count = (current.match(/[.!?]+/g) || []).length;
+    if (count >= 2 && current.length > 150) {
+      paragraphs.push(current.trim());
+      current = "";
+    }
+  }
+  if (current.trim()) {
+    paragraphs.push(current.trim());
+  }
+  return paragraphs;
+}
+
 export function generateStaticParams() {
   return categoryNames.map((name) => ({ slug: toSlug(name) }));
 }
@@ -196,10 +216,13 @@ export default async function CategoryPage({
         {/* Long description */}
         {longDesc && (
           <section className="mb-12">
-            <div className="prose prose-invert max-w-none">
-              <p className="text-gray-300 leading-relaxed text-base">
-                {longDesc}
-              </p>
+            <h2 className="text-xl font-semibold text-white mb-4">Overview</h2>
+            <div className="space-y-4">
+              {splitIntoParagraphs(longDesc).map((para, i) => (
+                <p key={i} className="text-gray-300 leading-relaxed text-sm">
+                  {para}
+                </p>
+              ))}
             </div>
           </section>
         )}
