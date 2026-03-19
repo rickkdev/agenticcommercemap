@@ -64,16 +64,6 @@ body {
   background: rgba(250, 204, 21, 0.08);
 }
 
-.chip.needs-review {
-  border-color: rgba(250, 204, 21, 0.5);
-  box-shadow: 0 0 12px rgba(250, 204, 21, 0.1);
-}
-
-.chip.needs-review:hover {
-  border-color: rgba(250, 204, 21, 0.7);
-  box-shadow: 0 0 20px rgba(250, 204, 21, 0.2);
-}
-
 .chip.dimmed {
   opacity: 0.2;
 }

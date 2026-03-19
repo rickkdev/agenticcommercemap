@@ -4,7 +4,6 @@ import { useState, useMemo, useEffect, useRef } from "react";
 import Link from "next/link";
 import companyInfoMap, { type CompanyInfo } from "@/data/company-info";
 import lowRelevance from "@/data/low-relevance";
-import needsReview from "@/data/needs-review";
 import {
   categories,
   toSlug,
@@ -46,8 +45,6 @@ function CompanyChip({
   const info = companyInfoMap[company.name];
   const hasInfo = !!info;
   const isLowRelevance = lowRelevance.has(company.name);
-  const isNeedsReview = needsReview.has(company.name);
-
   return (
     <button
       onClick={() => onClick(company, category)}
@@ -58,8 +55,6 @@ function CompanyChip({
           ? "dimmed"
           : isLowRelevance
           ? "opacity-30"
-          : isNeedsReview
-          ? "needs-review"
           : ""
       }`}
     >
