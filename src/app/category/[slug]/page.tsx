@@ -136,18 +136,11 @@ export default async function CategoryPage({
             href="/"
             className="flex items-center gap-3 shrink-0 hover:opacity-80 transition-opacity"
           >
-            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                {/* Speed lines */}
-                <line x1="1" y1="5.5" x2="3.5" y2="5.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.35"/>
-                <line x1="0.5" y1="8" x2="4" y2="8" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.5"/>
-                <line x1="1" y1="10.5" x2="3.5" y2="10.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.35"/>
-                {/* $ vertical bar */}
-                <line x1="9.5" y1="2.5" x2="9.5" y2="13.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.6"/>
-                {/* $ S-curve */}
-                <path d="M12 5 C12 3 7 3 7 5.5 C7 7.5 12 7.5 12 10.5 C12 13 7 13 7 11" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" strokeOpacity="0.9"/>
-                {/* AI sparkle */}
-                <path d="M14 1.5 L14.3 2.7 L15.5 3 L14.3 3.3 L14 4.5 L13.7 3.3 L12.5 3 L13.7 2.7 Z" fill="white" fillOpacity="0.85"/>
+            <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center ring-1 ring-indigo-500/30">
+              <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
+                <path d="M3 26 L9 6 L15 26" stroke="white" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" fill="none"/>
+                <line x1="5" y1="19" x2="13" y2="19" stroke="white" strokeWidth="2.2" strokeLinecap="round"/>
+                <path d="M28 10 C25 5, 19 6, 19 16 C19 26, 25 27, 28 22" stroke="white" strokeWidth="2.8" strokeLinecap="round" fill="none"/>
               </svg>
             </div>
             <div>
