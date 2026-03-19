@@ -86,6 +86,7 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://pbs.twimg.com" />
         <link rel="dns-prefetch" href="https://res.cloudinary.com" />
         <link rel="dns-prefetch" href="https://avatars.githubusercontent.com" />
+        <script src="https://tinylytics.app/embed/KsCzNyh-bzrRj3Mquqix.js" defer></script>
       </head>
       <body className={`${geistSans.variable} antialiased bg-[#0a0a0f]`}>{children}</body>
     </html>
