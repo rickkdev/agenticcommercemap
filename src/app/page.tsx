@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect, useRef } from "react";
+import Link from "next/link";
 import companyInfoMap, { type CompanyInfo } from "@/data/company-info";
 import lowRelevance from "@/data/low-relevance";
 import needsReview from "@/data/needs-review";
@@ -480,6 +481,15 @@ export default function Home() {
           </div>
 
           <StatsBar />
+
+          <a
+            href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
+          >
+            + Add Company
+          </a>
         </div>
       </header>
 
@@ -520,8 +530,17 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="text-center py-8 text-xs text-gray-600">
+      <footer className="text-center py-8 text-xs text-gray-600 space-y-2">
         <p>Agentic Commerce Market Map — Interactive Explorer</p>
+        <p>
+          <a href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Suggestion:+[Your+Suggestion]&body=**What+would+you+like+to+change?**%0A%0A" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Suggest Changes</a>
+          <span className="mx-2">·</span>
+          <a href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Contact:+[Subject]&body=**Message:**%0A%0A" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Contact</a>
+          <span className="mx-2">·</span>
+          <Link href="/legal" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
+          <span className="mx-2">·</span>
+          <Link href="/legal" className="hover:text-gray-400 transition-colors">Imprint</Link>
+        </p>
       </footer>
 
       {/* Modal */}
