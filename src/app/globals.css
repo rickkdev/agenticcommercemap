@@ -1,8 +1,14 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0f;
+  --foreground: #e0e0e0;
+  --accent: #6366f1;
+  --accent-glow: rgba(99, 102, 241, 0.4);
+  --card-bg: rgba(15, 15, 25, 0.8);
+  --card-border: rgba(99, 102, 241, 0.15);
+  --chip-bg: rgba(20, 20, 35, 0.9);
+  --chip-border: rgba(99, 102, 241, 0.2);
 }
 
 @theme inline {
@@ -16,4 +22,179 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Animated gradient background */
+.bg-mesh {
+  background:
+    radial-gradient(ellipse at 20% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(168, 85, 247, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 80%, rgba(59, 130, 246, 0.06) 0%, transparent 50%),
+    var(--background);
+}
+
+/* Glow effects */
+.glow-border {
+  border: 1px solid var(--card-border);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.05), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.glow-border:hover {
+  border-color: rgba(99, 102, 241, 0.35);
+  box-shadow: 0 0 30px rgba(99, 102, 241, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+/* Company chip styles */
+.chip {
+  background: var(--chip-bg);
+  border: 1px solid var(--chip-border);
+  transition: all 0.2s ease;
+  backdrop-filter: blur(10px);
+}
+
+.chip:hover {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 15px rgba(99, 102, 241, 0.15);
+  transform: translateY(-1px);
+}
+
+.chip.highlighted {
+  border-color: rgba(250, 204, 21, 0.6);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.15);
+  background: rgba(250, 204, 21, 0.08);
+}
+
+.chip.needs-review {
+  border-color: rgba(250, 204, 21, 0.5);
+  box-shadow: 0 0 12px rgba(250, 204, 21, 0.1);
+}
+
+.chip.needs-review:hover {
+  border-color: rgba(250, 204, 21, 0.7);
+  box-shadow: 0 0 20px rgba(250, 204, 21, 0.2);
+}
+
+.chip.dimmed {
+  opacity: 0.2;
+}
+
+/* Search input */
+.search-input {
+  background: rgba(15, 15, 25, 0.8);
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: rgba(99, 102, 241, 0.5);
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.15);
+  outline: none;
+}
+
+/* Category card */
+.category-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+/* Modal backdrop */
+.modal-backdrop {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+/* Modal content */
+.modal-content {
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.98), rgba(20, 20, 40, 0.98));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  box-shadow: 0 0 60px rgba(99, 102, 241, 0.1), 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Animate in */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.3s ease forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-down {
+  animation: slideDown 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Staggered row animations */
+.row-animate {
+  opacity: 0;
+  animation: slideDown 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(99, 102, 241, 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(99, 102, 241, 0.5);
+}
+
+/* Category count badge */
+.count-badge {
+  background: rgba(99, 102, 241, 0.15);
+  color: rgba(165, 168, 255, 0.8);
+  font-size: 0.65rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 500;
+}
+
+/* Header blur */
+.header-blur {
+  background: rgba(10, 10, 15, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+/* Pulse dot */
+.pulse-dot {
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+/* Category label */
+.category-label {
+  background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), transparent);
+  border-left: 2px solid rgba(99, 102, 241, 0.4);
+  padding: 4px 12px;
 }
