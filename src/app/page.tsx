@@ -319,7 +319,7 @@ function StatsBar() {
   );
 
   return (
-    <div className="flex items-center gap-6 text-xs text-gray-500">
+    <div className="hidden md:flex items-center gap-6 text-xs text-gray-500">
       <div className="flex items-center gap-1.5">
         <span className="w-2 h-2 rounded-full bg-indigo-500/60" />
         <span><strong className="text-gray-300">{totalCompanies}</strong> companies</span>
@@ -433,7 +433,7 @@ export default function Home() {
       />
       {/* Header */}
       <header className="sticky top-0 z-20 header-blur px-6 py-3">
-        <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
           <div className="flex items-center gap-3 shrink-0">
             <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center ring-1 ring-indigo-500/30">
               <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
@@ -494,11 +494,11 @@ export default function Home() {
       </header>
 
       {/* Map */}
-      <main className="max-w-[1400px] mx-auto px-4 py-6 space-y-3">
+      <main className="max-w-[1600px] mx-auto px-4 py-6 space-y-3">
         {layout.map((row, i) => (
           <div
             key={i}
-            className="grid gap-3 row-animate"
+            className="grid gap-3 row-animate map-row"
             style={{
               animationDelay: `${i * 60}ms`,
               gridTemplateColumns:
