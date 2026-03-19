@@ -1,126 +1,21 @@
 "use client";
 
 import { useState, useMemo, useEffect, useRef } from "react";
-import data from "@/data/market-map-data.json";
 import companyInfoMap, { type CompanyInfo } from "@/data/company-info";
 import lowRelevance from "@/data/low-relevance";
 import needsReview from "@/data/needs-review";
-
-type Company = {
-  name: string;
-  logoUrl: string;
-};
-
-type Subcategory = {
-  name: string;
-  companies: Company[];
-};
-
-type CategoryData = {
-  count: number;
-  companies: Company[];
-  subcategories?: Subcategory[];
-};
-
-const categories = data.categories as Record<string, CategoryData>;
-
-const layout: { row: string[] }[] = [
-  { row: ["User Interfaces"] },
-  { row: ["Agent Harness"] },
-  { row: ["Agent Frameworks & Tooling", "Agent Networks"] },
-  { row: ["Discovery", "Crypto Commerce"] },
-  { row: ["Identity & Trust", "Wallets & Tooling"] },
-  { row: ["Payment Processors", "Payment Infrastructure"] },
-  { row: ["Stablecoins", "Universal Balance & Account Abstraction"] },
-  { row: ["Proprietary Models", "Open Source Models"] },
-  { row: ["Blockchains", "Hosting / Cloud / Compute"] },
-  { row: ["Explorers & Data"] },
-  { row: ["Standards & Protocols"] },
-];
-
-const categoryDescriptions: Record<string, string> = {
-  "User Interfaces": "where humans interact with agents",
-  "Agent Harness": "the agents themselves",
-  "Agent Frameworks & Tooling": "how agents are built",
-  "Agent Networks": "how agents connect & collaborate",
-  "Discovery": "finding products & services",
-  "Crypto Commerce": "buying & selling with crypto",
-  "Identity & Trust": "who you are & can you be trusted",
-  "Wallets & Tooling": "managing keys & agent wallets",
-  "Payment Processors": "processing transactions",
-  "Payment Infrastructure": "rails for moving money",
-  "Stablecoins": "the money layer",
-  "Universal Balance & Account Abstraction": "accounts & cross-chain balances",
-  "Proprietary Models": "closed-source AI brains",
-  "Open Source Models": "self-hostable AI brains",
-  "Blockchains": "settlement & consensus",
-  "Hosting / Cloud / Compute": "where agents run",
-  "Explorers & Data": "monitoring & analytics",
-  "Standards & Protocols": "the foundation everything is built on",
-};
-
-const categoryColors: Record<string, string> = {
-  "Explorers & Data": "from-cyan-500/20 to-cyan-500/0 border-cyan-500/30 text-cyan-300",
-  "User Interfaces": "from-violet-500/20 to-violet-500/0 border-violet-500/30 text-violet-300",
-  "Discovery": "from-amber-500/20 to-amber-500/0 border-amber-500/30 text-amber-300",
-  "Payment Processors": "from-emerald-500/20 to-emerald-500/0 border-emerald-500/30 text-emerald-300",
-  "Identity & Trust": "from-rose-500/20 to-rose-500/0 border-rose-500/30 text-rose-300",
-  "Agent Networks": "from-orange-500/20 to-orange-500/0 border-orange-500/30 text-orange-300",
-  "Agent Frameworks & Tooling": "from-indigo-500/20 to-indigo-500/0 border-indigo-500/30 text-indigo-300",
-  "Payment Infrastructure": "from-green-500/20 to-green-500/0 border-green-500/30 text-green-300",
-  "Stablecoins": "from-teal-500/20 to-teal-500/0 border-teal-500/30 text-teal-300",
-  "Wallets & Tooling": "from-purple-500/20 to-purple-500/0 border-purple-500/30 text-purple-300",
-  "Universal Balance & Account Abstraction": "from-sky-500/20 to-sky-500/0 border-sky-500/30 text-sky-300",
-  "Hosting / Cloud / Compute": "from-fuchsia-500/20 to-fuchsia-500/0 border-fuchsia-500/30 text-fuchsia-300",
-  "Proprietary Models": "from-red-500/20 to-red-500/0 border-red-500/30 text-red-300",
-  "Open Source Models": "from-emerald-400/20 to-emerald-400/0 border-emerald-400/30 text-emerald-300",
-  "Blockchains": "from-blue-500/20 to-blue-500/0 border-blue-500/30 text-blue-300",
-  "Standards & Protocols": "from-yellow-500/20 to-yellow-500/0 border-yellow-500/30 text-yellow-300",
-  "Agent Harness": "from-lime-500/20 to-lime-500/0 border-lime-500/30 text-lime-300",
-  "Crypto Commerce": "from-pink-500/20 to-pink-500/0 border-pink-500/30 text-pink-300",
-};
-
-const categoryAccentMap: Record<string, string> = {
-  "Explorers & Data": "border-cyan-500/40 shadow-cyan-500/20",
-  "User Interfaces": "border-violet-500/40 shadow-violet-500/20",
-  "Discovery": "border-amber-500/40 shadow-amber-500/20",
-  "Payment Processors": "border-emerald-500/40 shadow-emerald-500/20",
-  "Identity & Trust": "border-rose-500/40 shadow-rose-500/20",
-  "Agent Networks": "border-orange-500/40 shadow-orange-500/20",
-  "Agent Frameworks & Tooling": "border-indigo-500/40 shadow-indigo-500/20",
-  "Payment Infrastructure": "border-green-500/40 shadow-green-500/20",
-  "Stablecoins": "border-teal-500/40 shadow-teal-500/20",
-  "Wallets & Tooling": "border-purple-500/40 shadow-purple-500/20",
-  "Universal Balance & Account Abstraction": "border-sky-500/40 shadow-sky-500/20",
-  "Hosting / Cloud / Compute": "border-fuchsia-500/40 shadow-fuchsia-500/20",
-  "Proprietary Models": "border-red-500/40 shadow-red-500/20",
-  "Open Source Models": "border-emerald-400/40 shadow-emerald-400/20",
-  "Blockchains": "border-blue-500/40 shadow-blue-500/20",
-  "Standards & Protocols": "border-yellow-500/40 shadow-yellow-500/20",
-  "Agent Harness": "border-lime-500/40 shadow-lime-500/20",
-  "Crypto Commerce": "border-pink-500/40 shadow-pink-500/20",
-};
-
-const categoryBadgeMap: Record<string, string> = {
-  "Explorers & Data": "bg-cyan-500/15 text-cyan-300",
-  "User Interfaces": "bg-violet-500/15 text-violet-300",
-  "Discovery": "bg-amber-500/15 text-amber-300",
-  "Payment Processors": "bg-emerald-500/15 text-emerald-300",
-  "Identity & Trust": "bg-rose-500/15 text-rose-300",
-  "Agent Networks": "bg-orange-500/15 text-orange-300",
-  "Agent Frameworks & Tooling": "bg-indigo-500/15 text-indigo-300",
-  "Payment Infrastructure": "bg-green-500/15 text-green-300",
-  "Stablecoins": "bg-teal-500/15 text-teal-300",
-  "Wallets & Tooling": "bg-purple-500/15 text-purple-300",
-  "Universal Balance & Account Abstraction": "bg-sky-500/15 text-sky-300",
-  "Hosting / Cloud / Compute": "bg-fuchsia-500/15 text-fuchsia-300",
-  "Proprietary Models": "bg-red-500/15 text-red-300",
-  "Open Source Models": "bg-emerald-400/15 text-emerald-300",
-  "Blockchains": "bg-blue-500/15 text-blue-300",
-  "Standards & Protocols": "bg-yellow-500/15 text-yellow-300",
-  "Agent Harness": "bg-lime-500/15 text-lime-300",
-  "Crypto Commerce": "bg-pink-500/15 text-pink-300",
-};
+import {
+  categories,
+  toSlug,
+  categoryShortDescriptions,
+  categoryLongDescriptions,
+  categoryGradients,
+  categoryAccents,
+  categoryBadges,
+  layout,
+  type Company,
+  type CategoryData,
+} from "@/lib/categories";
 
 function KbdShortcut() {
   const [prefix, setPrefix] = useState("⌘");
@@ -195,7 +90,7 @@ function CategoryCard({
   onCompanyClick: (company: Company, category: string) => void;
   searchQuery: string;
 }) {
-  const colors = categoryColors[name] || "from-indigo-500/20 to-indigo-500/0 border-indigo-500/30 text-indigo-300";
+  const colors = categoryGradients[name] || "from-indigo-500/20 to-indigo-500/0 border-indigo-500/30 text-indigo-300";
   const hasSearch = searchQuery.length > 0;
 
   const matchCount = hasSearch
@@ -209,10 +104,16 @@ function CategoryCard({
       {/* Category header with gradient */}
       <div className={`bg-gradient-to-r ${colors} border-b border-white/5 px-4 py-2.5 flex items-center justify-between`}>
         <h3 className="text-xs font-semibold uppercase tracking-wider flex items-center gap-2">
-          {name}
-          {categoryDescriptions[name] && (
+          <a
+            href={`/category/${toSlug(name)}`}
+            className="hover:underline underline-offset-2"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {name}
+          </a>
+          {categoryShortDescriptions[name] && (
             <span className="text-[10px] font-normal normal-case tracking-normal opacity-60">
-              — {categoryDescriptions[name]}
+              — {categoryShortDescriptions[name]}
             </span>
           )}
           {name === "Open Source Models" && (
@@ -288,8 +189,8 @@ function Modal({
   info: CompanyInfo | undefined;
   onClose: () => void;
 }) {
-  const accent = categoryAccentMap[category] || "border-indigo-500/40 shadow-indigo-500/20";
-  const badge = categoryBadgeMap[category] || "bg-indigo-500/15 text-indigo-300";
+  const accent = categoryAccents[category] || "border-indigo-500/40 shadow-indigo-500/20";
+  const badge = categoryBadges[category] || "bg-indigo-500/15 text-indigo-300";
 
   return (
     <div
@@ -496,8 +397,40 @@ export default function Home() {
     setSelectedCompany({ company, category });
   };
 
+  // JSON-LD structured data for SEO and LLM queryability
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: "Agentic Commerce Market Map",
+    description:
+      "Interactive market map of 215+ companies building the agentic commerce ecosystem across 18 categories.",
+    url: "https://agenticcommercemap.com",
+    mainEntity: {
+      "@type": "ItemList",
+      name: "Agentic Commerce Categories",
+      numberOfItems: Object.keys(categories).length,
+      itemListElement: Object.entries(categories).map(
+        ([catName, catData], i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          item: {
+            "@type": "CollectionPage",
+            name: catName,
+            description: categoryLongDescriptions[catName] || categoryShortDescriptions[catName] || "",
+            url: `https://agenticcommercemap.com/category/${toSlug(catName)}`,
+            numberOfItems: catData.count,
+          },
+        })
+      ),
+    },
+  };
+
   return (
     <div className="min-h-screen bg-mesh">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Header */}
       <header className="sticky top-0 z-20 header-blur px-6 py-3">
         <div className="max-w-[1400px] mx-auto flex items-center justify-between gap-4">

@@ -32,16 +32,8 @@
       ]
     },
     "Discovery": {
-      "count": 16,
+      "count": 10,
       "companies": [
-        {
-          "name": "Questflow",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2020783630055092224/6_dh7Va5_400x400.jpg"
-        },
-        {
-          "name": "Coinbase",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2023421750197772288/IqJX3XB4_400x400.png"
-        },
         {
           "name": "x402jobs",
           "logoUrl": "https://pbs.twimg.com/profile_images/1998416577868288001/AbYKovJi_400x400.jpg"
@@ -51,36 +43,16 @@
           "logoUrl": "https://pbs.twimg.com/profile_images/2023181713023918080/RFwiwZ-H_400x400.jpg"
         },
         {
-          "name": "payable.link",
-          "logoUrl": "https://payable.link/icon.svg"
-        },
-        {
           "name": "402.bot",
           "logoUrl": "https://pbs.twimg.com/profile_images/2031728059330793472/drgRqwBP_400x400.png"
-        },
-        {
-          "name": "x402scan",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"
-        },
-        {
-          "name": "Unicity Labs",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2021235417836920832/kH6lY52l_400x400.png"
         },
         {
           "name": "Pawr.link",
           "logoUrl": "https://pbs.twimg.com/profile_images/2020565184947892224/r3JSmxMU_400x400.jpg"
         },
         {
-          "name": "UCP",
-          "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771435804/CleanShot_2026-02-18_at_12.29.11_2x_x7un1c.png"
-        },
-        {
           "name": "ClawIndex",
           "logoUrl": "https://clawindex.org/favicon.svg"
-        },
-        {
-          "name": "NEAR",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1970880320103985152/SAMA6Vh0_400x400.jpg"
         },
         {
           "name": "WURK",
@@ -91,12 +63,16 @@
           "logoUrl": "https://pbs.twimg.com/profile_images/2018876723308253184/4EjbROsk_400x400.jpg"
         },
         {
-          "name": "Shopify",
-          "logoUrl": "https://unavatar.io/twitter/Shopify"
+          "name": "x402scan",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"
         },
         {
-          "name": "AgentCash",
-          "logoUrl": "https://unavatar.io/twitter/agentcashdev"
+          "name": "8004scan",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2006809821463404544/JYuA7ivA_400x400.jpg"
+        },
+        {
+          "name": "Valoria",
+          "logoUrl": "https://x402.valoria.net/favicon.png"
         }
       ]
     },
@@ -230,16 +206,8 @@
       ]
     },
     "Identity & Trust": {
-      "count": 19,
+      "count": 15,
       "companies": [
-        {
-          "name": "Proofivy",
-          "logoUrl": "https://proofivy.com/images/logo_los.svg"
-        },
-        {
-          "name": "Stripe",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg"
-        },
         {
           "name": "Cascade",
           "logoUrl": "https://pbs.twimg.com/profile_images/2008970099391070208/NP3R3nNm_400x400.jpg"
@@ -255,10 +223,6 @@
         {
           "name": "Self",
           "logoUrl": "https://pbs.twimg.com/profile_images/1894153706578317312/A_wuvkoA_400x400.jpg"
-        },
-        {
-          "name": "8k4",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2029074266210349057/0wV-ba1y_400x400.jpg"
         },
         {
           "name": "ERC-8004",
@@ -279,10 +243,6 @@
         {
           "name": "AgentProof",
           "logoUrl": "https://agentproof.sh/logo-icon.svg"
-        },
-        {
-          "name": "Mastercard",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1013421144815198208/FV9IEL1U_400x400.jpg"
         },
         {
           "name": "World",
@@ -315,7 +275,7 @@
       "companies": [
         {
           "name": "Moltbook",
-          "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Crect width='400' height='400' rx='200' fill='%23000'/%3E%3C/svg%3E"
+          "logoUrl": "https://moltbook.com/apple-icon.png"
         },
         {
           "name": "ClawdVine",
@@ -336,51 +296,53 @@
       ]
     },
     "Crypto Commerce": {
-      "count": 12,
+      "count": 13,
       "companies": [
-        { "name": "List402", "logoUrl": "https://unavatar.io/list402.com" },
-        { "name": "Agoragentic", "logoUrl": "https://unavatar.io/twitter/Agoragentic" },
+        { "name": "List402", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230ea5e9'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='12' font-weight='bold' fill='%23fff'%3E402%3C/text%3E%3C/svg%3E" },
+        { "name": "Agoragentic", "logoUrl": "https://agoragentic.com/og-image.png" },
         { "name": "RelAI", "logoUrl": "https://relai.fi/RelayAI-logo-2.png" },
-        { "name": "agentshops.xyz", "logoUrl": "https://unavatar.io/agentshops.xyz" },
-        { "name": "x402-store", "logoUrl": "https://unavatar.io/x402-store.com" },
+        { "name": "agentshops.xyz", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%238b5cf6'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='11' font-weight='bold' fill='%23fff'%3EAS%3C/text%3E%3C/svg%3E" },
+        { "name": "x402-store", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23f59e0b'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='10' font-weight='bold' fill='%23fff'%3Ex402%3C/text%3E%3C/svg%3E" },
         { "name": "x402 Shopify Commerce", "logoUrl": "https://unavatar.io/twitter/Shopify" },
-        { "name": "Bitrefill", "logoUrl": "https://unavatar.io/twitter/bitrefill" },
-        { "name": "Laso Finance", "logoUrl": "https://unavatar.io/twitter/LasoFinance" },
-        { "name": "x402wall", "logoUrl": "https://unavatar.io/twitter/x402wall" },
-        { "name": "Postera", "logoUrl": "https://unavatar.io/postera.dev" },
-        { "name": "AEON", "logoUrl": "https://unavatar.io/twitter/AeonPayment" },
-        { "name": "Stripe", "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg" }
+        { "name": "Bitrefill", "logoUrl": "https://bitrefill.com/apple-touch-icon.png" },
+        { "name": "Laso Finance", "logoUrl": "https://laso.finance/android-chrome-512x512.png" },
+        { "name": "x402wall", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23ec4899'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='9' font-weight='bold' fill='%23fff'%3EWALL%3C/text%3E%3C/svg%3E" },
+        { "name": "Postera", "logoUrl": "https://postera.dev/apple-icon.png" },
+        { "name": "AEON", "logoUrl": "https://aeon.xyz/logo.png" },
+        { "name": "Stripe", "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg" },
+        { "name": "payable.link", "logoUrl": "https://payable.link/icon.svg" }
       ],
       "subcategories": [
         {
           "name": "Marketplaces & Aggregators",
           "companies": [
-            { "name": "List402", "logoUrl": "https://unavatar.io/list402.com" },
-            { "name": "Agoragentic", "logoUrl": "https://unavatar.io/twitter/Agoragentic" },
+            { "name": "List402", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230ea5e9'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='12' font-weight='bold' fill='%23fff'%3E402%3C/text%3E%3C/svg%3E" },
+            { "name": "Agoragentic", "logoUrl": "https://agoragentic.com/og-image.png" },
             { "name": "RelAI", "logoUrl": "https://relai.fi/RelayAI-logo-2.png" }
           ]
         },
         {
           "name": "Physical Goods & Agent Stores",
           "companies": [
-            { "name": "agentshops.xyz", "logoUrl": "https://unavatar.io/agentshops.xyz" },
-            { "name": "x402-store", "logoUrl": "https://unavatar.io/x402-store.com" },
+            { "name": "agentshops.xyz", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%238b5cf6'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='11' font-weight='bold' fill='%23fff'%3EAS%3C/text%3E%3C/svg%3E" },
+            { "name": "x402-store", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23f59e0b'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='10' font-weight='bold' fill='%23fff'%3Ex402%3C/text%3E%3C/svg%3E" },
             { "name": "x402 Shopify Commerce", "logoUrl": "https://unavatar.io/twitter/Shopify" }
           ]
         },
         {
           "name": "Digital Goods, Gift Cards & Services",
           "companies": [
-            { "name": "Bitrefill", "logoUrl": "https://unavatar.io/twitter/bitrefill" },
-            { "name": "Laso Finance", "logoUrl": "https://unavatar.io/twitter/LasoFinance" },
-            { "name": "x402wall", "logoUrl": "https://unavatar.io/twitter/x402wall" },
-            { "name": "Postera", "logoUrl": "https://unavatar.io/postera.dev" }
+            { "name": "Bitrefill", "logoUrl": "https://bitrefill.com/apple-touch-icon.png" },
+            { "name": "Laso Finance", "logoUrl": "https://laso.finance/android-chrome-512x512.png" },
+            { "name": "x402wall", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23ec4899'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='9' font-weight='bold' fill='%23fff'%3EWALL%3C/text%3E%3C/svg%3E" },
+            { "name": "Postera", "logoUrl": "https://postera.dev/apple-icon.png" },
+            { "name": "payable.link", "logoUrl": "https://payable.link/icon.svg" }
           ]
         },
         {
           "name": "Bridges to Traditional Retail",
           "companies": [
-            { "name": "AEON", "logoUrl": "https://unavatar.io/twitter/AeonPayment" },
+            { "name": "AEON", "logoUrl": "https://aeon.xyz/logo.png" },
             { "name": "Stripe", "logoUrl": "https://pbs.twimg.com/profile_images/1970187852572250113/hhDZmj7w_400x400.jpg" }
           ]
         }
@@ -448,10 +410,6 @@
         {
           "name": "Conway Research",
           "logoUrl": "https://pbs.twimg.com/profile_images/1989432820989657088/2f_wIfbd_400x400.jpg"
-        },
-        {
-          "name": "Phantom",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1973036509449121792/ePaMAzyA_400x400.jpg"
         },
         {
           "name": "MCP",
@@ -532,11 +490,15 @@
         {
           "name": "Droyd",
           "logoUrl": "https://res.cloudinary.com/dgdsz4rvi/image/upload/v1771449057/DROYD_D_LOGO_v31awk_bej7xy.svg"
+        },
+        {
+          "name": "twit.sh",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2025891186729246721/2PzpYJ8j_400x400.jpg"
         }
       ]
     },
     "Payment Infrastructure": {
-      "count": 27,
+      "count": 29,
       "companies": [
         {
           "name": "Merit Systems",
@@ -645,6 +607,14 @@
         {
           "name": "Lithic",
           "logoUrl": "https://unavatar.io/twitter/lithic"
+        },
+        {
+          "name": "AgentCash",
+          "logoUrl": "https://agentcash.dev/apple-icon.png"
+        },
+        {
+          "name": "Unicity Labs",
+          "logoUrl": "https://pbs.twimg.com/profile_images/2021235417836920832/kH6lY52l_400x400.png"
         }
       ]
     },
@@ -666,7 +636,7 @@
       ]
     },
     "Wallets & Tooling": {
-      "count": 12,
+      "count": 13,
       "companies": [
         {
           "name": "Turnkey",
@@ -715,11 +685,15 @@
         {
           "name": "AgentCard",
           "logoUrl": "https://pbs.twimg.com/profile_images/1979190252448133120/xAMqZF7__400x400.jpg"
+        },
+        {
+          "name": "Phantom",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1973036509449121792/ePaMAzyA_400x400.jpg"
         }
       ]
     },
     "Hosting / Cloud / Compute": {
-      "count": 15,
+      "count": 19,
       "companies": [
         {
           "name": "Google Cloud",
@@ -735,7 +709,7 @@
         },
         {
           "name": "Hetzner",
-          "logoUrl": "https://unavatar.io/twitter/haborner_cloud"
+          "logoUrl": "https://www.google.com/s2/favicons?domain=hetzner.com&sz=128"
         },
         {
           "name": "Hostinger",
@@ -747,7 +721,7 @@
         },
         {
           "name": "Contabo",
-          "logoUrl": "https://unavatar.io/twitter/contaborobot"
+          "logoUrl": "https://www.google.com/s2/favicons?domain=contabo.com&sz=128"
         },
         {
           "name": "OVHcloud",
@@ -780,6 +754,22 @@
         {
           "name": "Venice.ai",
           "logoUrl": "https://venice.ai/apple-touch-icon.png"
+        },
+        {
+          "name": "Dune",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1986458079248986112/qq80s3hx_400x400.jpg"
+        },
+        {
+          "name": "Allium",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1778926940407132160/UEwR3lHt_400x400.jpg"
+        },
+        {
+          "name": "SQD",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1930962633387089920/eqfByFAN_400x400.jpg"
+        },
+        {
+          "name": "Alchemy",
+          "logoUrl": "https://pbs.twimg.com/profile_images/1979190252448133120/xAMqZF7__400x400.jpg"
         }
       ]
     },
@@ -927,67 +917,6 @@
         {
           "name": "Stellar",
           "logoUrl": "https://unavatar.io/twitter/StellarOrg"
-        }
-      ]
-    },
-    "Explorers & Data": {
-      "count": 14,
-      "companies": [
-        {
-          "name": "MetEngine",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1952288991543529472/tz7-lynu_400x400.png"
-        },
-        {
-          "name": "x402scan",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1978173554894966784/rdGi4cHy_400x400.jpg"
-        },
-        {
-          "name": "SQD",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1930962633387089920/eqfByFAN_400x400.jpg"
-        },
-        {
-          "name": "8004scan",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2006809821463404544/JYuA7ivA_400x400.jpg"
-        },
-        {
-          "name": "Dune",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1986458079248986112/qq80s3hx_400x400.jpg"
-        },
-        {
-          "name": "Valoria",
-          "logoUrl": "https://x402.valoria.net/favicon.png"
-        },
-        {
-          "name": "twit.sh",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2025891186729246721/2PzpYJ8j_400x400.jpg"
-        },
-        {
-          "name": "Quick Intel",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1882651870201520128/_6yWXw-N_400x400.jpg"
-        },
-        {
-          "name": "Nansen",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2029027179863146496/KhFqNWuW_400x400.jpg"
-        },
-        {
-          "name": "Quicknode",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2006931756109209601/TRgoe6HT_400x400.jpg"
-        },
-        {
-          "name": "Allium",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1778926940407132160/UEwR3lHt_400x400.jpg"
-        },
-        {
-          "name": "Birdeye Data",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2007489102632103938/FMQ1tBv2_400x400.jpg"
-        },
-        {
-          "name": "Alchemy",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1979190252448133120/xAMqZF7__400x400.jpg"
-        },
-        {
-          "name": "growthepie",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1733218142044758018/58vzNXwy_400x400.jpg"
         }
       ]
     },
