@@ -428,7 +428,7 @@ export default function Home() {
       />
       {/* Header */}
       <header className="sticky top-0 z-20 header-blur px-6 py-3">
-        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4">
+        <div className="max-w-[1600px] mx-auto flex flex-wrap items-center justify-between gap-2 sm:gap-4">
           <div className="flex items-center gap-3 shrink-0">
             <div className="w-8 h-8 rounded-lg bg-black flex items-center justify-center ring-1 ring-indigo-500/30">
               <svg width="16" height="16" viewBox="0 0 32 32" fill="none">
@@ -445,8 +445,19 @@ export default function Home() {
             </div>
           </div>
 
+          <a
+            href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 transition-colors order-3 sm:order-none"
+          >
+            + Add Company
+          </a>
+
+          <StatsBar />
+
           {/* Search */}
-          <div className="relative max-w-md flex-1">
+          <div className="relative w-full sm:max-w-md sm:flex-1 order-4 sm:order-none">
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
               width="14"
@@ -474,17 +485,6 @@ export default function Home() {
               <KbdShortcut />
             </div>
           </div>
-
-          <StatsBar />
-
-          <a
-            href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
-          >
-            + Add Company
-          </a>
         </div>
       </header>
 
