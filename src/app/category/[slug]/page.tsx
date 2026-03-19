@@ -27,18 +27,26 @@ export async function generateMetadata({
   const cat = categories[name];
   const short = categoryShortDescriptions[name] || "";
 
+  const totalCompanies = Object.values(categories).reduce((acc, catData) => {
+    catData.companies.forEach((c) => acc.add(c.name));
+    return acc;
+  }, new Set<string>()).size;
+
   return {
     title: `${name} — Agentic Commerce Market Map`,
     description: `Explore ${cat.count} companies in ${name} (${short}). Detailed profiles, descriptions, and links for every project in the agentic commerce ecosystem.`,
     openGraph: {
       title: `${name} — Agentic Commerce Market Map`,
-      description: `${cat.count} companies building ${short}. Part of the agentic commerce ecosystem with 215+ projects across 18 categories.`,
+      description: `${cat.count} companies building ${short}. Part of the agentic commerce ecosystem with ${totalCompanies}+ projects across ${categoryNames.length} categories.`,
       type: "article",
     },
     twitter: {
       card: "summary_large_image",
       title: `${name} — Agentic Commerce Market Map`,
       description: `${cat.count} companies building ${short}.`,
+    },
+    alternates: {
+      canonical: `https://agenticcommercemap.com/category/${slug}`,
     },
   };
 }
@@ -62,6 +70,26 @@ export default async function CategoryPage({
     ...c,
     info: companyInfoMap[c.name],
   }));
+
+  // Breadcrumb structured data for rich search results
+  const breadcrumbLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Agentic Commerce Market Map",
+        item: "https://agenticcommercemap.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: name,
+        item: `https://agenticcommercemap.com/category/${toSlug(name)}`,
+      },
+    ],
+  };
 
   // JSON-LD structured data for this category
   const jsonLd = {
@@ -94,6 +122,10 @@ export default async function CategoryPage({
     <div className="min-h-screen bg-mesh">
       <script
         type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <script
+        type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
@@ -106,11 +138,16 @@ export default async function CategoryPage({
           >
             <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                <path
-                  d="M8 1L14.9282 5V11L8 15L1.0718 11V5L8 1Z"
-                  fill="white"
-                  fillOpacity="0.9"
-                />
+                {/* Speed lines */}
+                <line x1="1" y1="5.5" x2="3.5" y2="5.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.35"/>
+                <line x1="0.5" y1="8" x2="4" y2="8" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.5"/>
+                <line x1="1" y1="10.5" x2="3.5" y2="10.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.35"/>
+                {/* $ vertical bar */}
+                <line x1="9.5" y1="2.5" x2="9.5" y2="13.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.6"/>
+                {/* $ S-curve */}
+                <path d="M12 5 C12 3 7 3 7 5.5 C7 7.5 12 7.5 12 10.5 C12 13 7 13 7 11" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" strokeOpacity="0.9"/>
+                {/* AI sparkle */}
+                <path d="M14 1.5 L14.3 2.7 L15.5 3 L14.3 3.3 L14 4.5 L13.7 3.3 L12.5 3 L13.7 2.7 Z" fill="white" fillOpacity="0.85"/>
               </svg>
             </div>
             <div>

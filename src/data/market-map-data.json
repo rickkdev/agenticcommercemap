@@ -77,7 +77,7 @@
       ]
     },
     "Payment Processors": {
-      "count": 31,
+      "count": 30,
       "companies": [
         {
           "name": "Autoincentive",
@@ -190,10 +190,6 @@
         {
           "name": "Gnosis Pay",
           "logoUrl": "https://unavatar.io/twitter/gnosispay"
-        },
-        {
-          "name": "Rain",
-          "logoUrl": "https://unavatar.io/twitter/raincards"
         },
         {
           "name": "Immersve",
@@ -498,7 +494,7 @@
       ]
     },
     "Payment Infrastructure": {
-      "count": 29,
+      "count": 30,
       "companies": [
         {
           "name": "Merit Systems",
@@ -615,6 +611,10 @@
         {
           "name": "Unicity Labs",
           "logoUrl": "https://pbs.twimg.com/profile_images/2021235417836920832/kH6lY52l_400x400.png"
+        },
+        {
+          "name": "Rain",
+          "logoUrl": "https://unavatar.io/twitter/raincards"
         }
       ]
     },
@@ -630,8 +630,8 @@
           "logoUrl": "https://pbs.twimg.com/profile_images/1792114402864640002/yR72EOJ7_400x400.png"
         },
         {
-          "name": "CASH",
-          "logoUrl": "https://pbs.twimg.com/profile_images/1973003466894163968/QLiOIqmF_400x400.jpg"
+          "name": "PYUSD",
+          "logoUrl": "https://unavatar.io/twitter/PayPal"
         }
       ]
     },
@@ -860,7 +860,7 @@
         },
         {
           "name": "Avalanche",
-          "logoUrl": "https://pbs.twimg.com/profile_images/2014350494433783808/EPeRo1FD_400x400.jpg"
+          "logoUrl": "https://unavatar.io/twitter/avax"
         },
         {
           "name": "Polygon",

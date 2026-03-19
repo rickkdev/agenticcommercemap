@@ -154,7 +154,7 @@ const companyInfo: Record<string, CompanyInfo> = {
   // STABLECOINS
   "USDC": { website: "https://www.circle.com", url: "https://www.circle.com/blog/autonomous-payments-using-circle-wallets-usdc-and-x402", description: "The primary stablecoin for x402 agentic payments; Circle is integrating USDC into x402 via its Gateway product for high-throughput autonomous AI agent micropayments across multiple chains." },
   "USDT": { website: "https://tether.to", url: "https://www.theblock.co/post/359645/tether-ceo-ai-agents-bitcoin-usdt", description: "Tether CEO predicts 1 trillion AI agents will use USDT for transactions; launched Tether AI open-source runtime and Wallet Development Kit (WDK) for non-custodial AI agent payments." },
-  "CASH": { website: "https://phantom.com", url: "https://finance.yahoo.com/news/stripe-unveils-stablecoin-issuance-tool-151419024.html", description: "Phantom's open-loop stablecoin, the first to launch through Stripe's Open Issuance platform, designed for seamless commerce across Stripe and crypto-native payment rails." },
+  "PYUSD": { website: "https://www.paypal.com/pyusd", url: "https://www.paypal.com/pyusd", description: "PayPal's stablecoin with $4B+ market cap, issued on Solana, Arbitrum, and Stellar. PayPal published an agentic commerce white paper and is using PYUSD for AI infrastructure financing, with distribution across 70+ markets and massive merchant network." },
   "fxUSD": { website: "https://fx.aladdin.club", url: "https://fx.aladdin.club", description: "Decentralized stablecoin from f(x) Protocol, fully collateralized by stETH, offering organic yield through stability pools and DeFi-native programmability for automated transactions." },
 
   // WALLETS

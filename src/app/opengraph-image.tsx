@@ -1,7 +1,12 @@
 import { ImageResponse } from "next/og";
 import { categories, categoryNames } from "@/lib/categories";
 
-export const alt = "Agentic Commerce Market Map — 215+ companies building the agentic commerce ecosystem";
+const companyCount = Object.values(categories).reduce((acc, cat) => {
+  cat.companies.forEach((c) => acc.add(c.name));
+  return acc;
+}, new Set<string>()).size;
+
+export const alt = `Agentic Commerce Market Map — ${companyCount}+ companies building the agentic commerce ecosystem`;
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -68,7 +73,12 @@ export default function OGImage() {
             }}
           >
             <svg width="32" height="32" viewBox="0 0 16 16" fill="none">
-              <path d="M8 1L14.9282 5V11L8 15L1.0718 11V5L8 1Z" fill="white" fillOpacity="0.9" />
+              <line x1="1" y1="5.5" x2="3.5" y2="5.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.35"/>
+              <line x1="0.5" y1="8" x2="4" y2="8" stroke="white" strokeWidth="1.4" strokeLinecap="round" strokeOpacity="0.5"/>
+              <line x1="1" y1="10.5" x2="3.5" y2="10.5" stroke="white" strokeWidth="1.2" strokeLinecap="round" strokeOpacity="0.35"/>
+              <line x1="9.5" y1="2.5" x2="9.5" y2="13.5" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeOpacity="0.6"/>
+              <path d="M12 5 C12 3 7 3 7 5.5 C7 7.5 12 7.5 12 10.5 C12 13 7 13 7 11" stroke="white" strokeWidth="1.5" strokeLinecap="round" fill="none" strokeOpacity="0.9"/>
+              <path d="M14 1.5 L14.3 2.7 L15.5 3 L14.3 3.3 L14 4.5 L13.7 3.3 L12.5 3 L13.7 2.7 Z" fill="white" fillOpacity="0.85"/>
             </svg>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
