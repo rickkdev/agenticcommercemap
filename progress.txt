@@ -80,3 +80,14 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Article follows the established pattern: intro section explaining why the category matters, deep dives into key concepts, company overview, future outlook
   - The category field must exactly match "Identity & Trust" as it appears in market-map-data.json
 ---
+
+## 2026-03-20 - US-006
+- Implemented Agent Harnesses article with slug 'agent-harness-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added fourth article to the articles array with 11 content sections, 5 FAQ entries, ~2400 words covering the autonomy spectrum (coding agents, general-purpose assistants, crypto-native frameworks), how harnesses differ from chatbots, competitive landscape, and stack integration
+  - `prd.json` — Marked US-006 as passes: true
+- **Learnings for future iterations:**
+  - All 12 companies from the Agent Harness category in market-map-data.json were mentioned with context: OpenClaw, IronClaw, ElizaOS, NemoClaw, NanoClaw, Manus, Perplexity Computer, OpenAI Operator, Project Mariner, Claude Cowork, Simular AI, MultiOn
+  - Category field is "Agent Harness" (singular, not "Agent Harnesses") to match market-map-data.json exactly
+  - Article maintains the established pattern: what the category is, why it matters, deep dives into sub-categories, company overview, future outlook
+---

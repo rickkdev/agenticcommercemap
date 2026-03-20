@@ -120,7 +120,7 @@
         "Typecheck passes"
       ],
       "priority": 6,
-      "passes": false,
+      "passes": true,
       "notes": "Should clearly differentiate agent harnesses from simple chatbots and explain why autonomy is the defining feature."
     },
     {
