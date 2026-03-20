@@ -7,6 +7,7 @@ import { toSlug } from "@/lib/categories";
 import { Footer } from "@/components/footer";
 import StandardsProtocolsDiagram from "@/components/diagrams/StandardsProtocolsDiagram";
 import PaymentProcessorsDiagram from "@/components/diagrams/PaymentProcessorsDiagram";
+import IdentityTrustDiagram from "@/components/diagrams/IdentityTrustDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -22,6 +23,10 @@ const articleDiagrams: Record<
   "payment-processors-guide": {
     Component: PaymentProcessorsDiagram,
     afterSection: 1,
+  },
+  "identity-and-trust-guide": {
+    Component: IdentityTrustDiagram,
+    afterSection: 0,
   },
 };
 

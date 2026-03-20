@@ -56,7 +56,7 @@
         "Article still renders correctly at /articles/identity-and-trust-guide"
       ],
       "priority": 3,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-004",
