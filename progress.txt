@@ -356,3 +356,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-006
+- Improved Agent Networks article (slug: agent-networks-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from agent-networks-guide content (metaDescription, all 10 contentSections, 2 FAQ answers). Converted 3 sections to use bullet/numbered lists: "How Agents Discover, Negotiate, and Pay Each Other" (numbered list of 4 transaction stages), "The Coordination Frontier" (bullet lists of 3 challenges and 4 network approaches), "The Future of Agent-to-Agent Commerce" (numbered list of 3 trends).
+  - `src/components/diagrams/AgentNetworksDiagram.tsx` — NEW: React component showing 5 network nodes (Virtuals Protocol, Bittensor, Moltbook, ClawdVine, Questflow) with role, stats, and approach, plus a 4-stage transaction flow diagram
+  - `src/app/articles/[slug]/page.tsx` — Added AgentNetworksDiagram import and mapping (afterSection: 1)
+  - `prd.json` — Marked US-006 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---

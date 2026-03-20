@@ -10,6 +10,7 @@ import PaymentProcessorsDiagram from "@/components/diagrams/PaymentProcessorsDia
 import IdentityTrustDiagram from "@/components/diagrams/IdentityTrustDiagram";
 import AgentHarnessDiagram from "@/components/diagrams/AgentHarnessDiagram";
 import StablecoinsDiagram from "@/components/diagrams/StablecoinsDiagram";
+import AgentNetworksDiagram from "@/components/diagrams/AgentNetworksDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -37,6 +38,10 @@ const articleDiagrams: Record<
   "stablecoins-guide": {
     Component: StablecoinsDiagram,
     afterSection: 0,
+  },
+  "agent-networks-guide": {
+    Component: AgentNetworksDiagram,
+    afterSection: 1,
   },
 };
 
