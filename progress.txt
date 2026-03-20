@@ -342,5 +342,17 @@ Started: Thu Mar 19 16:52:37 CET 2026
 - **Learnings for future iterations:**
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - Em dash replacement requires contextual judgment: some become commas, some become colons, some become parentheses, some need semicolons, some need sentence restructuring
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields (last entry for US-004)
+---
+
+## 2026-03-20 - US-005
+- Improved Stablecoins article (slug: stablecoins-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from stablecoins-guide content (metaDescription, all 10 contentSections, 1 FAQ answer). Converted 4 sections to use bullet/numbered lists: "The Three Properties" (numbered list of 3 properties), "How Stablecoins Compare" (bullet list of fiat vs crypto advantages), "Stablecoins in the Agent Payment Stack" (numbered list of 4 stack layers), "The Micropayment Revolution" (bullet list of 4 business models), "The Future of Agent Money" (numbered list of 4 trends).
+  - `src/components/diagrams/StablecoinsDiagram.tsx` — NEW: React component showing 3-coin comparison (USDC, USDT, PYUSD) with color-coded cards, key stats (market cap, chains, agent adoption), strength highlights, and feature pills
+  - `src/app/articles/[slug]/page.tsx` — Added StablecoinsDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-005 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---

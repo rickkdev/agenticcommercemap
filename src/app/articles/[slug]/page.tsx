@@ -9,6 +9,7 @@ import StandardsProtocolsDiagram from "@/components/diagrams/StandardsProtocolsD
 import PaymentProcessorsDiagram from "@/components/diagrams/PaymentProcessorsDiagram";
 import IdentityTrustDiagram from "@/components/diagrams/IdentityTrustDiagram";
 import AgentHarnessDiagram from "@/components/diagrams/AgentHarnessDiagram";
+import StablecoinsDiagram from "@/components/diagrams/StablecoinsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -32,6 +33,10 @@ const articleDiagrams: Record<
   "agent-harness-guide": {
     Component: AgentHarnessDiagram,
     afterSection: 2,
+  },
+  "stablecoins-guide": {
+    Component: StablecoinsDiagram,
+    afterSection: 0,
   },
 };
 

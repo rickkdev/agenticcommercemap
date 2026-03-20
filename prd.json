@@ -88,7 +88,7 @@
         "Article still renders correctly at /articles/stablecoins-guide"
       ],
       "priority": 5,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-006",
