@@ -82,7 +82,7 @@
         "Typecheck passes"
       ],
       "priority": 4,
-      "passes": false,
+      "passes": true,
       "notes": "Biggest category by company count. Should convey why so many companies are racing into this space."
     },
     {

@@ -58,3 +58,14 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Category field should match the category name exactly as used in market-map-data.json (e.g., "Standards & Protocols")
   - Reading time is a string like "12 min read" — estimate based on ~200 words per minute
 ---
+
+## 2026-03-20 - US-004
+- Implemented Payment Processors article with slug 'payment-processors-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added second article to the articles array with 9 content sections, 5 FAQ entries, ~2200 words covering payment processing for AI agents, x402 in practice, convergence of crypto-native and traditional processors, specialized processors, protocol competition
+  - `prd.json` — Marked US-004 as passes: true
+- **Learnings for future iterations:**
+  - The market-map-data.json contains company names and logos but no descriptions — article content must draw from domain knowledge and PRD notes
+  - Category name in article data must match market-map-data.json exactly (e.g., "Payment Processors" not "Payment Processing")
+  - Articles can reference related articles that exist (standards-and-protocols-guide) and ones that don't yet (payment-infrastructure-guide, stablecoins-guide)
+---
