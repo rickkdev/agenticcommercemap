@@ -23,6 +23,7 @@ import OpenSourceModelsDiagram from "@/components/diagrams/OpenSourceModelsDiagr
 import BlockchainsDiagram from "@/components/diagrams/BlockchainsDiagram";
 import HostingCloudComputeDiagram from "@/components/diagrams/HostingCloudComputeDiagram";
 import BookFlightsDiagram from "@/components/diagrams/BookFlightsDiagram";
+import TempoMPPDiagram from "@/components/diagrams/TempoMPPDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -101,6 +102,10 @@ const articleDiagrams: Record<
   },
   "book-flights-with-openclaw-agent": {
     Component: BookFlightsDiagram,
+    afterSection: 0,
+  },
+  "tempo-mainnet-launch-mpp": {
+    Component: TempoMPPDiagram,
     afterSection: 0,
   },
 };

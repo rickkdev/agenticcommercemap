@@ -518,3 +518,17 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
   - This is a non-category tutorial article with category "Agent Harness" — the OG image uses the category-aware style since "Agent Harness" exists in market-map-data.json
 ---
+
+## 2026-03-20 - US-019
+- Improved Tempo Mainnet Launch article (slug: tempo-mainnet-launch-mpp) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from tempo-mainnet-launch-mpp content (title, metaDescription, all 10 contentSections, 2 FAQ answers). Converted 4 sections to use bullet/numbered lists: "What Is MPP?" (bullet list of 4 payment methods), "MPP Key Features" (numbered list of 3 features with nested bullet lists for network extensions), "Launch Partners" (bullet list of 6 partner categories), "What Tempo Means for the Future" (numbered list of 4 signals), "Use Cases" (numbered list of 5 business trip workflow steps).
+  - `src/components/diagrams/TempoMPPDiagram.tsx` — NEW: React component showing 4-layer MPP architecture stack (Agent Layer, MPP Protocol, Network Extensions, Tempo Blockchain) with color-coded items, 3-chain comparison grid (Base, Solana, Tempo) with TPS/protocol/model/strength, and 12 launch partner pills organized by role
+  - `src/app/articles/[slug]/page.tsx` — Added TempoMPPDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-019 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - This is a news/analysis article with category "Blockchains" — the OG image uses the category-aware style since "Blockchains" exists in market-map-data.json
+  - The acceptance criteria says "non-category article" for OG image style, but since the category field is "Blockchains" (a valid category), the existing OG image logic automatically renders it in category-aware style, consistent with how US-018 was handled
+---

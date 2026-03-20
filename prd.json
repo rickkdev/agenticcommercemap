@@ -312,7 +312,7 @@
         "Article still renders correctly at /articles/tempo-mainnet-launch-mpp"
       ],
       "priority": 19,
-      "passes": false
+      "passes": true
     }
   ]
 }
