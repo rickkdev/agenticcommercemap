@@ -291,7 +291,7 @@
         "Typecheck passes"
       ],
       "priority": 15,
-      "passes": false,
+      "passes": true,
       "notes": "Technical but accessible. Should explain why multi-chain complexity is a blocker and how account abstraction removes it."
     },
     {

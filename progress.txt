@@ -188,3 +188,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Many companies in this category appear in other categories too (thirdweb, Visa, Cloudflare, etc.) — noted cross-category presence where relevant
   - Published date 2026-03-04 is earlier than most other articles — specified in PRD acceptance criteria
 ---
+
+## 2026-03-20 - US-015
+- Implemented Universal Balance & Account Abstraction article with slug 'universal-balance-and-account-abstraction-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added thirteenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering the multi-chain problem, what account abstraction is, EOAs vs smart accounts, ERC-4337, Polygon Agent CLI, programmable wallet logic (ERC-7579), gas abstraction, universal balance across chains, practical implications for developers, key players, and future outlook
+  - `prd.json` — Marked US-015 as passes: true
+- **Learnings for future iterations:**
+  - "Universal Balance & Account Abstraction" does NOT exist as a category in market-map-data.json — this is a cross-cutting topic that draws companies from Wallets & Tooling, Standards & Protocols, and Blockchains categories
+  - Companies mentioned span multiple market-map categories: Polygon (Blockchains), ERC-4337 (Standards & Protocols), Rhinestone/Openfort/Coinbase/Turnkey/Fireblocks/Privy/MetaMask/Phantom/thirdweb (Wallets & Tooling), SKALE/Base/Tempo (Blockchains), Biconomy and Pimlico (not in market-map but key ERC-4337 ecosystem players)
+  - The article distinguishes between account abstraction (smarter individual wallets) and universal balance (unified cross-chain view) as complementary but distinct concepts
+  - Published date 2026-03-05 is earlier than most other articles — specified in PRD acceptance criteria
+---
