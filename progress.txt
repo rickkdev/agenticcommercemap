@@ -103,3 +103,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The PRD mentioned CASH by Phantom but market-map-data.json has PYUSD instead — followed the market-map data as the source of truth for company listings
   - Article covers the unique angle of why stablecoins beat both volatile crypto AND traditional fiat for agent use cases — the three-way comparison is key
 ---
+
+## 2026-03-20 - US-008
+- Implemented Agent Networks article with slug 'agent-networks-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added sixth article to the articles array with 10 content sections, 5 FAQ entries, ~2400 words covering agent-to-agent commerce, Virtuals Protocol and ACP, Bittensor subnets, Moltbook social layer, ClawdVine collaboration graphs, Questflow orchestration, agent discovery/negotiation/payment mechanics, coordination frontier
+  - `prd.json` — Marked US-008 as passes: true
+- **Learnings for future iterations:**
+  - All 5 companies from the Agent Networks category in market-map-data.json were mentioned with context: Moltbook, ClawdVine, Questflow, Bittensor, Virtuals Protocol
+  - Category field is "Agent Networks" to match market-map-data.json exactly
+  - Some companies appear in multiple categories (e.g., Questflow is in both Agent Networks and Agent Frameworks & Tooling) — this is noted in the article content where relevant
+  - Article follows the established pattern: what the category is, why it matters, deep dives into each company/concept, mechanics explanation, future outlook
+---

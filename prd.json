@@ -158,7 +158,7 @@
         "Typecheck passes"
       ],
       "priority": 8,
-      "passes": false,
+      "passes": true,
       "notes": "Should paint the vision of an agent-to-agent economy and explain the infrastructure making it possible."
     },
     {
