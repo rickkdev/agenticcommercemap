@@ -380,3 +380,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-008
+- Improved Crypto Commerce article (slug: crypto-commerce-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from crypto-commerce-guide content (metaDescription, all 10 contentSections, 3 FAQ answers). Converted Section 1 sub-sectors to bullet list, Section 7 agent differences to numbered list (4 items), Section 9 challenges to bullet list (4 items).
+  - `src/components/diagrams/CryptoCommerceDiagram.tsx` — NEW: React component showing 4-sector breakdown (Marketplaces & Aggregators, Physical Goods & Agent Stores, Digital Goods & Services, Bridges to Traditional Retail) with color-coded company pills, plus a 4-step x402 purchase flow diagram
+  - `src/app/articles/[slug]/page.tsx` — Added CryptoCommerceDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-008 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---

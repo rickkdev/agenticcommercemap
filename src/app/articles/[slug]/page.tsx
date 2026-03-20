@@ -12,6 +12,7 @@ import AgentHarnessDiagram from "@/components/diagrams/AgentHarnessDiagram";
 import StablecoinsDiagram from "@/components/diagrams/StablecoinsDiagram";
 import AgentNetworksDiagram from "@/components/diagrams/AgentNetworksDiagram";
 import DiscoveryDiagram from "@/components/diagrams/DiscoveryDiagram";
+import CryptoCommerceDiagram from "@/components/diagrams/CryptoCommerceDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -47,6 +48,10 @@ const articleDiagrams: Record<
   "discovery-guide": {
     Component: DiscoveryDiagram,
     afterSection: 1,
+  },
+  "crypto-commerce-guide": {
+    Component: CryptoCommerceDiagram,
+    afterSection: 0,
   },
 };
 

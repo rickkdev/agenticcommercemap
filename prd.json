@@ -136,7 +136,7 @@
         "Article still renders correctly at /articles/crypto-commerce-guide"
       ],
       "priority": 8,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-009",
