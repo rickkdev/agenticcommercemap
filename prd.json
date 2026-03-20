@@ -329,7 +329,7 @@
         "Typecheck passes"
       ],
       "priority": 17,
-      "passes": false,
+      "passes": true,
       "notes": "Should make the case that open-source is a requirement, not just a preference, for certain agentic commerce use cases (regulated finance, privacy-sensitive transactions)."
     },
     {

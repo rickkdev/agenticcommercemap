@@ -213,3 +213,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Published date 2026-03-06 is earlier than most other articles — specified in PRD acceptance criteria
   - The vendor lock-in tradeoff is a key theme that naturally connects to the open-source-models-guide article
 ---
+
+## 2026-03-20 - US-017
+- Implemented Open Source Models article with slug 'open-source-models-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added fifteenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering Llama (Meta), DeepSeek (MIT license, MoE), Qwen (native MCP, Apache 2.0, consumer hardware), Hermes (agent-first, persistent memory), Mistral (European compliance), Gemma (edge deployment), Phi (lightweight), GPT-OSS (migration path), regulated industries, self-hosted inference economics, open-source vs proprietary tradeoffs, future outlook
+  - `prd.json` — Marked US-017 as passes: true
+- **Learnings for future iterations:**
+  - All 8 companies from the Open Source Models category in market-map-data.json were mentioned with context: Llama, DeepSeek, Qwen, Mistral, Hermes, Gemma, Phi, GPT-OSS
+  - Category field is "Open Source Models" to match market-map-data.json exactly
+  - This article naturally pairs with the proprietary-models-guide — cross-references between the two articles help readers compare approaches
+  - Published date 2026-03-07 is earlier than most other articles — specified in PRD acceptance criteria
+  - The regulated industries section is the article's strongest differentiator — makes the case that open-source is a compliance requirement, not just a preference
+---
