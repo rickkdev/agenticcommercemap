@@ -152,7 +152,7 @@
         "Article still renders correctly at /articles/wallets-and-tooling-guide"
       ],
       "priority": 9,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-010",

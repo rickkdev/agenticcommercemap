@@ -13,6 +13,7 @@ import StablecoinsDiagram from "@/components/diagrams/StablecoinsDiagram";
 import AgentNetworksDiagram from "@/components/diagrams/AgentNetworksDiagram";
 import DiscoveryDiagram from "@/components/diagrams/DiscoveryDiagram";
 import CryptoCommerceDiagram from "@/components/diagrams/CryptoCommerceDiagram";
+import WalletsToolingDiagram from "@/components/diagrams/WalletsToolingDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -51,6 +52,10 @@ const articleDiagrams: Record<
   },
   "crypto-commerce-guide": {
     Component: CryptoCommerceDiagram,
+    afterSection: 0,
+  },
+  "wallets-and-tooling-guide": {
+    Component: WalletsToolingDiagram,
     afterSection: 0,
   },
 };

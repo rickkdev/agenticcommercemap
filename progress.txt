@@ -392,3 +392,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-009
+- Improved Wallets & Tooling article (slug: wallets-and-tooling-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from wallets-and-tooling-guide content (all 11 contentSections, all 5 FAQ answers). Converted 3 sections to use bullet/numbered lists: "Why Agent Wallets Are Fundamentally Different" (bullet list of 3 wallet requirements: delegation, scoping, revocation), "Key Management Infrastructure" (numbered list of 3 approaches: institutional custody, embedded key management, decentralized key management), "The Balance Between Autonomy and Security" (bullet list of 3 transaction tiers), "The Key Players" (bullet list of all 13 companies with roles).
+  - `src/components/diagrams/WalletsToolingDiagram.tsx` — NEW: React component showing human wallet vs agent wallet comparison table (interface, signing, key storage, spending limits, access control, revocation) plus 5-tier company landscape (Key Management & Custody, Smart Accounts & Policies, Consumer Wallets, Security & Monitoring, Fiat Bridge)
+  - `src/app/articles/[slug]/page.tsx` — Added WalletsToolingDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-009 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---
