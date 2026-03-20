@@ -239,3 +239,17 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Published date 2026-03-08 is earlier than most other articles — specified in PRD acceptance criteria
   - The multi-chain future thesis is key — no single chain wins, agents will use multiple chains routed by infrastructure
 ---
+
+## 2026-03-20 - US-019
+- Implemented Hosting, Cloud & Compute article with slug 'hosting-cloud-compute-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added seventeenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering hyperscale clouds (Google Cloud AP2 stack, AWS Bedrock AgentCore), Cloudflare (x402 Foundation, edge computing), decentralized compute (Akash 85% cheaper, Heurist censorship-resistant, Bittensor subnets), self-hosted servers (Hetzner, DigitalOcean, Contabo, OVHcloud, Hostinger), local inference (Mac Mini M4, Rabbit R1), privacy infrastructure (Venice.ai VVV token, Treza Labs ZK-KYC), data infrastructure (Dune, Allium, SQD, Alchemy), cost comparison across tiers, choosing infrastructure, future outlook
+  - `prd.json` — Marked US-019 as passes: true
+- **Learnings for future iterations:**
+  - All 19 companies from the Hosting / Cloud / Compute category in market-map-data.json were mentioned with context: Google Cloud, Amazon Web Services, Cloudflare, Hetzner, Hostinger, DigitalOcean, Contabo, OVHcloud, Mac Mini, Rabbit, Heurist, Bittensor, akash, Treza Labs, Venice.ai, Dune, Allium, SQD, Alchemy
+  - Category field is "Hosting / Cloud / Compute" to match market-map-data.json exactly (uses slashes, not ampersands or commas)
+  - This category spans a uniquely wide spectrum — from hyperscale clouds to a $500 Mac Mini — article organized by infrastructure tier rather than alphabetically
+  - Some companies appear in multiple categories (Cloudflare in Agent Frameworks & Tooling, Bittensor in Agent Networks, Rabbit in User Interfaces) — noted cross-category presence where relevant
+  - Published date 2026-03-09 is earlier than most other articles — specified in PRD acceptance criteria
+  - Data infrastructure companies (Dune, Allium, SQD, Alchemy) are part of hosting because they provide the analytics and blockchain connectivity layer agents need to operate
+---

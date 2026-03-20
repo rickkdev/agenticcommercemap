@@ -367,7 +367,7 @@
         "Typecheck passes"
       ],
       "priority": 19,
-      "passes": false,
+      "passes": true,
       "notes": "Practical and cost-conscious. Should help readers understand the full spectrum from free/cheap self-hosting to enterprise cloud and make an informed choice."
     },
     {
