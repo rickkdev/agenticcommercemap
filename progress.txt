@@ -200,3 +200,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The article distinguishes between account abstraction (smarter individual wallets) and universal balance (unified cross-chain view) as complementary but distinct concepts
   - Published date 2026-03-05 is earlier than most other articles — specified in PRD acceptance criteria
 ---
+
+## 2026-03-20 - US-016
+- Implemented Proprietary Models article with slug 'proprietary-models-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added fourteenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering Claude/MCP, GPT/ACP/Stripe, Gemini/AP2/Project Mariner, Grok/2M context, Command/enterprise/multilingual, Nova/AWS/Bedrock AgentCore, model-commerce stack coupling, capability comparison, vendor lock-in tradeoffs, and future outlook
+  - `prd.json` — Marked US-016 as passes: true
+- **Learnings for future iterations:**
+  - All 6 companies from the Proprietary Models category in market-map-data.json were mentioned with context: Claude, GPT, Gemini, Grok, Command, Nova
+  - Category field is "Proprietary Models" to match market-map-data.json exactly
+  - This article is unique in that each company maps to a distinct commerce stack (Claude→MCP, GPT→ACP, Gemini→AP2) — the article's thesis is that model choice determines commerce architecture
+  - Published date 2026-03-06 is earlier than most other articles — specified in PRD acceptance criteria
+  - The vendor lock-in tradeoff is a key theme that naturally connects to the open-source-models-guide article
+---

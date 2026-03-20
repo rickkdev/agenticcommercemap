@@ -310,7 +310,7 @@
         "Typecheck passes"
       ],
       "priority": 16,
-      "passes": false,
+      "passes": true,
       "notes": "Should highlight the strategic implication: choosing a model increasingly means choosing a commerce ecosystem. Compare objectively."
     },
     {
