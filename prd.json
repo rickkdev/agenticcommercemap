@@ -386,7 +386,7 @@
         "Typecheck passes"
       ],
       "priority": 20,
-      "passes": false,
+      "passes": true,
       "notes": "This is a practical how-to article, not a category overview. Should feel like a tutorial that a non-technical person can follow. Emphasize safety — the virtual card is what makes this viable. Be honest about limitations and security risks."
     },
     {
