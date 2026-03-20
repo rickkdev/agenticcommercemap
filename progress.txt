@@ -46,3 +46,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Articles index page already had proper Metadata from US-001
   - Article pages are fully server-rendered — no client-side fetching or useEffect for content
 ---
+
+## 2026-03-20 - US-003
+- Implemented Standards & Protocols article with slug 'standards-and-protocols-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added first article to the articles array with 12 content sections, 5 FAQ entries, ~2000 words covering x402, ERC-8004, MCP, A2A, ACP, AP2, UCP, ERC-4337, and MPP
+  - `prd.json` — Marked US-003 as passes: true
+- **Learnings for future iterations:**
+  - Article content uses double newlines (`\n\n`) for paragraph breaks within body text — this matches the `section.body.split("\n\n")` rendering pattern
+  - Related article slugs can reference articles that don't exist yet — they will be created by subsequent stories
+  - Category field should match the category name exactly as used in market-map-data.json (e.g., "Standards & Protocols")
+  - Reading time is a string like "12 min read" — estimate based on ~200 words per minute
+---
