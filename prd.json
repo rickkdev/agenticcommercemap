@@ -272,7 +272,7 @@
         "Typecheck passes"
       ],
       "priority": 14,
-      "passes": false,
+      "passes": true,
       "notes": "Developer-focused article. Should help builders understand the landscape and make informed choices about their agent stack."
     },
     {

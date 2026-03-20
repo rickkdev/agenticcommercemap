@@ -175,3 +175,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - This category is unique in that the companies are platforms, not startups — the article focuses on how each platform serves as a commerce surface rather than what product they sell
   - Published date 2026-03-03 is earlier than most other articles — this was specified in the PRD acceptance criteria
 ---
+
+## 2026-03-20 - US-014
+- Implemented Agent Frameworks & Tooling article with slug 'agent-frameworks-and-tooling-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added twelfth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering protocol-level infrastructure (MCP, A2A, AXTP), platform-level infrastructure (thirdweb, Cloudflare, Blockrun), coding agents (Claude Code, Cursor, Devin, Windsurf, OpenHands, Cline, Goose, Codex CLI, GitHub Copilot, Replit Agent, Droyd, twit.sh), specialized frameworks (Bankr, Starkbot Cloud, RevaPay AI, Beep, Fluid, Frames), security tooling (Quick Intel, t54.ai, Corbits, Visa), orchestration (Questflow, OpenServ, NEAR, ClawHub), picks-and-shovels analogy, choosing frameworks, build-vs-buy decision, future outlook
+  - `prd.json` — Marked US-014 as passes: true
+- **Learnings for future iterations:**
+  - All 36 companies from the Agent Frameworks & Tooling category in market-map-data.json were mentioned with context: Starkbot Cloud, thirdweb, t54.ai, Frames, Daydreams, Blockrun, RevaPay AI, Beep, Fluid, Dexter, Visa, Quick Intel, NEAR, ClawHub, Conway Research, MCP, OpenServ, Cloudflare, Corbits, Questflow, Bankr, A2A, AXTP, Arcade.dev, Claude Code, Cursor, Windsurf, Devin, OpenHands, Cline, Goose, Codex CLI, GitHub Copilot, Replit Agent, Droyd, twit.sh
+  - Category field is "Agent Frameworks & Tooling" to match market-map-data.json exactly
+  - This is the largest category (36 companies) — organized by functional tier (protocol, platform, coding agents, specialized) rather than listing companies sequentially
+  - Many companies in this category appear in other categories too (thirdweb, Visa, Cloudflare, etc.) — noted cross-category presence where relevant
+  - Published date 2026-03-04 is earlier than most other articles — specified in PRD acceptance criteria
+---
