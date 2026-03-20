@@ -127,3 +127,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Article emphasizes the fundamental difference between human and agent discovery — not just a convenience problem but an existential bottleneck for the agent economy
   - Discovery articles naturally reference many other categories (payments, identity, protocols) since discovery is a cross-cutting concern
 ---
+
+## 2026-03-20 - US-010
+- Implemented Crypto Commerce article with slug 'crypto-commerce-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added eighth article to the articles array with 10 content sections, 5 FAQ entries, ~2300 words covering marketplaces & aggregators, physical goods & agent stores, digital goods & services, bridges to traditional retail, x402 in practice, agent vs human purchasing, challenges, and future outlook
+  - `prd.json` — Marked US-010 as passes: true
+- **Learnings for future iterations:**
+  - All 13 companies from the Crypto Commerce category in market-map-data.json were mentioned with context: List402, Agoragentic, RelAI, agentshops.xyz, x402-store, x402 Shopify Commerce, Bitrefill, Laso Finance, x402wall, Postera, AEON, Stripe, payable.link
+  - Category field is "Crypto Commerce" to match market-map-data.json exactly
+  - The Crypto Commerce category has 4 subcategories in market-map-data.json — article structure mirrors these subcategories as sections for natural organization
+  - This category is unique in having both crypto-native companies (List402, x402-store) and traditional companies (Stripe, Shopify) — the article emphasizes convergence
+---

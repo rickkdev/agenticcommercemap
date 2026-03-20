@@ -196,7 +196,7 @@
         "Typecheck passes"
       ],
       "priority": 10,
-      "passes": false,
+      "passes": true,
       "notes": "Should show that crypto commerce is moving beyond niche into mainstream, with AI agents as the bridge."
     },
     {
