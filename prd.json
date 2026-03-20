@@ -248,7 +248,7 @@
         "Article still renders correctly at /articles/open-source-models-guide"
       ],
       "priority": 15,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-016",

@@ -467,3 +467,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-015
+- Improved Open Source Models article (slug: open-source-models-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from open-source-models-guide content (metaDescription, all 11 contentSections, 3 FAQ answers). Converted 4 sections to use bullet/numbered lists: "Why Open Source Models Matter" (bullet list of 4 customization capabilities), "The Case for Self-Hosting" (numbered list of 5 self-hosting advantages), "Regulated Industries" (bullet list of 4 compliance benefits + numbered list of 4 regulatory frameworks), "Gemma, Phi, and GPT-OSS" (bullet list of 3 model niches), "The Future" (numbered list of 3 trends).
+  - `src/components/diagrams/OpenSourceModelsDiagram.tsx` — NEW: React component showing 8-model comparison grid (Llama, DeepSeek, Qwen, Hermes, Mistral, Gemma, Phi, GPT-OSS) with color-coded cards showing license, parameters, best-for use case, and strength pills, plus a 4-tier deployment spectrum (Edge/Local, Single GPU, Multi-GPU, GPU Cluster)
+  - `src/app/articles/[slug]/page.tsx` — Added OpenSourceModelsDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-015 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---

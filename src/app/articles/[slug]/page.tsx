@@ -19,6 +19,7 @@ import UserInterfacesDiagram from "@/components/diagrams/UserInterfacesDiagram";
 import AgentFrameworksDiagram from "@/components/diagrams/AgentFrameworksDiagram";
 import UniversalBalanceDiagram from "@/components/diagrams/UniversalBalanceDiagram";
 import ProprietaryModelsDiagram from "@/components/diagrams/ProprietaryModelsDiagram";
+import OpenSourceModelsDiagram from "@/components/diagrams/OpenSourceModelsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -81,6 +82,10 @@ const articleDiagrams: Record<
   },
   "proprietary-models-guide": {
     Component: ProprietaryModelsDiagram,
+    afterSection: 0,
+  },
+  "open-source-models-guide": {
+    Component: OpenSourceModelsDiagram,
     afterSection: 0,
   },
 };
