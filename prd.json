@@ -348,7 +348,7 @@
         "Typecheck passes"
       ],
       "priority": 18,
-      "passes": false,
+      "passes": true,
       "notes": "Should be objective about chain tradeoffs. Focus on what matters for agents specifically: speed, cost, stablecoin support, and protocol compatibility."
     },
     {

@@ -226,3 +226,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Published date 2026-03-07 is earlier than most other articles — specified in PRD acceptance criteria
   - The regulated industries section is the article's strongest differentiator — makes the case that open-source is a compliance requirement, not just a preference
 ---
+
+## 2026-03-20 - US-018
+- Implemented Blockchains & Crypto article with slug 'blockchains-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added sixteenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering why agents need blockchains, key requirements (sub-second finality, near-zero fees, stablecoin support), Base (Coinbase x402 hub), Solana (400ms finality, 35M+ x402 transactions), Ethereum (settlement layer, ERC standards origin), Tempo (Stripe/Paradigm, MPP, 100K+ TPS), next-gen chains (SKALE gas-free, Radius 2.5M TPS, Keeta regulated, Sei DeFi, Story IP), broader ecosystem (Arbitrum, Polygon, Avalanche, NEAR, BNB, Celo, Algorand, MultiversX, Stellar, Taiko), chain competition dynamics, multi-chain reality, future outlook
+  - `prd.json` — Marked US-018 as passes: true
+- **Learnings for future iterations:**
+  - All 19 companies from the Blockchains category in market-map-data.json were mentioned with context: Ethereum, Arbitrum, Radius, Tempo, Avalanche, Polygon, Keeta Network, Celo, SKALE, BNB, Sei, Story, Algorand, Taiko, NEAR, Base, MultiversX, Solana, Stellar
+  - Category field is "Blockchains" to match market-map-data.json exactly
+  - This is a large category (19 chains) — organized by strategic importance (Base, Solana, Ethereum as top-tier, Tempo as new entrant, next-gen specialized chains, then broader ecosystem) rather than alphabetically
+  - Published date 2026-03-08 is earlier than most other articles — specified in PRD acceptance criteria
+  - The multi-chain future thesis is key — no single chain wins, agents will use multiple chains routed by infrastructure
+---
