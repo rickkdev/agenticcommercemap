@@ -445,14 +445,22 @@ export default function Home() {
             </div>
           </div>
 
-          <a
-            href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="shrink-0 text-xs text-indigo-400 hover:text-indigo-300 transition-colors order-3 sm:order-none"
-          >
-            + Add Company
-          </a>
+          <div className="flex items-center gap-4 shrink-0 order-3 sm:order-none">
+            <Link
+              href="/articles"
+              className="text-xs text-gray-400 hover:text-gray-200 transition-colors"
+            >
+              Guides
+            </Link>
+            <a
+              href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
+            >
+              + Add Company
+            </a>
+          </div>
 
           <StatsBar />
 

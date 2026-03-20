@@ -1,0 +1,33 @@
+# Ralph Progress Log
+Started: Thu Mar 19 16:52:37 CET 2026
+---
+
+## Codebase Patterns
+- Article data is stored in `src/data/articles.ts` as a typed array, not markdown files
+- All pages (homepage, category, articles) share the same dark theme with `bg-mesh` background, `header-blur` sticky header, and `category-card glow-border` card styling
+- Category page and article page headers use the same logo + nav pattern with Map/Guides links
+- `toSlug()` from `@/lib/categories` converts category names to URL slugs (e.g., "Standards & Protocols" → "standards-and-protocols")
+- Homepage is a client component; category pages and article pages are server components
+- Params in Next.js 16 are async: `params: Promise<{ slug: string }>` — must `await params`
+- Pre-existing lint error in `src/app/page.tsx` (setState in useEffect) — not introduced by articles work
+
+---
+
+## 2026-03-20 - US-001
+- Implemented blog infrastructure and sitemap integration
+- Files changed:
+  - `src/data/articles.ts` — Article type definitions (Article, ContentSection, FAQ) and articles array
+  - `src/app/articles/page.tsx` — Articles index page with listing, dark theme, header/footer
+  - `src/app/articles/[slug]/page.tsx` — Dynamic article route with semantic HTML (<article>, <time>, <section>, proper H1>H2>H3), generateStaticParams, related articles, category link
+  - `src/app/sitemap.ts` — Added /articles (priority 0.6) and /articles/[slug] (priority 0.7) with publishedDate as lastModified
+  - `src/app/feed.xml/route.ts` — Added article entries with title, link, description, pubDate
+  - `src/app/llms.txt/route.ts` — Plain-text site overview for LLM crawlers with articles and categories
+  - `src/app/page.tsx` — Added "Guides" link to homepage header nav
+  - `src/app/category/[slug]/page.tsx` — Added "Guides" link to category page header nav, replaced "Back to Map" with Map/Guides nav
+  - `prd.json` — Marked US-001 as passes: true
+- **Learnings for future iterations:**
+  - The header pattern is duplicated across homepage, category, and articles pages — consider extracting a shared Header component in the future
+  - The homepage uses `max-w-[1600px]` while category/article pages use `max-w-[900px]` for the content area
+  - Articles are rendered with `section.body.split("\n\n")` for paragraph splitting — content should use double newlines for paragraph breaks
+  - The articles array is currently empty — subsequent stories (US-003 through US-021) will populate it
+---

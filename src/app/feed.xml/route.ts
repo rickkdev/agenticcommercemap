@@ -1,4 +1,5 @@
 import { categories, categoryNames, categoryShortDescriptions, categoryLongDescriptions, toSlug } from "@/lib/categories";
+import { articles } from "@/data/articles";
 
 const BASE_URL = "https://agenticcommercemap.com";
 
@@ -8,7 +9,7 @@ export function GET() {
     return acc;
   }, new Set<string>()).size;
 
-  const items = categoryNames
+  const categoryItems = categoryNames
     .map(
       (name) => `    <item>
       <title>${escapeXml(name)} — ${categories[name].count} Companies</title>
@@ -21,6 +22,20 @@ export function GET() {
     </item>`
     )
     .join("\n");
+
+  const articleItems = articles
+    .map(
+      (article) => `    <item>
+      <title>${escapeXml(article.title)}</title>
+      <link>${BASE_URL}/articles/${article.slug}</link>
+      <guid>${BASE_URL}/articles/${article.slug}</guid>
+      <description>${escapeXml(article.metaDescription)}</description>
+      <pubDate>${new Date(article.publishedDate).toUTCString()}</pubDate>
+    </item>`
+    )
+    .join("\n");
+
+  const items = [categoryItems, articleItems].filter(Boolean).join("\n");
 
   const xml = `<?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">

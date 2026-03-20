@@ -172,27 +172,20 @@ export default async function CategoryPage({
               </p>
             </div>
           </Link>
-          <Link
-            href="/"
-            className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors flex items-center gap-1.5"
-          >
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 16 16"
-              fill="none"
-              className="shrink-0"
+          <nav className="flex items-center gap-4">
+            <Link
+              href="/"
+              className="text-sm text-gray-400 hover:text-gray-200 transition-colors"
             >
-              <path
-                d="M10 12L6 8l4-4"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            Back to Map
-          </Link>
+              Map
+            </Link>
+            <Link
+              href="/articles"
+              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
+            >
+              Guides
+            </Link>
+          </nav>
         </div>
       </header>
 
