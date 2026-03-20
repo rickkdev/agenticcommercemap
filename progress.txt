@@ -303,3 +303,17 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The `computeWordCount` function in page.tsx computes word count from title, description, all sections, and all FAQ entries
   - Future US stories for article improvements can follow the same pattern: add diagram to `src/components/diagrams/`, add entry to `articleDiagrams` mapping, edit article content for dashes and lists
 ---
+
+## 2026-03-20 - US-002
+- Improved Payment Processors article (slug: payment-processors-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from payment-processors-guide content (metaDescription, all 8 contentSections, all 5 FAQ answers). Converted 3 sections to use bullet/numbered lists: "Why This Is the Most Crowded Category" (bullet list of processor types), "What Makes Agent Payments Different" (numbered list of 5 differences), "The Battle Between Protocols" (bullet list of 4 protocol ecosystems), "What the Future Looks Like" (numbered list of 3 winning characteristics).
+  - `src/components/diagrams/PaymentProcessorsDiagram.tsx` — NEW: React component showing 4-category processor landscape (Crypto-Native, Traditional Finance, Hybrid/Bridge, Specialized/Vertical) with color-coded company pills
+  - `src/app/articles/[slug]/page.tsx` — Added PaymentProcessorsDiagram import and mapping (afterSection: 1)
+  - `prd.json` — Marked US-002 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - Em dash replacement requires contextual judgment: some become commas, some become colons, some need parentheses, some need sentence restructuring
+  - Converting paragraphs to lists works best when content has clear enumeration (numbered differences, protocol comparisons, category breakdowns)
+  - SEO infrastructure from US-001 (OG images, JSON-LD, hero image) carries forward automatically for all articles with valid category fields
+---

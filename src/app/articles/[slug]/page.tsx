@@ -6,6 +6,7 @@ import { articles } from "@/data/articles";
 import { toSlug } from "@/lib/categories";
 import { Footer } from "@/components/footer";
 import StandardsProtocolsDiagram from "@/components/diagrams/StandardsProtocolsDiagram";
+import PaymentProcessorsDiagram from "@/components/diagrams/PaymentProcessorsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -17,6 +18,10 @@ const articleDiagrams: Record<
   "standards-and-protocols-guide": {
     Component: StandardsProtocolsDiagram,
     afterSection: 0,
+  },
+  "payment-processors-guide": {
+    Component: PaymentProcessorsDiagram,
+    afterSection: 1,
   },
 };
 
