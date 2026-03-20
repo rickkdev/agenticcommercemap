@@ -168,7 +168,7 @@
         "Article still renders correctly at /articles/payment-infrastructure-guide"
       ],
       "priority": 10,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-011",

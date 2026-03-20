@@ -404,3 +404,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-010
+- Improved Payment Infrastructure article (slug: payment-infrastructure-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from payment-infrastructure-guide content (metaDescription, heading, all 12 contentSections, all 5 FAQ answers). Converted 3 sections to use bullet/numbered lists: "How Infrastructure Decisions Lock in Architecture" (bullet list of 4 protocol choices), "The Key Players" (bullet list of 7 infrastructure layers with companies), "The Future of Payment Infrastructure" (numbered list of 3 trends).
+  - `src/components/diagrams/PaymentInfrastructureDiagram.tsx` — NEW: React component showing 6-layer infrastructure architecture (Protocol, Routing & Processing, Virtual Cards & Fiat Bridge, Streaming & Continuous, Compliance & Security, Management & Commerce) with color-coded company pills plus a 4-step payment flow diagram
+  - `src/app/articles/[slug]/page.tsx` — Added PaymentInfrastructureDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-010 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - Payment Infrastructure has 30 companies (largest category alongside Agent Frameworks & Tooling), organized by infrastructure layer rather than listing companies sequentially
+---
