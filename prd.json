@@ -139,7 +139,7 @@
         "Typecheck passes"
       ],
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "notes": "Should make the non-obvious case for why stablecoins are uniquely suited to AI agent commerce vs other payment methods."
     },
     {

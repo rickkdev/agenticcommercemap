@@ -91,3 +91,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Category field is "Agent Harness" (singular, not "Agent Harnesses") to match market-map-data.json exactly
   - Article maintains the established pattern: what the category is, why it matters, deep dives into sub-categories, company overview, future outlook
 ---
+
+## 2026-03-20 - US-007
+- Implemented Stablecoins article with slug 'stablecoins-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added fifth article to the articles array with 10 content sections, 5 FAQ entries, ~2200 words covering why agents need stablecoins (stability + programmability + instant settlement), USDC as x402 standard, USDT's scale ambitions, PYUSD as PayPal's bridge, micropayment revolution, stablecoins vs fiat vs volatile crypto
+  - `prd.json` — Marked US-007 as passes: true
+- **Learnings for future iterations:**
+  - All 3 companies from the Stablecoins category in market-map-data.json were mentioned with context: USDC (Circle), USDT (Tether), PYUSD (PayPal)
+  - Category field is "Stablecoins" to match market-map-data.json exactly
+  - The PRD mentioned CASH by Phantom but market-map-data.json has PYUSD instead — followed the market-map data as the source of truth for company listings
+  - Article covers the unique angle of why stablecoins beat both volatile crypto AND traditional fiat for agent use cases — the three-way comparison is key
+---
