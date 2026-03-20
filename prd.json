@@ -177,7 +177,7 @@
         "Typecheck passes"
       ],
       "priority": 9,
-      "passes": false,
+      "passes": true,
       "notes": "Should highlight that discovery is a fundamentally different problem for agents vs humans — no UI, no browsing, need machine-readable everything."
     },
     {

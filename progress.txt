@@ -115,3 +115,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Some companies appear in multiple categories (e.g., Questflow is in both Agent Networks and Agent Frameworks & Tooling) — this is noted in the article content where relevant
   - Article follows the established pattern: what the category is, why it matters, deep dives into each company/concept, mechanics explanation, future outlook
 ---
+
+## 2026-03-20 - US-009
+- Implemented Discovery article with slug 'discovery-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added seventh article to the articles array with 10 content sections, 5 FAQ entries, ~2200 words covering the discovery problem, why human search fails for agents, agent-native marketplaces, directories and indexes, ecosystem explorers, task platforms, machine-readable catalogs, key companies, challenges, and future outlook
+  - `prd.json` — Marked US-009 as passes: true
+- **Learnings for future iterations:**
+  - All 10 companies from the Discovery category in market-map-data.json were mentioned with context: x402jobs, Moltlaunch, 402.bot, Pawr.link, ClawIndex, WURK, 0xWork, x402scan, 8004scan, Valoria
+  - Category field is "Discovery" to match market-map-data.json exactly
+  - Article emphasizes the fundamental difference between human and agent discovery — not just a convenience problem but an existential bottleneck for the agent economy
+  - Discovery articles naturally reference many other categories (payments, identity, protocols) since discovery is a cross-cutting concern
+---
