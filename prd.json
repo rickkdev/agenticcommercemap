@@ -44,7 +44,7 @@
         "Verify structured data is valid by inspecting the rendered HTML — no missing required fields"
       ],
       "priority": 2,
-      "passes": false,
+      "passes": true,
       "notes": "Critical for the SEO/LLMO goals. Every article must be a fully static, server-rendered page with rich structured data. No client components for article content. The FAQPage schema is essential for LLMs and Google featured snippets."
     },
     {

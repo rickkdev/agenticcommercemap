@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { articles } from "@/data/articles";
 import { toSlug } from "@/lib/categories";
 
+const SITE_URL = "https://agenticcommercemap.com";
+
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
 }
@@ -17,19 +19,24 @@ export async function generateMetadata({
   const article = articles.find((a) => a.slug === slug);
   if (!article) return {};
 
+  const canonicalUrl = `${SITE_URL}/articles/${article.slug}`;
+
   return {
     title: `${article.title} | Agentic Commerce Market Map`,
     description: article.metaDescription,
     keywords: article.keywords,
     alternates: {
-      canonical: `https://agenticcommercemap.com/articles/${article.slug}`,
+      canonical: canonicalUrl,
     },
     openGraph: {
       title: `${article.title} | Agentic Commerce Market Map`,
       description: article.metaDescription,
+      url: canonicalUrl,
       type: "article",
       publishedTime: article.publishedDate,
+      modifiedTime: article.publishedDate,
       section: article.category,
+      siteName: "Agentic Commerce Market Map",
     },
     twitter: {
       card: "summary_large_image",
@@ -37,6 +44,102 @@ export async function generateMetadata({
       description: article.metaDescription,
     },
   };
+}
+
+function ArticleJsonLd({ slug }: { slug: string }) {
+  const article = articles.find((a) => a.slug === slug);
+  if (!article) return null;
+
+  const canonicalUrl = `${SITE_URL}/articles/${article.slug}`;
+
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: article.title,
+    description: article.metaDescription,
+    datePublished: article.publishedDate,
+    dateModified: article.publishedDate,
+    author: {
+      "@type": "Person",
+      name: "Agentic Commerce",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Agentic Commerce Market Map",
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/icon.png`,
+      },
+    },
+    articleSection: article.category,
+    keywords: article.keywords,
+    inLanguage: "en-US",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": canonicalUrl,
+    },
+    image: `${SITE_URL}/articles/${article.slug}/opengraph-image`,
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: SITE_URL,
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Guides",
+        item: `${SITE_URL}/articles`,
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: article.title,
+        item: canonicalUrl,
+      },
+    ],
+  };
+
+  const faqSchema =
+    article.faq.length > 0
+      ? {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          mainEntity: article.faq.map((item) => ({
+            "@type": "Question",
+            name: item.question,
+            acceptedAnswer: {
+              "@type": "Answer",
+              text: item.answer,
+            },
+          })),
+        }
+      : null;
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
+      {faqSchema && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
+    </>
+  );
 }
 
 export default async function ArticlePage({
@@ -56,6 +159,7 @@ export default async function ArticlePage({
 
   return (
     <div className="min-h-screen bg-mesh">
+      <ArticleJsonLd slug={slug} />
       {/* Header */}
       <header className="sticky top-0 z-20 header-blur px-6 py-3">
         <div className="max-w-[900px] mx-auto flex items-center justify-between gap-4">

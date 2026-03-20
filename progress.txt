@@ -31,3 +31,18 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Articles are rendered with `section.body.split("\n\n")` for paragraph splitting — content should use double newlines for paragraph breaks
   - The articles array is currently empty — subsequent stories (US-003 through US-021) will populate it
 ---
+
+## 2026-03-20 - US-002
+- Implemented article SEO, structured data & server-side rendering
+- Files changed:
+  - `src/app/articles/[slug]/page.tsx` — Added JSON-LD structured data (Article, BreadcrumbList, FAQPage), enhanced OpenGraph metadata with url/modifiedTime
+  - `src/app/articles/[slug]/opengraph-image.tsx` — Dynamic OG image generation per article using next/og ImageResponse (edge runtime)
+  - `prd.json` — Marked US-002 as passes: true
+- **Learnings for future iterations:**
+  - JSON-LD is injected via `<script type="application/ld+json">` with `dangerouslySetInnerHTML` — standard Next.js pattern for structured data
+  - OG image uses `runtime = "edge"` and `ImageResponse` from `next/og` — must export `size`, `contentType`, `alt`, and `generateStaticParams`
+  - The `ArticleJsonLd` component is a server component rendered inside the page — no "use client" needed
+  - robots.ts already allows all AI bots (ChatGPT-User, ClaudeBot, GPTBot, anthropic-ai, cohere-ai, Google-Extended)
+  - Articles index page already had proper Metadata from US-001
+  - Article pages are fully server-rendered — no client-side fetching or useEffect for content
+---
