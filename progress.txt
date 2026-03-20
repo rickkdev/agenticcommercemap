@@ -479,3 +479,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-016
+- Improved Blockchains & Crypto article (slug: blockchains-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from blockchains-guide content (metaDescription, all 12 contentSections, 3 FAQ answers). Converted 4 sections to use bullet/numbered lists: "Why AI Agents Need Blockchains" (bullet list of 3 blockchain properties), "The Key Requirements" (numbered list of 5 requirements), "Next-Generation Chains" (bullet list of 5 chains with focus areas), "How Chains Compete" (bullet list of 4 competitive factors), "The Future" (numbered list of 3 chain types that win).
+  - `src/components/diagrams/BlockchainsDiagram.tsx` — NEW: React component showing 6-chain comparison grid (Base, Solana, Ethereum, Tempo, SKALE, Radius) with color-coded cards showing type, TPS, finality, fees, stablecoin support, and strength pills, plus a broader ecosystem section with 8 additional chains
+  - `src/app/articles/[slug]/page.tsx` — Added BlockchainsDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-016 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - Blockchains is a large category (19 chains) organized by strategic importance (Base, Solana, Ethereum as top-tier, Tempo as new entrant, then next-gen and broader ecosystem)
+---

@@ -20,6 +20,7 @@ import AgentFrameworksDiagram from "@/components/diagrams/AgentFrameworksDiagram
 import UniversalBalanceDiagram from "@/components/diagrams/UniversalBalanceDiagram";
 import ProprietaryModelsDiagram from "@/components/diagrams/ProprietaryModelsDiagram";
 import OpenSourceModelsDiagram from "@/components/diagrams/OpenSourceModelsDiagram";
+import BlockchainsDiagram from "@/components/diagrams/BlockchainsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -86,6 +87,10 @@ const articleDiagrams: Record<
   },
   "open-source-models-guide": {
     Component: OpenSourceModelsDiagram,
+    afterSection: 0,
+  },
+  "blockchains-guide": {
+    Component: BlockchainsDiagram,
     afterSection: 0,
   },
 };
