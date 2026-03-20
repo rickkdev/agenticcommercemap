@@ -1,10 +1,24 @@
 import type { Metadata } from "next";
+import type { ComponentType } from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { articles } from "@/data/articles";
 import { toSlug } from "@/lib/categories";
+import { Footer } from "@/components/footer";
+import StandardsProtocolsDiagram from "@/components/diagrams/StandardsProtocolsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
+
+// Map article slugs to diagram components and where to insert them
+const articleDiagrams: Record<
+  string,
+  { Component: ComponentType; afterSection: number }
+> = {
+  "standards-and-protocols-guide": {
+    Component: StandardsProtocolsDiagram,
+    afterSection: 0,
+  },
+};
 
 export function generateStaticParams() {
   return articles.map((article) => ({ slug: article.slug }));
@@ -46,11 +60,23 @@ export async function generateMetadata({
   };
 }
 
+function computeWordCount(article: (typeof articles)[number]): number {
+  let text = article.title + " " + article.metaDescription;
+  for (const section of article.contentSections) {
+    text += " " + section.heading + " " + section.body;
+  }
+  for (const item of article.faq) {
+    text += " " + item.question + " " + item.answer;
+  }
+  return text.split(/\s+/).filter(Boolean).length;
+}
+
 function ArticleJsonLd({ slug }: { slug: string }) {
   const article = articles.find((a) => a.slug === slug);
   if (!article) return null;
 
   const canonicalUrl = `${SITE_URL}/articles/${article.slug}`;
+  const wordCount = computeWordCount(article);
 
   const articleSchema = {
     "@context": "https://schema.org",
@@ -60,8 +86,9 @@ function ArticleJsonLd({ slug }: { slug: string }) {
     datePublished: article.publishedDate,
     dateModified: article.publishedDate,
     author: {
-      "@type": "Person",
-      name: "Agentic Commerce",
+      "@type": "Organization",
+      name: "Agentic Commerce Market Map",
+      url: SITE_URL,
     },
     publisher: {
       "@type": "Organization",
@@ -79,6 +106,7 @@ function ArticleJsonLd({ slug }: { slug: string }) {
       "@id": canonicalUrl,
     },
     image: `${SITE_URL}/articles/${article.slug}/opengraph-image`,
+    wordCount,
   };
 
   const breadcrumbSchema = {
@@ -142,6 +170,45 @@ function ArticleJsonLd({ slug }: { slug: string }) {
   );
 }
 
+function renderContentBlock(block: string, key: number) {
+  const lines = block.split("\n");
+  const isBulletList = lines.length > 1 && lines.every((l) => /^[•\-]\s/.test(l));
+  const isNumberedList =
+    lines.length > 1 && lines.every((l) => /^\d+\.\s/.test(l));
+
+  if (isBulletList) {
+    return (
+      <ul
+        key={key}
+        className="list-disc list-inside text-gray-300 text-sm leading-relaxed mb-4 space-y-1.5 pl-1"
+      >
+        {lines.map((line, i) => (
+          <li key={i}>{line.replace(/^[•\-]\s/, "")}</li>
+        ))}
+      </ul>
+    );
+  }
+
+  if (isNumberedList) {
+    return (
+      <ol
+        key={key}
+        className="list-decimal list-inside text-gray-300 text-sm leading-relaxed mb-4 space-y-1.5 pl-1"
+      >
+        {lines.map((line, i) => (
+          <li key={i}>{line.replace(/^\d+\.\s/, "")}</li>
+        ))}
+      </ol>
+    );
+  }
+
+  return (
+    <p key={key} className="text-gray-300 leading-relaxed text-sm mb-4">
+      {block}
+    </p>
+  );
+}
+
 export default async function ArticlePage({
   params,
 }: {
@@ -156,6 +223,7 @@ export default async function ArticlePage({
     .filter(Boolean);
 
   const categorySlug = toSlug(article.category);
+  const diagram = articleDiagrams[slug];
 
   return (
     <div className="min-h-screen bg-mesh">
@@ -223,6 +291,14 @@ export default async function ArticlePage({
 
       <main className="max-w-[900px] mx-auto px-4 py-10">
         <article>
+          {/* Hero image */}
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`/articles/${article.slug}/opengraph-image`}
+            alt=""
+            className="w-full rounded-xl mb-8"
+          />
+
           {/* Article header */}
           <header className="mb-10">
             <div className="flex items-center gap-3 mb-4">
@@ -253,19 +329,19 @@ export default async function ArticlePage({
 
           {/* Article content */}
           {article.contentSections.map((section, i) => (
-            <section key={i} className="mb-8">
-              <h2 className="text-xl font-semibold text-white mb-3">
-                {section.heading}
-              </h2>
-              {section.body.split("\n\n").map((paragraph, j) => (
-                <p
-                  key={j}
-                  className="text-gray-300 leading-relaxed text-sm mb-4"
-                >
-                  {paragraph}
-                </p>
-              ))}
-            </section>
+            <div key={i}>
+              <section className="mb-8">
+                <h2 className="text-xl font-semibold text-white mb-3">
+                  {section.heading}
+                </h2>
+                {section.body
+                  .split("\n\n")
+                  .map((block, j) => renderContentBlock(block, j))}
+              </section>
+              {diagram && diagram.afterSection === i && (
+                <diagram.Component />
+              )}
+            </div>
           ))}
 
           {/* FAQ section */}
@@ -346,9 +422,7 @@ export default async function ArticlePage({
         </article>
       </main>
 
-      <footer className="text-center py-8 text-xs text-gray-600">
-        <p>Agentic Commerce Market Map — Interactive Explorer</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

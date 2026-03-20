@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { articles } from "@/data/articles";
+import { Footer } from "@/components/footer";
+
+const SITE_URL = "https://agenticcommercemap.com";
 
 export const metadata: Metadata = {
   title: "Guides — Agentic Commerce Market Map",
@@ -17,9 +20,30 @@ export const metadata: Metadata = {
   },
 };
 
+function ArticlesItemListJsonLd() {
+  const itemListSchema = {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    itemListElement: articles.map((article, i) => ({
+      "@type": "ListItem",
+      position: i + 1,
+      name: article.title,
+      url: `${SITE_URL}/articles/${article.slug}`,
+    })),
+  };
+
+  return (
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListSchema) }}
+    />
+  );
+}
+
 export default function ArticlesPage() {
   return (
     <div className="min-h-screen bg-mesh">
+      <ArticlesItemListJsonLd />
       {/* Header */}
       <header className="sticky top-0 z-20 header-blur px-6 py-3">
         <div className="max-w-[900px] mx-auto flex items-center justify-between gap-4">
@@ -154,9 +178,7 @@ export default function ArticlesPage() {
         )}
       </main>
 
-      <footer className="text-center py-8 text-xs text-gray-600">
-        <p>Agentic Commerce Market Map — Interactive Explorer</p>
-      </footer>
+      <Footer />
     </div>
   );
 }

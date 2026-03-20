@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { Footer } from "@/components/footer";
 
 export const metadata: Metadata = {
   title: "Legal",
@@ -166,6 +167,7 @@ export default function LegalPage() {
           </div>
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

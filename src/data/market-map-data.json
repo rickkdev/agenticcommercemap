@@ -242,7 +242,7 @@
         },
         {
           "name": "World",
-          "logoUrl": "https://unavatar.io/twitter/worldcoin"
+          "logoUrl": "/world-logo.svg"
         },
         {
           "name": "Incode",
@@ -295,7 +295,7 @@
       "count": 13,
       "companies": [
         { "name": "List402", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230ea5e9'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='12' font-weight='bold' fill='%23fff'%3E402%3C/text%3E%3C/svg%3E" },
-        { "name": "Agoragentic", "logoUrl": "https://agoragentic.com/og-image.png" },
+        { "name": "Agoragentic", "logoUrl": "/agoragentic-logo.svg" },
         { "name": "RelAI", "logoUrl": "https://relai.fi/RelayAI-logo-2.png" },
         { "name": "agentshops.xyz", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%238b5cf6'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='11' font-weight='bold' fill='%23fff'%3EAS%3C/text%3E%3C/svg%3E" },
         { "name": "x402-store", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%23f59e0b'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='10' font-weight='bold' fill='%23fff'%3Ex402%3C/text%3E%3C/svg%3E" },
@@ -313,7 +313,7 @@
           "name": "Marketplaces & Aggregators",
           "companies": [
             { "name": "List402", "logoUrl": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='8' fill='%230ea5e9'/%3E%3Ctext x='20' y='26' text-anchor='middle' font-family='system-ui' font-size='12' font-weight='bold' fill='%23fff'%3E402%3C/text%3E%3C/svg%3E" },
-            { "name": "Agoragentic", "logoUrl": "https://agoragentic.com/og-image.png" },
+            { "name": "Agoragentic", "logoUrl": "/agoragentic-logo.svg" },
             { "name": "RelAI", "logoUrl": "https://relai.fi/RelayAI-logo-2.png" }
           ]
         },

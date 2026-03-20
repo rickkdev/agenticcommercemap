@@ -16,6 +16,7 @@ import {
   type Company,
   type CategoryData,
 } from "@/lib/categories";
+import { Footer } from "@/components/footer";
 
 function KbdShortcut() {
   const [prefix, setPrefix] = useState("⌘");
@@ -445,27 +446,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="flex items-center gap-4 shrink-0 order-3 sm:order-none">
-            <Link
-              href="/articles"
-              className="text-xs text-gray-400 hover:text-gray-200 transition-colors"
-            >
-              Guides
-            </Link>
-            <a
-              href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
-            >
-              + Add Company
-            </a>
-          </div>
-
-          <StatsBar />
-
-          {/* Search */}
-          <div className="relative w-full sm:max-w-md sm:flex-1 order-4 sm:order-none">
+          {/* Search - order-1 on desktop to appear after logo, order-4 on mobile to go below */}
+          <div className="relative w-full sm:max-w-md sm:flex-1 order-4 sm:order-1">
             <svg
               className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500"
               width="14"
@@ -492,6 +474,25 @@ export default function Home() {
               )}
               <KbdShortcut />
             </div>
+          </div>
+
+          <StatsBar />
+
+          <div className="flex items-center gap-4 shrink-0 order-3 sm:order-last">
+            <Link
+              href="/articles"
+              className="text-xs text-gray-400 hover:text-gray-200 transition-colors"
+            >
+              Guides
+            </Link>
+            <a
+              href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
+            >
+              + Add Company
+            </a>
           </div>
         </div>
       </header>
@@ -532,19 +533,7 @@ export default function Home() {
         ))}
       </main>
 
-      {/* Footer */}
-      <footer className="text-center py-8 text-xs text-gray-600 space-y-2">
-        <p>Agentic Commerce Market Map — Interactive Explorer</p>
-        <p>
-          <a href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Suggestion:+[Your+Suggestion]&body=**What+would+you+like+to+change?**%0A%0A" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Suggest Changes</a>
-          <span className="mx-2">·</span>
-          <a href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Contact:+[Subject]&body=**Message:**%0A%0A" target="_blank" rel="noopener noreferrer" className="hover:text-gray-400 transition-colors">Contact</a>
-          <span className="mx-2">·</span>
-          <Link href="/legal" className="hover:text-gray-400 transition-colors">Privacy Policy</Link>
-          <span className="mx-2">·</span>
-          <Link href="/legal" className="hover:text-gray-400 transition-colors">Imprint</Link>
-        </p>
-      </footer>
+      <Footer />
 
       {/* Modal */}
       {selectedCompany && (

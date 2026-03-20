@@ -1,412 +1,318 @@
 {
   "project": "AgenticCommerceMap",
   "branchName": "ralph/blog-articles",
-  "description": "Blog & Articles System - SEO-optimized guides explaining each agentic commerce category",
+  "description": "Article Improvement Pass - Clean up dashes, add data diagrams, improve readability with bullet points and numbered lists",
+  "improvementGuidelines": {
+    "dashCleanup": "Remove all em dashes (—), en dashes (–), and standalone hyphens used as dashes (` - `) from article content. Replace with commas, colons, parentheses, or restructured sentences as appropriate. Hyphenated compound words (e.g., 'crypto-native', 'open-source') are fine to keep.",
+    "diagrams": "Add at least one SVG diagram per article rendered inline in the article content. The diagram should visualize relevant data, relationships, or ecosystem maps related to the article topic. Use a React component rendered server-side. Examples: a comparison table/chart of projects, a flow diagram showing how a protocol works, an ecosystem map showing category players, a timeline of key events. Store diagram components in src/components/diagrams/ and import them in the article's contentSections.",
+    "readability": "Add bullet point lists or numbered lists (1/2/3/4) in at least 2-3 places per article where content is currently dense paragraphs. Use bullets for unordered information (features, examples, players) and numbers for sequential steps or ranked items.",
+    "thumbnail": "Update src/app/articles/[slug]/opengraph-image.tsx to generate rich, category-aware thumbnails for articles. For category-based articles, the OG image should match the style of the corresponding category page's OG image (src/app/category/[slug]/opengraph-image.tsx) — use the same category color, show key company pills, include breadcrumb, company count, and category description. The article's category field maps to a category name which can be looked up via the categories data to get color, companies, and description. For non-category articles (e.g., tutorials, news), use a clean placeholder style with the article title prominently displayed. The opengraph-image.tsx should dynamically detect whether the article maps to a category and render accordingly. This also serves as the social sharing thumbnail (og:image, twitter:image). Each article page should also display this thumbnail/hero image inline at the top of the article content on the actual page, not just in meta tags.",
+    "seo": "Each article must have complete, rich SEO. Verify and enhance the following for each article: (1) Metadata: unique title (<60 chars ideal), unique meta description (<160 chars), keywords array, canonical URL, openGraph with type 'article', publishedTime, modifiedTime, section, siteName, and twitter card 'summary_large_image'. (2) JSON-LD Article schema: must include headline, datePublished, dateModified, author (@type Organization with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com'), publisher (@type Organization with name and logo ImageObject), articleSection, keywords, inLanguage 'en-US', mainEntityOfPage, image pointing to the OG image URL, wordCount (compute from article content). (3) JSON-LD BreadcrumbList: Home > Guides > Article Title with proper item URLs. (4) JSON-LD FAQPage: all FAQ Q&A pairs from the article data. (5) The /articles index page should have an ItemList JSON-LD schema listing all articles with position, name, and url for each. (6) Ensure no duplicate or missing required JSON-LD fields. All structured data must be valid per schema.org specs."
+  },
   "userStories": [
     {
       "id": "US-001",
-      "title": "Blog infrastructure & sitemap integration",
-      "description": "As a developer, I need the foundational blog system so articles can be created, routed, and discovered by search engines and LLMs.",
+      "title": "Improve Article: Standards & Protocols for Agentic Commerce",
+      "description": "Clean up and enhance the standards-and-protocols-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Create src/data/articles.ts with article type definition (slug, title, category, publishedDate, metaDescription, keywords, readingTime, content sections with heading/body pairs, faq array with question/answer pairs, relatedArticleSlugs)",
-        "Create /articles index page listing all articles with title, date, category badge, reading time, and excerpt",
-        "Create /articles/[slug] dynamic route for individual article pages",
-        "Article pages use semantic HTML: <article> wrapper, <time datetime=''> for dates, <section> for content blocks, proper H1 > H2 > H3 heading hierarchy, no heading level skips",
-        "Articles index page uses the same dark theme and header/footer as existing category pages",
-        "generateStaticParams exports all article slugs for static generation",
-        "Update src/app/sitemap.ts to include /articles (priority 0.6) and all /articles/[slug] pages (priority 0.7) — use each article's publishedDate as lastModified, not new Date()",
-        "Update src/app/feed.xml/route.ts RSS feed to include article entries with proper titles, links, descriptions, and pubDate using the article's publishedDate",
-        "Add 'Guides' link to the header navigation on all pages (homepage, category pages, article pages)",
-        "Create /llms.txt route that outputs a plain-text site overview for LLM crawlers: site name, purpose, list of all article URLs with titles, list of all category URLs — so LLMs can discover and understand the full site structure",
-        "Each article page includes a 'Related Articles' section at the bottom linking to 2-3 other articles (using relatedArticleSlugs from article data)",
-        "Each article page includes a link back to the corresponding /category/[slug] page",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'standards-and-protocols-guide'",
+        "Add at least one inline SVG diagram component (e.g., ecosystem map of standards showing x402, ERC-8004, MCP, A2A, ACP, AP2, UCP, MPP and their relationships/layers)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Standards & Protocols category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/standards-and-protocols-guide"
       ],
       "priority": 1,
-      "passes": true,
-      "notes": "This is the foundation — must be done before any individual article stories. Articles are data-driven from src/data/articles.ts, not markdown files. Each article links back to its corresponding /category/[slug] page. The llms.txt file is an emerging standard — keep it simple plain text, not JSON."
+      "passes": true
     },
     {
       "id": "US-002",
-      "title": "Article SEO, structured data & server-side rendering",
-      "description": "As a site owner, I need each article page to have proper SEO metadata, JSON-LD structured data, and SSR so search engines and LLM crawlers can fully index the content.",
+      "title": "Improve Article: Payment Processors for Agentic Commerce",
+      "description": "Clean up and enhance the payment-processors-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Each article page generates dynamic Metadata with unique title (format: '[Article Title] | Agentic Commerce Market Map'), description, canonical URL (/articles/[slug]), and openGraph/twitter tags",
-        "Each article page includes JSON-LD @type Article with: headline, datePublished, dateModified, author (@type Person), publisher (@type Organization with name and logo), description, articleSection (category name), keywords array, inLanguage 'en-US', mainEntityOfPage pointing to the canonical URL, image",
-        "Each article page includes BreadcrumbList JSON-LD (Home > Guides > Article Title)",
-        "Each article page includes FAQPage JSON-LD schema with the article's FAQ question/answer pairs (for featured snippets and LLM extraction)",
-        "Article content is fully server-rendered (no client-side fetching or useEffect for content) — all content in the initial HTML response",
-        "Meta description is unique per article and under 160 characters",
-        "OG image falls back to the site default or generates a dynamic one per article using src/app/articles/[slug]/opengraph-image.tsx",
-        "Articles index page has its own Metadata (title: 'Guides — Agentic Commerce Market Map', proper description, canonical URL)",
-        "robots.ts continues to allow all crawlers including AI bots (ChatGPT-User, ClaudeBot, GPTBot, anthropic-ai, cohere-ai, Google-Extended, etc.)",
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'payment-processors-guide'",
+        "Add at least one inline SVG diagram component (e.g., chart showing the 31+ payment processors categorized by type: crypto-native vs traditional vs hybrid)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Payment Processors category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
         "Typecheck passes",
-        "Verify structured data is valid by inspecting the rendered HTML — no missing required fields"
+        "Article still renders correctly at /articles/payment-processors-guide"
       ],
       "priority": 2,
-      "passes": true,
-      "notes": "Critical for the SEO/LLMO goals. Every article must be a fully static, server-rendered page with rich structured data. No client components for article content. The FAQPage schema is essential for LLMs and Google featured snippets."
+      "passes": false
     },
     {
       "id": "US-003",
-      "title": "Article: Standards & Protocols for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining what Standards & Protocols means in agentic commerce, why it matters, and how x402, ERC-8004, MCP, A2A, ACP, AP2, UCP, and MPP form the foundation of the agent economy.",
+      "title": "Improve Article: Identity & Trust for Agentic Commerce",
+      "description": "Clean up and enhance the identity-and-trust-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'standards-and-protocols-guide'",
-        "Published date: 2026-03-10",
-        "Content covers: what standards & protocols are, why interoperability matters for agents, deep dive into each major standard (x402, ERC-8004, MCP, A2A, ACP, AP2, UCP, ERC-4337, MPP), how they relate to each other, what the future looks like",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is x402?', 'How do MCP and A2A differ?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., payment-infrastructure-guide, payment-processors-guide)",
-        "Links back to /category/standards-and-protocols",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'identity-and-trust-guide'",
+        "Add at least one inline SVG diagram component (e.g., trust verification flow showing how an agent gets verified: identity creation > KYA > reputation > transaction)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Identity & Trust category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/identity-and-trust-guide"
       ],
       "priority": 3,
-      "passes": true,
-      "notes": "This is the foundational article — standards underpin everything else. Should explain how these protocols enable the entire ecosystem."
+      "passes": false
     },
     {
       "id": "US-004",
-      "title": "Article: Payment Processors for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the role of payment processors in AI agent commerce, why this is the most crowded category with 31+ players, and how crypto-native and traditional processors are converging.",
+      "title": "Improve Article: Agent Harnesses for Agentic Commerce",
+      "description": "Clean up and enhance the agent-harness-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'payment-processors-guide'",
-        "Published date: 2026-03-11",
-        "Content covers: what payment processing means for AI agents, why 31+ companies are competing here, the convergence of crypto-native and traditional processors (Coinbase, Stripe, Visa, PayPal), specialized processors for different niches, how x402 works in practice, what makes agent payments different from human payments",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'How do AI agents pay for things?', 'What is x402?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., payment-infrastructure-guide, stablecoins-guide)",
-        "Links back to /category/payment-processors",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'agent-harness-guide'",
+        "Add at least one inline SVG diagram component (e.g., autonomy spectrum showing coding agents > general-purpose > crypto-native with example projects at each level)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Agent Harness category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/agent-harness-guide"
       ],
       "priority": 4,
-      "passes": true,
-      "notes": "Biggest category by company count. Should convey why so many companies are racing into this space."
+      "passes": false
     },
     {
       "id": "US-005",
-      "title": "Article: Identity & Trust for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining why identity and trust are the critical verification layer for AI agents, covering ERC-8004, KYA (Know Your Agent), reputation systems, and the challenges of trusting autonomous systems with money.",
+      "title": "Improve Article: Stablecoins for Agentic Commerce",
+      "description": "Clean up and enhance the stablecoins-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'identity-and-trust-guide'",
-        "Published date: 2026-03-12",
-        "Content covers: why trust matters when agents handle money, the identity problem (who is this agent? who does it represent?), ERC-8004 on-chain agent identity, KYA verification, reputation systems, human-identity bridges (World's AgentKit), deepfake resistance, enterprise verification, real-time behavior classification",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is KYA?', 'How does ERC-8004 work?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., wallets-and-tooling-guide, standards-and-protocols-guide)",
-        "Links back to /category/identity-and-trust",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'stablecoins-guide'",
+        "Add at least one inline SVG diagram component (e.g., comparison chart of stablecoins: USDC vs USDT vs CASH with features like market cap, chains supported, agent adoption)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Stablecoins category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/stablecoins-guide"
       ],
       "priority": 5,
-      "passes": true,
-      "notes": "Should make the case that identity & trust is the enabler or bottleneck of the entire ecosystem."
+      "passes": false
     },
     {
       "id": "US-006",
-      "title": "Article: Agent Harnesses for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining what agent harnesses are, the spectrum from coding agents to autonomous assistants to crypto-native frameworks, and how they are the actual autonomous actors in the agentic economy.",
+      "title": "Improve Article: Agent Networks for Agentic Commerce",
+      "description": "Clean up and enhance the agent-networks-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'agent-harness-guide'",
-        "Published date: 2026-03-13",
-        "Content covers: what an agent harness is vs a chatbot, the autonomy spectrum (coding agents like Claude Code/Cursor/Devin, general-purpose like Manus/OpenAI Operator, crypto-native like ElizaOS/OpenClaw), what agents actually do (browse, transact, code, coordinate), the competitive landscape, how harnesses connect to the rest of the stack",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is an agent harness?', 'How is it different from a chatbot?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., agent-networks-guide, discovery-guide)",
-        "Links back to /category/agent-harness",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'agent-networks-guide'",
+        "Add at least one inline SVG diagram component (e.g., network topology showing how agents discover, negotiate, and transact with each other through different network protocols)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Agent Networks category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/agent-networks-guide"
       ],
       "priority": 6,
-      "passes": true,
-      "notes": "Should clearly differentiate agent harnesses from simple chatbots and explain why autonomy is the defining feature."
+      "passes": false
     },
     {
       "id": "US-007",
-      "title": "Article: Stablecoins for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining why stablecoins (USDC, USDT, CASH) are the money layer of the agent economy, how they solve the payment problem for AI agents, and why they beat both volatile crypto and traditional fiat for agent transactions.",
+      "title": "Improve Article: Discovery for Agentic Commerce",
+      "description": "Clean up and enhance the discovery-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'stablecoins-guide'",
-        "Published date: 2026-03-14",
-        "Content covers: why agents need stablecoins (stability + programmability + instant settlement), USDC as the x402 standard, Circle's micropayment infrastructure, USDT's scale ambitions (1 trillion agents prediction), CASH by Phantom as application-specific stablecoin, how stablecoins compare to volatile crypto and fiat for agent use cases, the future of agent money",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Why can't agents just use regular money?', 'What stablecoin do most agents use?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., payment-processors-guide, payment-infrastructure-guide)",
-        "Links back to /category/stablecoins",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'discovery-guide'",
+        "Add at least one inline SVG diagram component (e.g., discovery ecosystem map showing marketplaces, directories, indexes, and task platforms with key players in each)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Discovery category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/discovery-guide"
       ],
       "priority": 7,
-      "passes": true,
-      "notes": "Should make the non-obvious case for why stablecoins are uniquely suited to AI agent commerce vs other payment methods."
+      "passes": false
     },
     {
       "id": "US-008",
-      "title": "Article: Agent Networks for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining how agent networks enable agent-to-agent commerce, covering Virtuals Protocol, Bittensor, decentralized AI coordination, and why the future of commerce is agents hiring other agents.",
+      "title": "Improve Article: Crypto Commerce for Agentic Commerce",
+      "description": "Clean up and enhance the crypto-commerce-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'agent-networks-guide'",
-        "Published date: 2026-03-15",
-        "Content covers: what agent networks are, the shift from human-to-agent to agent-to-agent commerce, Virtuals Protocol and ACP (18K+ agents, $470M+ aGDP), Bittensor's subnet model, Moltbook as the agent internet's social layer, how agents discover/negotiate/pay each other, why coordination is the next frontier",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is agent-to-agent commerce?', 'How do agents find and hire other agents?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., agent-harness-guide, discovery-guide)",
-        "Links back to /category/agent-networks",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'crypto-commerce-guide'",
+        "Add at least one inline SVG diagram component (e.g., four-sector breakdown showing marketplaces, physical goods, digital goods, and traditional retail bridges with example companies)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Crypto Commerce category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/crypto-commerce-guide"
       ],
       "priority": 8,
-      "passes": true,
-      "notes": "Should paint the vision of an agent-to-agent economy and explain the infrastructure making it possible."
+      "passes": false
     },
     {
       "id": "US-009",
-      "title": "Article: Discovery for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the discovery problem in agentic commerce — how AI agents find products, services, APIs, and other agents — and the companies building the 'Google for agents'.",
+      "title": "Improve Article: Wallets & Tooling for Agentic Commerce",
+      "description": "Clean up and enhance the wallets-and-tooling-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'discovery-guide'",
-        "Published date: 2026-03-16",
-        "Content covers: the discovery problem (agents can't browse like humans), agent-native marketplaces (Moltlaunch, x402jobs), directories and indexes (ClawIndex, 402.bot, Pawr.link), ecosystem explorers (x402scan, 8004scan), task platforms (WURK, 0xWork), why machine-readable catalogs matter, the challenge of building search for agents",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'How do AI agents find products?', 'What is an agent marketplace?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., crypto-commerce-guide, agent-networks-guide)",
-        "Links back to /category/discovery",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'wallets-and-tooling-guide'",
+        "Add at least one inline SVG diagram component (e.g., comparison of human wallet vs agent wallet showing differences in key management, permissions, signing, and spending policies)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Wallets & Tooling category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/wallets-and-tooling-guide"
       ],
       "priority": 9,
-      "passes": true,
-      "notes": "Should highlight that discovery is a fundamentally different problem for agents vs humans — no UI, no browsing, need machine-readable everything."
+      "passes": false
     },
     {
       "id": "US-010",
-      "title": "Article: Crypto Commerce for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the actual buying and selling happening in crypto commerce — marketplaces, physical goods, digital goods, and bridges to traditional retail — and how agents are making it mainstream.",
+      "title": "Improve Article: Payment Infrastructure for Agentic Commerce",
+      "description": "Clean up and enhance the payment-infrastructure-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'crypto-commerce-guide'",
-        "Published date: 2026-03-17",
-        "Content covers: what crypto commerce actually looks like today, the four sub-sectors (marketplaces & aggregators, physical goods, digital goods & services, bridges to traditional retail), List402 and verified x402 merchants, agent stores selling real products, Bitrefill and gift cards, pay-per-article content, AEON connecting to 50M+ real-world merchants, how agents bridge crypto and traditional commerce",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Can AI agents buy physical products?', 'What is List402?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., discovery-guide, stablecoins-guide)",
-        "Links back to /category/crypto-commerce",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'payment-infrastructure-guide'",
+        "Add at least one inline SVG diagram component (e.g., layered architecture diagram showing how x402, ACP, AP2 sit between agents and blockchains with compliance and streaming in between)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Payment Infrastructure category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/payment-infrastructure-guide"
       ],
       "priority": 10,
-      "passes": true,
-      "notes": "Should show that crypto commerce is moving beyond niche into mainstream, with AI agents as the bridge."
+      "passes": false
     },
     {
       "id": "US-011",
-      "title": "Article: Wallets & Tooling for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining why agent wallets are fundamentally different from human wallets, covering programmable spending policies, delegated access, autonomous signing, and the security challenges of giving AI agents access to money.",
+      "title": "Improve Article: User Interfaces for Agentic Commerce",
+      "description": "Clean up and enhance the user-interfaces-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'wallets-and-tooling-guide'",
-        "Published date: 2026-03-18",
-        "Content covers: why agent wallets differ from human wallets, programmable spending policies, delegated access and autonomous signing, key management infrastructure (Turnkey, Coinbase, MetaMask, Fireblocks), server-side wallet provisioning (Privy), security tooling (Varlock, mlld), modular smart accounts (Rhinestone ERC-7579), permission scoping, the balance between autonomy and security",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Can AI agents have their own wallets?', 'How do you prevent an agent from draining a wallet?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., identity-and-trust-guide, stablecoins-guide)",
-        "Links back to /category/wallets-and-tooling",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'user-interfaces-guide'",
+        "Add at least one inline SVG diagram component (e.g., UI channel map showing messaging apps, social platforms, dedicated hardware, and web interfaces with adoption/reach data)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the User Interfaces category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/user-interfaces-guide"
       ],
       "priority": 11,
-      "passes": true,
-      "notes": "Should make clear that wallets are a solved problem for humans but a hard unsolved problem for autonomous agents."
+      "passes": false
     },
     {
       "id": "US-012",
-      "title": "Article: Payment Infrastructure for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the underlying rails and protocols that payment processors build on — x402, ACP, AP2, streaming payments, compliance, and how these infrastructure decisions shape the entire agent payment architecture.",
+      "title": "Improve Article: Agent Frameworks & Tooling for Agentic Commerce",
+      "description": "Clean up and enhance the agent-frameworks-and-tooling-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'payment-infrastructure-guide'",
-        "Published date: 2026-03-19",
-        "Content covers: what payment infrastructure is vs payment processors, x402 protocol (HTTP 402 for micropayments), ACP by OpenAI/Stripe (agent shopping flows), AP2 by Google (cryptographic mandates, 60+ orgs), Crossmint (wallets + virtual Visa cards for agents), compliance layer (Cleared for BSA/OFAC), streaming payments (Superfluid), management dashboards, how infrastructure decisions lock in architecture",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is the difference between payment infrastructure and payment processors?', 'What is x402?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., payment-processors-guide, standards-and-protocols-guide)",
-        "Links back to /category/payment-infrastructure",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'agent-frameworks-and-tooling-guide'",
+        "Add at least one inline SVG diagram component (e.g., framework stack diagram showing protocol layer > platform layer > specialized frameworks with key projects at each level)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Agent Frameworks & Tooling category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/agent-frameworks-and-tooling-guide"
       ],
       "priority": 12,
-      "passes": true,
-      "notes": "Should clearly distinguish infrastructure from processors and explain why these architectural choices matter long-term."
+      "passes": false
     },
     {
       "id": "US-013",
-      "title": "Article: User Interfaces for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining how user interfaces are the front doors of agentic commerce — covering messaging apps (Telegram, WhatsApp, Discord, Slack), social platforms (X, Farcaster), and dedicated hardware (Rabbit R1), and why commerce is shifting from 'browse and click' to 'ask and confirm'.",
+      "title": "Improve Article: Universal Balance & Account Abstraction for Agentic Commerce",
+      "description": "Clean up and enhance the universal-balance-and-account-abstraction-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'user-interfaces-guide'",
-        "Published date: 2026-03-03",
-        "Content covers: what agentic commerce UIs look like vs traditional e-commerce, messaging apps as commerce surfaces (Telegram bots, WhatsApp agents, Discord commerce bots, Slack integrations), social platforms as commerce channels (X, Farcaster), dedicated hardware approaches (Rabbit R1), the paradigm shift from browsing to conversational commerce, how UI choice affects the agent stack, what the future of agent UIs looks like",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What apps can AI agents use to buy things?', 'Do I need a special app for agentic commerce?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., agent-harness-guide, discovery-guide)",
-        "Links back to /category/user-interfaces",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'universal-balance-and-account-abstraction-guide'",
+        "Add at least one inline SVG diagram component (e.g., before/after comparison showing multi-chain complexity without account abstraction vs simplified flow with smart accounts)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Universal Balance & Account Abstraction category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/universal-balance-and-account-abstraction-guide"
       ],
       "priority": 13,
-      "passes": true,
-      "notes": "Should make it tangible — this is where users actually interact with agents. Emphasize the shift from visual UIs to conversational interfaces."
+      "passes": false
     },
     {
       "id": "US-014",
-      "title": "Article: Agent Frameworks & Tooling for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the developer infrastructure for building, deploying, and connecting AI agents — covering MCP, A2A, AXTP, thirdweb, Cloudflare, and specialized frameworks, the picks-and-shovels layer of the agent economy.",
+      "title": "Improve Article: Proprietary Models for Agentic Commerce",
+      "description": "Clean up and enhance the proprietary-models-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'agent-frameworks-and-tooling-guide'",
-        "Published date: 2026-03-04",
-        "Content covers: what agent frameworks and tooling are, protocol-level infrastructure (MCP, A2A, AXTP), platform-level infrastructure (thirdweb, Cloudflare, Blockrun), specialized frameworks for specific use cases (Bankr, Starkbot Cloud, Phantom MCP server), the picks-and-shovels analogy, how frameworks abstract complexity for developers, choosing the right framework for your agent, the build-vs-buy decision",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What framework should I use to build an AI agent?', 'What is MCP?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., agent-harness-guide, standards-and-protocols-guide)",
-        "Links back to /category/agent-frameworks-and-tooling",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'proprietary-models-guide'",
+        "Add at least one inline SVG diagram component (e.g., comparison matrix of models: Claude, GPT, Gemini, Grok, Command, Nova with their commerce protocols, context windows, and key differentiators)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Proprietary Models category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/proprietary-models-guide"
       ],
       "priority": 14,
-      "passes": true,
-      "notes": "Developer-focused article. Should help builders understand the landscape and make informed choices about their agent stack."
+      "passes": false
     },
     {
       "id": "US-015",
-      "title": "Article: Universal Balance & Account Abstraction for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining how universal balance and account abstraction simplify multi-chain complexity for AI agents — covering ERC-4337, Polygon Agent CLI, smart contract wallets, and why agents shouldn't need to manage gas tokens across 20 chains.",
+      "title": "Improve Article: Open Source Models for Agentic Commerce",
+      "description": "Clean up and enhance the open-source-models-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'universal-balance-and-account-abstraction-guide'",
-        "Published date: 2026-03-05",
-        "Content covers: the multi-chain problem for agents, what account abstraction means (ERC-4337, 40M+ smart accounts), Polygon Agent CLI toolkit (session-scoped wallets, pay only in USDC), how smart accounts enable programmable wallet logic, why agents shouldn't manage gas tokens, the difference between EOAs and smart accounts, how universal balance works across chains, practical implications for agent developers",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is account abstraction?', 'Why do AI agents need smart accounts?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., wallets-and-tooling-guide, blockchains-guide)",
-        "Links back to /category/universal-balance-and-account-abstraction",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'open-source-models-guide'",
+        "Add at least one inline SVG diagram component (e.g., comparison of open-source models: Llama, DeepSeek, Qwen, Hermes with license, parameter count, and agent capabilities)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Open Source Models category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/open-source-models-guide"
       ],
       "priority": 15,
-      "passes": true,
-      "notes": "Technical but accessible. Should explain why multi-chain complexity is a blocker and how account abstraction removes it."
+      "passes": false
     },
     {
       "id": "US-016",
-      "title": "Article: Proprietary Models for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the role of proprietary/closed-source AI models (Claude, GPT, Gemini, Grok, Command, Nova) in powering agentic commerce, how each model provider is building its own commerce stack, and what model choice means for your agent's capabilities.",
+      "title": "Improve Article: Blockchains & Crypto for Agentic Commerce",
+      "description": "Clean up and enhance the blockchains-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'proprietary-models-guide'",
-        "Published date: 2026-03-06",
-        "Content covers: what proprietary models are and why they matter for agents, Claude by Anthropic (MCP, context retention), GPT by OpenAI (ACP with Stripe, Instant Checkout), Gemini by Google (Project Mariner, AP2, UCP), Grok by xAI (2M-token context, frontier tool-calling), Command by Cohere (enterprise, 23 languages), Nova by Amazon (MCP, Bedrock AgentCore), how model choice determines your commerce stack, the vendor lock-in tradeoff, comparing model capabilities for agent use cases",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Which AI model is best for agentic commerce?', 'Does model choice lock you into a specific payment protocol?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., open-source-models-guide, agent-harness-guide)",
-        "Links back to /category/proprietary-models",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'blockchains-guide'",
+        "Add at least one inline SVG diagram component (e.g., chain comparison showing Base, Solana, Ethereum, Tempo, SKALE, Radius with TPS, finality, fees, and stablecoin support)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Blockchains & Crypto category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/blockchains-guide"
       ],
       "priority": 16,
-      "passes": true,
-      "notes": "Should highlight the strategic implication: choosing a model increasingly means choosing a commerce ecosystem. Compare objectively."
+      "passes": false
     },
     {
       "id": "US-017",
-      "title": "Article: Open Source Models for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining why open-source AI models (Llama, DeepSeek, Qwen, Hermes) matter for agentic commerce — covering data sovereignty, customization, cost control, and why regulated industries often can't use proprietary models for financial transactions.",
+      "title": "Improve Article: Hosting, Cloud & Compute for Agentic Commerce",
+      "description": "Clean up and enhance the hosting-cloud-compute-guide article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'open-source-models-guide'",
-        "Published date: 2026-03-07",
-        "Content covers: why open-source matters for agent commerce, Llama by Meta (leading self-hosted adoption), DeepSeek (MIT-licensed MoE, reasoning + tool-use), Qwen (Apache 2.0, native MCP, consumer GPUs), Hermes by Nous Research (agent-first, persistent memory, skill learning), data sovereignty requirements for financial transactions, regulated industries and compliance, self-hosted inference economics, the open-source vs proprietary tradeoff for agents",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Can open-source models power autonomous agents?', 'Why would I self-host an AI model for commerce?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., proprietary-models-guide, hosting-cloud-compute-guide)",
-        "Links back to /category/open-source-models",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'hosting-cloud-compute-guide'",
+        "Add at least one inline SVG diagram component (e.g., cost/privacy spectrum showing hyperscale cloud > self-hosted > decentralized > local with cost and privacy tradeoffs)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "Update opengraph-image.tsx so this article's OG image matches the category page style: uses the Hosting, Cloud & Compute category color, shows key company pills, breadcrumb, and company count. Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/hosting-cloud-compute-guide"
       ],
       "priority": 17,
-      "passes": true,
-      "notes": "Should make the case that open-source is a requirement, not just a preference, for certain agentic commerce use cases (regulated finance, privacy-sensitive transactions)."
+      "passes": false
     },
     {
       "id": "US-018",
-      "title": "Article: Blockchains & Crypto for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining the role of blockchains as the settlement and consensus layer for AI agent transactions — covering Base, Solana, Ethereum, Tempo, SKALE, Radius, and what the key requirements are (sub-second finality, near-zero fees, native stablecoin support).",
+      "title": "Improve Article: How to Book Plane Tickets with an AI Agent",
+      "description": "Clean up and enhance the book-flights-with-openclaw-agent article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'blockchains-guide'",
-        "Published date: 2026-03-08",
-        "Content covers: why agents need blockchains (settlement, immutability, programmability), Base by Coinbase (primary x402 chain, gasless trading, TEE-secured wallets), Solana (400ms finality, $0.00025 fees, 35M+ x402 transactions), Ethereum (dAI Team, ERC-8004, settlement layer vision), next-gen chains optimized for agent micropayments (Tempo 100K+ TPS, SKALE gas-free, Radius 2.5M TPS), the key requirements for agent-compatible chains, how chains compete for agent transaction volume, the multi-chain future",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Which blockchain is best for AI agent payments?', 'Do agents need blockchain?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., stablecoins-guide, universal-balance-and-account-abstraction-guide)",
-        "Links back to /category/blockchains",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'book-flights-with-openclaw-agent'",
+        "Add at least one inline SVG diagram component (e.g., step-by-step flow diagram showing the booking process: user request > agent search > comparison > virtual card creation > booking > confirmation)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "This is a non-category article: use the placeholder OG image style (article title prominently displayed on dark gradient, no category-specific color or company pills). Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/book-flights-with-openclaw-agent"
       ],
       "priority": 18,
-      "passes": true,
-      "notes": "Should be objective about chain tradeoffs. Focus on what matters for agents specifically: speed, cost, stablecoin support, and protocol compatibility."
+      "passes": false
     },
     {
       "id": "US-019",
-      "title": "Article: Hosting, Cloud & Compute for Agentic Commerce",
-      "description": "As a reader, I want a detailed guide explaining where AI agents physically run — from hyperscale clouds (Google Cloud, AWS) to decentralized compute (Akash, Heurist) to self-hosted servers and even Mac Minis — and how infrastructure choice affects cost, privacy, and censorship resistance.",
+      "title": "Improve Article: Tempo Mainnet Launch",
+      "description": "Clean up and enhance the tempo-mainnet-launch-mpp article with dash removal, a data diagram, bullet/numbered lists for readability, rich SEO structured data, and a category-aware thumbnail.",
       "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'hosting-cloud-compute-guide'",
-        "Published date: 2026-03-09",
-        "Content covers: where agents physically run, hyperscale clouds (Google Cloud AP2 stack, AWS Bedrock AgentCore), Cloudflare (x402 Foundation co-founder, auth with Visa/Mastercard), decentralized compute (Akash 1000+ GPUs 85% cheaper, Heurist censorship-resistant), self-hosting options (Hetzner, DigitalOcean, Contabo, OVHcloud), local inference (Apple Mac Mini M4), hybrid approaches (Venice.ai privacy-first + VVV token), privacy infrastructure (Treza Labs ZK-KYC), cost comparison across tiers, choosing the right infrastructure for your agent",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'How much does it cost to run an AI agent?', 'Can I run an agent on my own computer?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., open-source-models-guide, agent-harness-guide)",
-        "Links back to /category/hosting-cloud-compute",
-        "Mentions key companies from this category with context on what they do",
-        "Typecheck passes"
+        "Remove all em dashes (—), en dashes (–), and standalone dash separators from the article content in src/data/articles.ts for slug 'tempo-mainnet-launch-mpp'",
+        "Add at least one inline SVG diagram component (e.g., MPP architecture diagram showing how the Machine Payments Protocol connects agents to services through sessions, with network extensions for Visa, Stripe, and Lightspark)",
+        "Convert at least 2-3 dense paragraphs into bullet point or numbered lists where appropriate",
+        "This is a non-category article: use the placeholder OG image style (article title prominently displayed on dark gradient, no category-specific color or company pills). Also display this thumbnail as a hero image at the top of the article page.",
+        "Verify and enhance SEO: ensure Article JSON-LD has wordCount computed from content, author is @type Organization (not Person) with name 'Agentic Commerce Market Map' and url 'https://agenticcommercemap.com', image points to OG image URL. Ensure BreadcrumbList and FAQPage JSON-LD schemas are present and complete. Ensure Metadata has unique title (<60 chars), description (<160 chars), keywords, canonical URL, openGraph type 'article' with publishedTime/modifiedTime/section/siteName, and twitter card 'summary_large_image'. On the first story, also add ItemList JSON-LD to the /articles index page listing all articles with position, name, and url.",
+        "Typecheck passes",
+        "Article still renders correctly at /articles/tempo-mainnet-launch-mpp"
       ],
       "priority": 19,
-      "passes": true,
-      "notes": "Practical and cost-conscious. Should help readers understand the full spectrum from free/cheap self-hosting to enterprise cloud and make an informed choice."
-    },
-    {
-      "id": "US-020",
-      "title": "Article: How to Book Plane Tickets Today with an AI Agent Using OpenClaw & Virtual Debit Cards",
-      "description": "As a reader, I want a practical, step-by-step guide showing how I can use OpenClaw with a virtual debit card (via Lobster.cash / CreditClaw) to have an AI agent autonomously search, compare, and book plane tickets for me — including how the virtual card system keeps my real payment info safe.",
-      "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'book-flights-with-openclaw-agent'",
-        "Published date: 2026-03-19",
-        "Content covers: what OpenClaw is and how it runs locally on your device, the problem (giving an AI agent your credit card is dangerous — prompt injection, plaintext credentials), the solution: virtual debit cards with spending limits (Lobster.cash by Crossmint + Visa Intelligent Commerce + Solana USDC, CreditClaw, Privacy.com), step-by-step walkthrough of booking a flight (tell the agent your trip details, agent searches flights, compares prices, selects best option, uses scoped virtual card to complete booking, confirms with you), how the virtual card system works (agent never sees raw card details, requests scoped cards via Visa VIC or USDC, human sets spending limits and approves), security considerations (OpenClaw called 'insecure by default' by security analysts — virtual cards are the mitigation), what sites/airlines this works with today, limitations and what's coming next",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'Is it safe to let an AI book flights for me?', 'What happens if the agent books the wrong flight?', 'How much does a virtual card cost?', 'Which airlines work with OpenClaw?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., agent-harness-guide, wallets-and-tooling-guide, crypto-commerce-guide)",
-        "Links back to /category/agent-harness and /category/wallets-and-tooling",
-        "Mentions OpenClaw, Lobster.cash, CreditClaw, Crossmint, Visa, Privacy.com with context",
-        "Typecheck passes"
-      ],
-      "priority": 20,
-      "passes": true,
-      "notes": "This is a practical how-to article, not a category overview. Should feel like a tutorial that a non-technical person can follow. Emphasize safety — the virtual card is what makes this viable. Be honest about limitations and security risks."
-    },
-    {
-      "id": "US-021",
-      "title": "Article: Tempo Mainnet Launch — Stripe & Paradigm's Payments Blockchain Goes Live with Machine Payments Protocol",
-      "description": "As a reader, I want a detailed, timely article about Tempo's mainnet launch on March 18, 2026 — what it is, why it matters, what the Machine Payments Protocol (MPP) enables, who the launch partners are, and how it fits into the agentic commerce landscape.",
-      "acceptanceCriteria": [
-        "Article stored in src/data/articles.ts with slug 'tempo-mainnet-launch-mpp'",
-        "Published date: 2026-03-19",
-        "Content covers: what Tempo is (payments-first L1 blockchain by Stripe and Paradigm, 100K+ TPS, sub-second finality), the mainnet launch on March 18 2026, what the Machine Payments Protocol (MPP) is (open standard co-authored with Stripe for agent-to-service payments — requesting, authorizing, and settling payments between machines), MPP key features (sessions for continuous payments, payment-method agnostic, HTTP-based control flow, payments directory with 100+ services at launch), MPP network extensions (Visa for card payments, Stripe for cards/wallets, Lightspark for Bitcoin Lightning), major launch partners (Anthropic, OpenAI, DoorDash, Mastercard, Shopify, Nubank, Revolut, Standard Chartered, Visa, UBS), use cases (pay-per-call APIs, monetized MCP servers, gated content, multi-service agent workflows), how Tempo compares to other chains in the agentic commerce stack (Base, Solana), what this means for the future of agent payments",
-        "Minimum 1500 words of substantive content split into clear H2/H3 sections — no heading level skips",
-        "Includes FAQ section with 3-5 common questions and concise answers (e.g., 'What is the Machine Payments Protocol?', 'How is Tempo different from Base or Solana?', 'Can my AI agent use Tempo today?', 'Who built Tempo?')",
-        "Includes relatedArticleSlugs linking to 2-3 other articles (e.g., blockchains-guide, payment-infrastructure-guide, standards-and-protocols-guide)",
-        "Links back to /category/blockchains and /category/standards-and-protocols and /category/payment-infrastructure",
-        "Mentions Tempo, Stripe, Paradigm, Visa, Mastercard, Anthropic, OpenAI, Shopify, Lightspark with context",
-        "Typecheck passes"
-      ],
-      "priority": 21,
-      "passes": true,
-      "notes": "This is a news/analysis article, not a category overview. Should feel timely and authoritative. Cover both the what (launch details) and the so-what (implications for the ecosystem). Reference that MPP specs are open-source on GitHub. This is a major event — Stripe entering blockchain with real launch partners signals mainstream adoption."
+      "passes": false
     }
   ]
 }

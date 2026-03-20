@@ -10,6 +10,11 @@ Started: Thu Mar 19 16:52:37 CET 2026
 - Homepage is a client component; category pages and article pages are server components
 - Params in Next.js 16 are async: `params: Promise<{ slug: string }>` — must `await params`
 - Pre-existing lint error in `src/app/page.tsx` (setState in useEffect) — not introduced by articles work
+- Article content supports bullet lists (lines starting with `• ` or `- `) and numbered lists (`1. `) within body text, separated by `\n\n`
+- Diagrams go in `src/components/diagrams/` and are mapped to articles via `articleDiagrams` in `src/app/articles/[slug]/page.tsx`
+- OG image for articles is category-aware: imports `categories`, `categoryColors`, `categoryHex` from `@/lib/categories`
+- Article JSON-LD author must be `@type: "Organization"` with `name: "Agentic Commerce Market Map"` and `url: "https://agenticcommercemap.com"`
+- `/articles` index page has ItemList JSON-LD schema listing all articles
 
 ---
 
@@ -279,4 +284,22 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Companies mentioned span multiple categories: Tempo (Blockchains), MPP (Standards & Protocols), Stripe/Visa/Lightspark (Payment Infrastructure), Anthropic/OpenAI (Proprietary Models), Shopify (Crypto Commerce)
   - Published date 2026-03-19 matches the PRD specification
   - MPP is distinguished from x402 and ACP by its session-based model and network extension architecture — this is the key differentiator to emphasize
+---
+
+## 2026-03-20 - US-001
+- Improved Standards & Protocols article (slug: standards-and-protocols-guide) with dash cleanup, diagram, bullet lists, category-aware OG image, hero image, and SEO enhancements
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from standards-and-protocols-guide content (metaDescription, all 12 contentSections, all 5 FAQ answers). Converted 3 dense paragraphs to bullet/numbered lists (interoperability problems, protocol stack layers, future trends).
+  - `src/components/diagrams/StandardsProtocolsDiagram.tsx` — NEW: React component showing 4-layer protocol stack (Identity, Discovery, Payment, Infrastructure) with color-coded protocol pills
+  - `src/app/articles/[slug]/opengraph-image.tsx` — Rewrote to be category-aware: imports category data (colors, companies, descriptions), renders category-style OG images for category articles (breadcrumb, color glow, company pills, count) and placeholder style for non-category articles
+  - `src/app/articles/[slug]/page.tsx` — Added hero image at top of article, diagram rendering system (slug-to-component mapping), content block renderer supporting bullet/numbered lists, SEO fixes (author changed from Person to Organization with url, added wordCount computation)
+  - `src/app/articles/page.tsx` — Added ItemList JSON-LD schema listing all articles with position, name, and url
+  - `prd.json` — Marked US-001 as passes: true
+- **Learnings for future iterations:**
+  - The article page now supports bullet points (lines starting with `• ` or `- `) and numbered lists (lines starting with `1. `) within content section bodies, separated by `\n\n` from surrounding paragraphs
+  - Diagrams are mapped via `articleDiagrams` object in page.tsx keyed by slug, with `afterSection` index to control placement
+  - The OG image now imports category data from `@/lib/categories` and `@/data/company-info` — for category articles it matches the category page OG style, for non-category articles it uses a simpler placeholder
+  - Hero image is rendered as `<img src="/articles/[slug]/opengraph-image">` at the top of the article page
+  - The `computeWordCount` function in page.tsx computes word count from title, description, all sections, and all FAQ entries
+  - Future US stories for article improvements can follow the same pattern: add diagram to `src/components/diagrams/`, add entry to `articleDiagrams` mapping, edit article content for dashes and lists
 ---

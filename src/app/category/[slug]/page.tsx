@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { Footer } from "@/components/footer";
 import {
   categories,
   categoryNames,
@@ -372,10 +373,7 @@ export default async function CategoryPage({
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="text-center py-8 text-xs text-gray-600">
-        <p>Agentic Commerce Market Map — Interactive Explorer</p>
-      </footer>
+      <Footer />
     </div>
   );
 }
