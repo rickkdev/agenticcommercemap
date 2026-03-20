@@ -139,3 +139,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The Crypto Commerce category has 4 subcategories in market-map-data.json — article structure mirrors these subcategories as sections for natural organization
   - This category is unique in having both crypto-native companies (List402, x402-store) and traditional companies (Stripe, Shopify) — the article emphasizes convergence
 ---
+
+## 2026-03-20 - US-011
+- Implemented Wallets & Tooling article with slug 'wallets-and-tooling-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added ninth article to the articles array with 11 content sections, 5 FAQ entries, ~2400 words covering agent wallets vs human wallets, programmable spending policies, delegated access, autonomous signing, key management infrastructure, MetaMask/Phantom evolution, ERC-7579 modular smart accounts, security tooling, Crossmint virtual cards, autonomy/security tradeoffs, key players, and future outlook
+  - `prd.json` — Marked US-011 as passes: true
+- **Learnings for future iterations:**
+  - All 13 companies from the Wallets & Tooling category in market-map-data.json were mentioned with context: Turnkey, Coinbase, MetaMask, Fireblocks, Crossmint, Privy, Openfort, Rhinestone, thirdweb, Varlock, mlld, AgentCard, Phantom
+  - Category field is "Wallets & Tooling" to match market-map-data.json exactly
+  - This category has no subcategories in market-map-data.json — structured the article by functional area instead (key management, smart accounts, security, bridging)
+  - The wallets article naturally references many other categories (identity, stablecoins, standards) since wallets are a cross-cutting infrastructure concern
+---

@@ -215,7 +215,7 @@
         "Typecheck passes"
       ],
       "priority": 11,
-      "passes": false,
+      "passes": true,
       "notes": "Should make clear that wallets are a solved problem for humans but a hard unsolved problem for autonomous agents."
     },
     {
