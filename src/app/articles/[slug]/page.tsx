@@ -17,6 +17,7 @@ import WalletsToolingDiagram from "@/components/diagrams/WalletsToolingDiagram";
 import PaymentInfrastructureDiagram from "@/components/diagrams/PaymentInfrastructureDiagram";
 import UserInterfacesDiagram from "@/components/diagrams/UserInterfacesDiagram";
 import AgentFrameworksDiagram from "@/components/diagrams/AgentFrameworksDiagram";
+import UniversalBalanceDiagram from "@/components/diagrams/UniversalBalanceDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -72,6 +73,10 @@ const articleDiagrams: Record<
   "agent-frameworks-and-tooling-guide": {
     Component: AgentFrameworksDiagram,
     afterSection: 0,
+  },
+  "universal-balance-and-account-abstraction-guide": {
+    Component: UniversalBalanceDiagram,
+    afterSection: 1,
   },
 };
 

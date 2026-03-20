@@ -442,3 +442,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
   - Agent Frameworks & Tooling is the largest category (36 companies), organized into 4 tiers (protocol, platform, development, specialized)
 ---
+
+## 2026-03-20 - US-013
+- Improved Universal Balance & Account Abstraction article (slug: universal-balance-and-account-abstraction-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from universal-balance-and-account-abstraction-guide content (metaDescription, all 12 contentSections, 3 FAQ answers). Converted 4 sections to use bullet/numbered lists: "The Multi-Chain Problem" (bullet list of 5 chain requirements), "EOAs vs Smart Accounts" (numbered list of 3 transformative capabilities), "Why Agents Should Not Manage Gas Tokens" (bullet list of 4 gas management problems), "Practical Implications" (numbered list of 5 developer recommendations), "The Future" (numbered list of 3 convergence trends).
+  - `src/components/diagrams/UniversalBalanceDiagram.tsx` — NEW: React component showing before/after comparison (multi-chain complexity without AA vs simplified flow with smart accounts + universal balance) plus 5-tier ecosystem landscape (Standards, Smart Account Infrastructure, Wallet Platforms, Consumer Wallets, Chain Infrastructure)
+  - `src/app/articles/[slug]/page.tsx` — Added UniversalBalanceDiagram import and mapping (afterSection: 1)
+  - `prd.json` — Marked US-013 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - "Universal Balance & Account Abstraction" is NOT a category in market-map-data.json, so the OG image uses the placeholder style (non-category article treatment)
+---
