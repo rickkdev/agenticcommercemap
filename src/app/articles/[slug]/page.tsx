@@ -18,6 +18,7 @@ import PaymentInfrastructureDiagram from "@/components/diagrams/PaymentInfrastru
 import UserInterfacesDiagram from "@/components/diagrams/UserInterfacesDiagram";
 import AgentFrameworksDiagram from "@/components/diagrams/AgentFrameworksDiagram";
 import UniversalBalanceDiagram from "@/components/diagrams/UniversalBalanceDiagram";
+import ProprietaryModelsDiagram from "@/components/diagrams/ProprietaryModelsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -77,6 +78,10 @@ const articleDiagrams: Record<
   "universal-balance-and-account-abstraction-guide": {
     Component: UniversalBalanceDiagram,
     afterSection: 1,
+  },
+  "proprietary-models-guide": {
+    Component: ProprietaryModelsDiagram,
+    afterSection: 0,
   },
 };
 

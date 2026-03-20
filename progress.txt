@@ -455,3 +455,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
   - "Universal Balance & Account Abstraction" is NOT a category in market-map-data.json, so the OG image uses the placeholder style (non-category article treatment)
 ---
+
+## 2026-03-20 - US-014
+- Improved Proprietary Models article (slug: proprietary-models-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from proprietary-models-guide content (metaDescription, all 12 contentSections, 2 FAQ answers). Converted 3 sections to use bullet/numbered lists: "Why Proprietary Models Matter" (bullet list of 6 model-to-protocol mappings), "How Model Choice Determines Your Commerce Stack" (numbered list of 6 model choices with commerce implications), "The Vendor Lock-In Tradeoff" (bullet list of 3 lock-in levels: model, protocol, ecosystem).
+  - `src/components/diagrams/ProprietaryModelsDiagram.tsx` — NEW: React component showing 6-model comparison matrix (Claude, GPT, Gemini, Grok, Command, Nova) with color-coded cards showing protocol, context window, commerce stack, and strength pills, plus a model-to-lock-in mapping section
+  - `src/app/articles/[slug]/page.tsx` — Added ProprietaryModelsDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-014 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---

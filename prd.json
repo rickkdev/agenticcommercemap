@@ -232,7 +232,7 @@
         "Article still renders correctly at /articles/proprietary-models-guide"
       ],
       "priority": 14,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-015",
