@@ -11,6 +11,7 @@ import IdentityTrustDiagram from "@/components/diagrams/IdentityTrustDiagram";
 import AgentHarnessDiagram from "@/components/diagrams/AgentHarnessDiagram";
 import StablecoinsDiagram from "@/components/diagrams/StablecoinsDiagram";
 import AgentNetworksDiagram from "@/components/diagrams/AgentNetworksDiagram";
+import DiscoveryDiagram from "@/components/diagrams/DiscoveryDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -41,6 +42,10 @@ const articleDiagrams: Record<
   },
   "agent-networks-guide": {
     Component: AgentNetworksDiagram,
+    afterSection: 1,
+  },
+  "discovery-guide": {
+    Component: DiscoveryDiagram,
     afterSection: 1,
   },
 };

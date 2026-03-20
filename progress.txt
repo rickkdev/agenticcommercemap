@@ -368,3 +368,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-007
+- Improved Discovery article (slug: discovery-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from discovery-guide content (metaDescription, all 10 contentSections, 3 FAQ answers). Converted 4 sections to use bullet/numbered lists: "Why Human Search Engines Fail" (bullet list of 6 agent requirements), "Directories and Indexes" (bullet list of 4 directory players), "The Challenge of Building Search" (numbered list of 5 challenges), "The Future of Agent Discovery" (numbered list of 3 evolution phases).
+  - `src/components/diagrams/DiscoveryDiagram.tsx` — NEW: React component showing 4-category discovery ecosystem map (Marketplaces, Directories & Indexes, Ecosystem Explorers, Task Platforms) with color-coded company pills and underlying standards layer (MCP, A2A, x402)
+  - `src/app/articles/[slug]/page.tsx` — Added DiscoveryDiagram import and mapping (afterSection: 1)
+  - `prd.json` — Marked US-007 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---
