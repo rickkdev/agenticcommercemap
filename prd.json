@@ -72,7 +72,7 @@
         "Article still renders correctly at /articles/agent-harness-guide"
       ],
       "priority": 4,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-005",

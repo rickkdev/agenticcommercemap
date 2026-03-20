@@ -331,3 +331,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Converting paragraphs to lists works best when content has clear enumeration (questions, numbered advantages, component breakdowns, challenge lists)
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-004
+- Improved Agent Harnesses article (slug: agent-harness-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from agent-harness-guide content (metaDescription, all 11 contentSections, all 5 FAQ answers). Converted 4 sections to use bullet/numbered lists: "How Agent Harnesses Differ from Chatbots" (numbered list of 3 capabilities), "The Autonomy Spectrum" (bullet list of 3 safety philosophies), "What Agents Actually Do" (numbered list of 4 action types), "The Competitive Landscape" (bullet list of 3 fault lines).
+  - `src/components/diagrams/AgentHarnessDiagram.tsx` — NEW: React component showing 3-tier autonomy spectrum (Coding Agents, General-Purpose Assistants, Crypto-Native Frameworks) with color-coded company pills and directional arrow
+  - `src/app/articles/[slug]/page.tsx` — Added AgentHarnessDiagram import and mapping (afterSection: 2)
+  - `prd.json` — Marked US-004 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - Em dash replacement requires contextual judgment: some become commas, some become colons, some become parentheses, some need semicolons, some need sentence restructuring
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---

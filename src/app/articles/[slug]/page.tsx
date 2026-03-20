@@ -8,6 +8,7 @@ import { Footer } from "@/components/footer";
 import StandardsProtocolsDiagram from "@/components/diagrams/StandardsProtocolsDiagram";
 import PaymentProcessorsDiagram from "@/components/diagrams/PaymentProcessorsDiagram";
 import IdentityTrustDiagram from "@/components/diagrams/IdentityTrustDiagram";
+import AgentHarnessDiagram from "@/components/diagrams/AgentHarnessDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -27,6 +28,10 @@ const articleDiagrams: Record<
   "identity-and-trust-guide": {
     Component: IdentityTrustDiagram,
     afterSection: 0,
+  },
+  "agent-harness-guide": {
+    Component: AgentHarnessDiagram,
+    afterSection: 2,
   },
 };
 
