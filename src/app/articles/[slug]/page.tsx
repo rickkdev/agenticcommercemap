@@ -15,6 +15,7 @@ import DiscoveryDiagram from "@/components/diagrams/DiscoveryDiagram";
 import CryptoCommerceDiagram from "@/components/diagrams/CryptoCommerceDiagram";
 import WalletsToolingDiagram from "@/components/diagrams/WalletsToolingDiagram";
 import PaymentInfrastructureDiagram from "@/components/diagrams/PaymentInfrastructureDiagram";
+import UserInterfacesDiagram from "@/components/diagrams/UserInterfacesDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -62,6 +63,10 @@ const articleDiagrams: Record<
   "payment-infrastructure-guide": {
     Component: PaymentInfrastructureDiagram,
     afterSection: 0,
+  },
+  "user-interfaces-guide": {
+    Component: UserInterfacesDiagram,
+    afterSection: 1,
   },
 };
 

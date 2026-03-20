@@ -184,7 +184,7 @@
         "Article still renders correctly at /articles/user-interfaces-guide"
       ],
       "priority": 11,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-012",

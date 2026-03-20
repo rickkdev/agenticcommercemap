@@ -417,3 +417,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
   - Payment Infrastructure has 30 companies (largest category alongside Agent Frameworks & Tooling), organized by infrastructure layer rather than listing companies sequentially
 ---
+
+## 2026-03-20 - US-011
+- Improved User Interfaces article (slug: user-interfaces-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from user-interfaces-guide content (metaDescription, all 12 contentSections, 2 FAQ answers). Converted 5 sections to use bullet/numbered lists: "The Front Door" (bullet list of 3 commerce stack changes), "Why the Interface Matters" (bullet list of 3 platform capabilities), "Slack" (numbered list of 4 procurement workflow steps), "Rabbit R1" (bullet list of 3 hardware security features), "The Paradigm Shift" (numbered list of 3 implications), "How UI Choice Affects the Agent Stack" (bullet list of 5 platform architecture differences), "The Future" (numbered list of 3 trends).
+  - `src/components/diagrams/UserInterfacesDiagram.tsx` — NEW: React component showing 6-channel UI map (Telegram, WhatsApp, Discord, Slack, X, Rabbit R1) with type tags, reach stats, strengths, and commerce fit, plus a paradigm shift comparison (Browse & Click vs Ask & Confirm)
+  - `src/app/articles/[slug]/page.tsx` — Added UserInterfacesDiagram import and mapping (afterSection: 1)
+  - `prd.json` — Marked US-011 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+---
