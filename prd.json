@@ -253,7 +253,7 @@
         "Typecheck passes"
       ],
       "priority": 13,
-      "passes": false,
+      "passes": true,
       "notes": "Should make it tangible — this is where users actually interact with agents. Emphasize the shift from visual UIs to conversational interfaces."
     },
     {

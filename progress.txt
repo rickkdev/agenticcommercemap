@@ -163,3 +163,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - This is the largest category by company count (30) — article organized by infrastructure layer (protocol, routing, virtual cards, streaming, compliance, management, commerce) rather than listing companies sequentially
   - The distinction between infrastructure and processors is the core thesis — emphasize architectural lock-in as the key differentiator
 ---
+
+## 2026-03-20 - US-013
+- Implemented User Interfaces article with slug 'user-interfaces-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added eleventh article to the articles array with 12 content sections, 5 FAQ entries, ~2400 words covering messaging apps as commerce surfaces (Telegram, WhatsApp, Discord, Slack), social platforms (X, Farcaster), dedicated hardware (Rabbit R1), the paradigm shift from browse-and-click to ask-and-confirm, how UI choice affects the agent stack, and the future of agent interfaces
+  - `prd.json` — Marked US-013 as passes: true
+- **Learnings for future iterations:**
+  - All 6 companies from the User Interfaces category in market-map-data.json were mentioned with context: Telegram, WhatsApp, Discord, Rabbit, Slack, X
+  - Category field is "User Interfaces" to match market-map-data.json exactly
+  - This category is unique in that the companies are platforms, not startups — the article focuses on how each platform serves as a commerce surface rather than what product they sell
+  - Published date 2026-03-03 is earlier than most other articles — this was specified in the PRD acceptance criteria
+---
