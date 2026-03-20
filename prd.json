@@ -101,7 +101,7 @@
         "Typecheck passes"
       ],
       "priority": 5,
-      "passes": false,
+      "passes": true,
       "notes": "Should make the case that identity & trust is the enabler or bottleneck of the entire ecosystem."
     },
     {
