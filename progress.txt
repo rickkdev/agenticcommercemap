@@ -253,3 +253,30 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - Published date 2026-03-09 is earlier than most other articles — specified in PRD acceptance criteria
   - Data infrastructure companies (Dune, Allium, SQD, Alchemy) are part of hosting because they provide the analytics and blockchain connectivity layer agents need to operate
 ---
+
+## 2026-03-20 - US-020
+- Implemented "How to Book Plane Tickets Today with an AI Agent Using OpenClaw & Virtual Debit Cards" article with slug 'book-flights-with-openclaw-agent'
+- Files changed:
+  - `src/data/articles.ts` — Added eighteenth article to the articles array with 10 content sections, 5 FAQ entries, ~2500 words covering OpenClaw setup, the credit card risk problem, virtual debit card solutions (Lobster.cash, CreditClaw, Privacy.com), step-by-step flight booking walkthrough, virtual card security model, OpenClaw security risks and mitigations, compatible airlines and sites, limitations and future outlook
+  - `prd.json` — Marked US-020 as passes: true
+- **Learnings for future iterations:**
+  - This is a tutorial/how-to article, not a category overview — uses a different structure with step-by-step instructions rather than company-by-company analysis
+  - Category is "Agent Harness" (the category OpenClaw belongs to in market-map-data.json), since this is not a category overview article
+  - The article links back to both /category/agent-harness and /category/wallets-and-tooling as specified in acceptance criteria — handled in the content body text rather than as a separate field
+  - Companies mentioned span multiple categories: OpenClaw/IronClaw/NemoClaw/Manus (Agent Harness), Lobster.cash/Crossmint/CreditClaw (Wallets & Tooling), Visa (Payment Infrastructure), Privacy.com (external)
+  - Published date 2026-03-19 matches the PRD specification
+---
+
+## 2026-03-20 - US-021
+- Implemented "Tempo Mainnet Launch — Stripe & Paradigm's Payments Blockchain Goes Live with Machine Payments Protocol" article with slug 'tempo-mainnet-launch-mpp'
+- Files changed:
+  - `src/data/articles.ts` — Added nineteenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering Tempo mainnet launch, MPP protocol details (sessions, payment-method agnosticism, directory), Tempo architecture (100K+ TPS, sub-second finality), launch partners (Anthropic, OpenAI, Visa, Mastercard, DoorDash, Shopify, Nubank, Revolut, Standard Chartered, UBS, Lightspark), use cases, comparison with Base and Solana, open-source specs, security/compliance, key companies, bigger picture implications
+  - `prd.json` — Marked US-021 as passes: true
+- **Learnings for future iterations:**
+  - This is a news/analysis article, not a category overview — uses a timely event (March 18, 2026 mainnet launch) as the hook for deep analysis
+  - Category is "Blockchains" since Tempo is listed in the Blockchains category in market-map-data.json
+  - The article links back to /category/blockchains, /category/standards-and-protocols, and /category/payment-infrastructure as specified in acceptance criteria — handled in content body text
+  - Companies mentioned span multiple categories: Tempo (Blockchains), MPP (Standards & Protocols), Stripe/Visa/Lightspark (Payment Infrastructure), Anthropic/OpenAI (Proprietary Models), Shopify (Crypto Commerce)
+  - Published date 2026-03-19 matches the PRD specification
+  - MPP is distinguished from x402 and ACP by its session-based model and network extension architecture — this is the key differentiator to emphasize
+---

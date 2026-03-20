@@ -405,7 +405,7 @@
         "Typecheck passes"
       ],
       "priority": 21,
-      "passes": false,
+      "passes": true,
       "notes": "This is a news/analysis article, not a category overview. Should feel timely and authoritative. Cover both the what (launch details) and the so-what (implications for the ecosystem). Reference that MPP specs are open-source on GitHub. This is a major event — Stripe entering blockchain with real launch partners signals mainstream adoption."
     }
   ]
