@@ -280,7 +280,7 @@
         "Article still renders correctly at /articles/hosting-cloud-compute-guide"
       ],
       "priority": 17,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-018",

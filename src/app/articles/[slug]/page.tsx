@@ -21,6 +21,7 @@ import UniversalBalanceDiagram from "@/components/diagrams/UniversalBalanceDiagr
 import ProprietaryModelsDiagram from "@/components/diagrams/ProprietaryModelsDiagram";
 import OpenSourceModelsDiagram from "@/components/diagrams/OpenSourceModelsDiagram";
 import BlockchainsDiagram from "@/components/diagrams/BlockchainsDiagram";
+import HostingCloudComputeDiagram from "@/components/diagrams/HostingCloudComputeDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -91,6 +92,10 @@ const articleDiagrams: Record<
   },
   "blockchains-guide": {
     Component: BlockchainsDiagram,
+    afterSection: 0,
+  },
+  "hosting-cloud-compute-guide": {
+    Component: HostingCloudComputeDiagram,
     afterSection: 0,
   },
 };
