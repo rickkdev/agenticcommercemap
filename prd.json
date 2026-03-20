@@ -200,7 +200,7 @@
         "Article still renders correctly at /articles/agent-frameworks-and-tooling-guide"
       ],
       "priority": 12,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-013",

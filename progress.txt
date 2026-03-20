@@ -429,3 +429,16 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
 ---
+
+## 2026-03-20 - US-012
+- Improved Agent Frameworks & Tooling article (slug: agent-frameworks-and-tooling-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from agent-frameworks-and-tooling-guide content (metaDescription, all 12 contentSections, 3 FAQ answers). Converted 3 sections to use bullet/numbered lists: "The Picks-and-Shovels Analogy" (bullet list of dependency examples), "Key Companies" (bullet list of four tiers with company groupings), "The Future" (numbered list of 4 trends).
+  - `src/components/diagrams/AgentFrameworksDiagram.tsx` — NEW: React component showing 4-tier framework stack (Protocol Layer, Platform Layer, Development Layer, Specialized Layer) with color-coded company pills and counts, plus a 4-step framework selection flow
+  - `src/app/articles/[slug]/page.tsx` — Added AgentFrameworksDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-012 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - Agent Frameworks & Tooling is the largest category (36 companies), organized into 4 tiers (protocol, platform, development, specialized)
+---
