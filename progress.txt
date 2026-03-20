@@ -151,3 +151,15 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - This category has no subcategories in market-map-data.json — structured the article by functional area instead (key management, smart accounts, security, bridging)
   - The wallets article naturally references many other categories (identity, stablecoins, standards) since wallets are a cross-cutting infrastructure concern
 ---
+
+## 2026-03-20 - US-012
+- Implemented Payment Infrastructure article with slug 'payment-infrastructure-guide'
+- Files changed:
+  - `src/data/articles.ts` — Added tenth article to the articles array with 12 content sections, 5 FAQ entries, ~2500 words covering x402, ACP, AP2, MPP, streaming payments (Superfluid), virtual cards (Crossmint, Lithic), compliance (Cleared, Basis Theory, BVNK), payment orchestration, infrastructure lock-in, key players, and future outlook
+  - `prd.json` — Marked US-012 as passes: true
+- **Learnings for future iterations:**
+  - All 30 companies from the Payment Infrastructure category in market-map-data.json were mentioned with context: Merit Systems, Moonpay, Gwop, ampersend, Conto, Superfluid Foundation, lobster.cash, RevaPay AI, Pay3, HTTPayer, x402engine, Cleared, Reveel, Visa, AP2, Crossmint, Meridian, x402, machines.cash, ACP, Sponge, Stripe, BVNK, Basis Theory, Rye, Firmly, Lithic, AgentCash, Unicity Labs, Rain
+  - Category field is "Payment Infrastructure" to match market-map-data.json exactly
+  - This is the largest category by company count (30) — article organized by infrastructure layer (protocol, routing, virtual cards, streaming, compliance, management, commerce) rather than listing companies sequentially
+  - The distinction between infrastructure and processors is the core thesis — emphasize architectural lock-in as the key differentiator
+---
