@@ -492,3 +492,29 @@ Started: Thu Mar 19 16:52:37 CET 2026
   - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
   - Blockchains is a large category (19 chains) organized by strategic importance (Base, Solana, Ethereum as top-tier, Tempo as new entrant, then next-gen and broader ecosystem)
 ---
+
+## 2026-03-20 - US-017
+- Improved Hosting, Cloud & Compute article (slug: hosting-cloud-compute-guide) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from hosting-cloud-compute-guide content (metaDescription, all 12 contentSections, 3 FAQ answers). Converted 5 sections to use bullet/numbered lists: "Where Do AI Agents Actually Run?" (bullet list of 4 infrastructure tradeoffs), "Self-Hosted Servers" (numbered list of 5 hosting providers with niches), "Data Infrastructure" (bullet list of 4 data providers with roles), "Cost Comparison" (numbered list of 5 cost tiers), "Choosing the Right Infrastructure" (bullet list of 5 deployment profiles), "The Key Players" (bullet list of 6 tiers with companies), "The Future" (numbered list of 4 trends).
+  - `src/components/diagrams/HostingCloudComputeDiagram.tsx` — NEW: React component showing 6-tier infrastructure spectrum (Hyperscale Cloud, Edge Computing, Traditional Hosting, Decentralized Compute, Privacy Infrastructure, Local Inference) with cost/privacy/control metrics, company pills, and strength tags, plus a data infrastructure layer section
+  - `src/app/articles/[slug]/page.tsx` — Added HostingCloudComputeDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-017 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - Category field is "Hosting / Cloud / Compute" (uses slashes) to match market-map-data.json exactly
+---
+
+## 2026-03-20 - US-018
+- Improved "How to Book Plane Tickets with an AI Agent" article (slug: book-flights-with-openclaw-agent) with dash cleanup, diagram, bullet/numbered lists, and SEO verification
+- Files changed:
+  - `src/data/articles.ts` — Removed all em dashes from book-flights-with-openclaw-agent content (all 10 contentSections, 5 FAQ answers). Converted 4 sections to use bullet/numbered lists: "What If Your AI Agent Could Book Your Next Flight?" (bullet list of 3 security questions), "The Problem: Giving AI Agents Your Credit Card Is Dangerous" (numbered list of 4 risks: prompt injection, credential exposure, unlimited authority, no task scoping), "Security Considerations" (bullet list of 4 blast-radius containments + bullet list of 4 safety practices), "What Sites and Airlines Work Today" (bullet list of 4 known limitations), "Limitations and What Is Coming Next" (numbered list of 4 upcoming improvements).
+  - `src/components/diagrams/BookFlightsDiagram.tsx` — NEW: React component showing 7-step booking flow (Setup > Virtual Card > Prompt > Search > Compare > Book > Confirmation) with numbered steps and color gradient, plus a 4-layer virtual card security model (Spending Limit, Single-Use, Merchant Lock, Instant Revoke), and virtual card provider pills
+  - `src/app/articles/[slug]/page.tsx` — Added BookFlightsDiagram import and mapping (afterSection: 0)
+  - `prd.json` — Marked US-018 as passes: true
+- **Learnings for future iterations:**
+  - The pattern for adding diagrams is well-established: create component in `src/components/diagrams/`, import in page.tsx, add to `articleDiagrams` mapping with `afterSection` index
+  - SEO infrastructure from US-001 carries forward automatically for all articles with valid category fields
+  - This is a non-category tutorial article with category "Agent Harness" — the OG image uses the category-aware style since "Agent Harness" exists in market-map-data.json
+---

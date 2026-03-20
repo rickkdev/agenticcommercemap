@@ -22,6 +22,7 @@ import ProprietaryModelsDiagram from "@/components/diagrams/ProprietaryModelsDia
 import OpenSourceModelsDiagram from "@/components/diagrams/OpenSourceModelsDiagram";
 import BlockchainsDiagram from "@/components/diagrams/BlockchainsDiagram";
 import HostingCloudComputeDiagram from "@/components/diagrams/HostingCloudComputeDiagram";
+import BookFlightsDiagram from "@/components/diagrams/BookFlightsDiagram";
 
 const SITE_URL = "https://agenticcommercemap.com";
 
@@ -96,6 +97,10 @@ const articleDiagrams: Record<
   },
   "hosting-cloud-compute-guide": {
     Component: HostingCloudComputeDiagram,
+    afterSection: 0,
+  },
+  "book-flights-with-openclaw-agent": {
+    Component: BookFlightsDiagram,
     afterSection: 0,
   },
 };

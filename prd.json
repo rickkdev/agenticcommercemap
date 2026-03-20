@@ -296,7 +296,7 @@
         "Article still renders correctly at /articles/book-flights-with-openclaw-agent"
       ],
       "priority": 18,
-      "passes": false
+      "passes": true
     },
     {
       "id": "US-019",
