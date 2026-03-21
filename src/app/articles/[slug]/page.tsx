@@ -270,7 +270,7 @@ function renderContentBlock(block: string, key: number) {
     return (
       <ul
         key={key}
-        className="list-disc list-inside text-gray-300 text-sm leading-relaxed mb-4 space-y-1.5 pl-1"
+        className="list-disc list-inside text-gray-300 text-base leading-relaxed mb-4 space-y-1.5 pl-1"
       >
         {lines.map((line, i) => (
           <li key={i}>{line.replace(/^[•\-]\s/, "")}</li>
@@ -283,7 +283,7 @@ function renderContentBlock(block: string, key: number) {
     return (
       <ol
         key={key}
-        className="list-decimal list-inside text-gray-300 text-sm leading-relaxed mb-4 space-y-1.5 pl-1"
+        className="list-decimal list-inside text-gray-300 text-base leading-relaxed mb-4 space-y-1.5 pl-1"
       >
         {lines.map((line, i) => (
           <li key={i}>{line.replace(/^\d+\.\s/, "")}</li>
@@ -293,7 +293,7 @@ function renderContentBlock(block: string, key: number) {
   }
 
   return (
-    <p key={key} className="text-gray-300 leading-relaxed text-sm mb-4">
+    <p key={key} className="text-gray-300 leading-relaxed text-base mb-4">
       {block}
     </p>
   );
@@ -369,12 +369,6 @@ export default async function ArticlePage({
             >
               Map
             </Link>
-            <Link
-              href="/articles"
-              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
-            >
-              Guides
-            </Link>
           </nav>
         </div>
       </header>
@@ -446,7 +440,7 @@ export default async function ArticlePage({
                     <h3 className="text-base font-medium text-white mb-2">
                       {item.question}
                     </h3>
-                    <p className="text-sm text-gray-400 leading-relaxed">
+                    <p className="text-base text-gray-400 leading-relaxed">
                       {item.answer}
                     </p>
                   </div>

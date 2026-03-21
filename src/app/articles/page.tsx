@@ -4,6 +4,12 @@ import { articles } from "@/data/articles";
 import { Footer } from "@/components/footer";
 
 const SITE_URL = "https://agenticcommercemap.com";
+const ARTICLES_PER_PAGE = 12;
+
+const sortedArticles = [...articles].sort(
+  (a, b) =>
+    new Date(b.publishedDate).getTime() - new Date(a.publishedDate).getTime()
+);
 
 export const metadata: Metadata = {
   title: "Guides — Agentic Commerce Market Map",
@@ -40,7 +46,20 @@ function ArticlesItemListJsonLd() {
   );
 }
 
-export default function ArticlesPage() {
+export default async function ArticlesPage({
+  searchParams,
+}: {
+  searchParams: Promise<{ page?: string }>;
+}) {
+  const { page: pageParam } = await searchParams;
+  const totalPages = Math.ceil(sortedArticles.length / ARTICLES_PER_PAGE);
+  const currentPage = Math.max(
+    1,
+    Math.min(totalPages, Number(pageParam) || 1)
+  );
+  const start = (currentPage - 1) * ARTICLES_PER_PAGE;
+  const pageArticles = sortedArticles.slice(start, start + ARTICLES_PER_PAGE);
+
   return (
     <div className="min-h-screen bg-mesh">
       <ArticlesItemListJsonLd />
@@ -95,12 +114,6 @@ export default function ArticlesPage() {
             >
               Map
             </Link>
-            <Link
-              href="/articles"
-              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
-            >
-              Guides
-            </Link>
           </nav>
         </div>
       </header>
@@ -114,19 +127,25 @@ export default function ArticlesPage() {
           </p>
         </div>
 
-        {articles.length === 0 ? (
+        {pageArticles.length === 0 ? (
           <p className="text-gray-500 text-sm">
             Articles coming soon. Check back later.
           </p>
         ) : (
           <div className="space-y-4">
-            {articles.map((article) => (
+            {pageArticles.map((article) => (
               <Link
                 key={article.slug}
                 href={`/articles/${article.slug}`}
-                className="category-card glow-border rounded-xl p-5 block hover:border-indigo-500/40 transition-all group"
+                className="category-card glow-border rounded-xl overflow-hidden block hover:border-indigo-500/40 transition-all group"
               >
-                <div className="flex items-start justify-between gap-4">
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/articles/${article.slug}/opengraph-image`}
+                  alt=""
+                  className="w-full aspect-[1200/630] object-cover"
+                />
+                <div className="p-5 flex items-start justify-between gap-4">
                   <div className="min-w-0 flex-1">
                     <div className="flex items-center gap-3 mb-2">
                       <span className="inline-block px-2 py-0.5 rounded text-[10px] font-medium uppercase tracking-wider bg-indigo-500/15 text-indigo-300">
@@ -175,6 +194,47 @@ export default function ArticlesPage() {
               </Link>
             ))}
           </div>
+        )}
+
+        {/* Pagination */}
+        {totalPages > 1 && (
+          <nav className="mt-10 flex items-center justify-center gap-2">
+            {currentPage > 1 && (
+              <Link
+                href={
+                  currentPage === 2
+                    ? "/articles"
+                    : `/articles?page=${currentPage - 1}`
+                }
+                rel="prev"
+                className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white border border-white/10 hover:border-indigo-500/40 transition-colors"
+              >
+                Previous
+              </Link>
+            )}
+            {Array.from({ length: totalPages }, (_, i) => i + 1).map((p) => (
+              <Link
+                key={p}
+                href={p === 1 ? "/articles" : `/articles?page=${p}`}
+                className={`w-10 h-10 rounded-lg text-sm flex items-center justify-center transition-colors ${
+                  p === currentPage
+                    ? "bg-indigo-500/20 text-indigo-300 border border-indigo-500/40"
+                    : "text-gray-500 hover:text-white border border-white/10 hover:border-indigo-500/40"
+                }`}
+              >
+                {p}
+              </Link>
+            ))}
+            {currentPage < totalPages && (
+              <Link
+                href={`/articles?page=${currentPage + 1}`}
+                rel="next"
+                className="px-4 py-2 rounded-lg text-sm text-gray-400 hover:text-white border border-white/10 hover:border-indigo-500/40 transition-colors"
+              >
+                Next
+              </Link>
+            )}
+          </nav>
         )}
       </main>
 

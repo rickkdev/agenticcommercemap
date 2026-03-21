@@ -36,6 +36,23 @@ export default async function Image({
     const hex = categoryHex[color] || "#6366f1";
     const short = categoryShortDescriptions[category] || "";
 
+    // Standards & Protocols lists standards, not companies — show the companies behind them instead
+    const isStandards = category === "Standards & Protocols";
+    const standardsDevelopers = isStandards
+      ? [
+          "Coinbase",
+          "Anthropic",
+          "Google",
+          "OpenAI",
+          "Stripe",
+          "Cloudflare",
+          "Visa",
+          "Paradigm",
+          "Ethereum Foundation",
+          "Consensys",
+        ]
+      : [];
+
     const companiesWithInfo = cat.companies
       .filter((c) => companyInfoMap[c.name])
       .slice(0, 8);
@@ -127,10 +144,11 @@ export default async function Image({
               display: "flex",
             }}
           >
-            {cat.count} companies {short ? `\u2014 ${short}` : ""}
+            {cat.count} {isStandards ? "standards" : "companies"}{" "}
+            {short ? `\u2014 ${short}` : ""}
           </span>
 
-          {/* Company pills */}
+          {/* Pills: show developers for standards, companies otherwise */}
           <div
             style={{
               display: "flex",
@@ -139,24 +157,42 @@ export default async function Image({
               maxWidth: "1080px",
             }}
           >
-            {companiesWithInfo.map((c) => (
-              <div
-                key={c.name}
-                style={{
-                  background: `${hex}18`,
-                  border: `1px solid ${hex}40`,
-                  borderRadius: "20px",
-                  padding: "6px 14px",
-                  fontSize: "14px",
-                  color: "#d1d5db",
-                  display: "flex",
-                  alignItems: "center",
-                }}
-              >
-                {c.name}
-              </div>
-            ))}
-            {cat.count > 8 && (
+            {isStandards
+              ? standardsDevelopers.map((name) => (
+                  <div
+                    key={name}
+                    style={{
+                      background: `${hex}18`,
+                      border: `1px solid ${hex}40`,
+                      borderRadius: "20px",
+                      padding: "6px 14px",
+                      fontSize: "14px",
+                      color: "#d1d5db",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    {name}
+                  </div>
+                ))
+              : companiesWithInfo.map((c) => (
+                  <div
+                    key={c.name}
+                    style={{
+                      background: `${hex}18`,
+                      border: `1px solid ${hex}40`,
+                      borderRadius: "20px",
+                      padding: "6px 14px",
+                      fontSize: "14px",
+                      color: "#d1d5db",
+                      display: "flex",
+                      alignItems: "center",
+                    }}
+                  >
+                    {c.name}
+                  </div>
+                ))}
+            {!isStandards && cat.count > 8 && (
               <div
                 style={{
                   background: "rgba(99, 102, 241, 0.08)",

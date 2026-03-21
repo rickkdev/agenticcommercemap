@@ -180,12 +180,6 @@ export default async function CategoryPage({
             >
               Map
             </Link>
-            <Link
-              href="/articles"
-              className="text-sm text-indigo-400 hover:text-indigo-300 transition-colors"
-            >
-              Guides
-            </Link>
           </nav>
         </div>
       </header>

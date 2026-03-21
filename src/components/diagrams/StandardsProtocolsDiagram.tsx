@@ -1,16 +1,16 @@
 export default function StandardsProtocolsDiagram() {
   const layers = [
     {
-      label: "Identity Layer",
-      color: "#f43f5e",
-      protocols: ["ERC-8004"],
-      desc: "On-chain agent registration & verification",
-    },
-    {
       label: "Discovery Layer",
       color: "#f59e0b",
-      protocols: ["MCP", "A2A"],
-      desc: "Find tools, services & other agents",
+      protocols: ["ERC-8004", "A2A"],
+      desc: "On-chain service identity & agent-to-agent discovery",
+    },
+    {
+      label: "Integration Layer",
+      color: "#f43f5e",
+      protocols: ["MCP"],
+      desc: "Standardized agent-to-tool connections",
     },
     {
       label: "Payment Layer",

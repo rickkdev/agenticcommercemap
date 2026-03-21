@@ -479,12 +479,6 @@ export default function Home() {
           <StatsBar />
 
           <div className="flex items-center gap-4 shrink-0 order-3 sm:order-last">
-            <Link
-              href="/articles"
-              className="text-xs text-gray-400 hover:text-gray-200 transition-colors"
-            >
-              Guides
-            </Link>
             <a
               href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
               target="_blank"
