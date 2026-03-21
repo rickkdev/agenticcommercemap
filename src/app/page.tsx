@@ -480,7 +480,7 @@ export default function Home() {
 
           <div className="flex items-center gap-4 shrink-0 order-3 sm:order-last">
             <a
-              href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Category:**%0A%0A**Short+Description:**%0A"
+              href="https://github.com/rickkdev/agenticcommercemap/issues/new?title=Add+Company:+[Company+Name]&body=**Company+Name:**%0A%0A**Website:**%0A%0A**Logo+/+Icon+URL:**%0A(Link+to+company+logo,+icon,+or+favicon.+Preferably+a+square+image,+e.g.+Twitter/X+profile+picture+or+company+favicon)%0A%0A**Category:**%0A%0A**Short+Description:**%0A(Please+describe+exactly+how+your+company+interacts+with+agentic+commerce+%E2%80%94+e.g.+what+products+or+services+you+offer+that+enable+AI+agents+to+transact,+discover,+or+operate+autonomously)%0A%0A----%0A%0A**Reference+Articles:**%0A(Link+any+blog+posts+or+articles+your+company+has+published+about+agentic+commerce)%0A-+%0A"
               target="_blank"
               rel="noopener noreferrer"
               className="text-xs text-indigo-400 hover:text-indigo-300 transition-colors"
