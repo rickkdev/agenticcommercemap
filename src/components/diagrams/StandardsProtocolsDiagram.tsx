@@ -7,16 +7,34 @@ export default function StandardsProtocolsDiagram() {
       desc: "On-chain service identity & agent-to-agent discovery",
     },
     {
+      label: "Authentication Layer",
+      color: "#ec4899",
+      protocols: ["ERC-8128"],
+      desc: "Per-request cryptographic auth via Ethereum signatures",
+    },
+    {
       label: "Integration Layer",
       color: "#f43f5e",
       protocols: ["MCP"],
       desc: "Standardized agent-to-tool connections",
     },
     {
+      label: "Commerce Layer",
+      color: "#8b5cf6",
+      protocols: ["ERC-8183"],
+      desc: "Job escrow with evaluation for complex agent tasks",
+    },
+    {
       label: "Payment Layer",
       color: "#10b981",
       protocols: ["x402", "ACP", "AP2", "MPP"],
       desc: "Micropayments, shopping flows, mandates & sessions",
+    },
+    {
+      label: "Privacy Layer",
+      color: "#06b6d4",
+      protocols: ["ERC-5564"],
+      desc: "Stealth addresses for unlinkable agent transactions",
     },
     {
       label: "Infrastructure Layer",
