@@ -1,6 +1,6 @@
 {
   "title": "Agentic Commerce Market Map",
-  "totalCompanies": 215,
+  "totalCompanies": 216,
   "categories": {
     "User Interfaces": {
       "count": 6,
@@ -32,7 +32,7 @@
       ]
     },
     "Discovery": {
-      "count": 10,
+      "count": 11,
       "companies": [
         {
           "name": "x402jobs",
@@ -73,6 +73,10 @@
         {
           "name": "Valoria",
           "logoUrl": "https://x402.valoria.net/favicon.png"
+        },
+        {
+          "name": "dentro",
+          "logoUrl": "https://dentro.fyi/favicon.svg"
         }
       ]
     },
